@@ -11,8 +11,8 @@ locale                   : "en-US"
 site_theme               : "default"
 title                    : "Tianhao Luo"
 title_separator          : "-"
-name                     : &name "Tianhao Luo"
-description              : &description "Harvard PhD Student in Biomedical AI"
+name                     : "Tianhao Luo"
+description              : "Harvard PhD Student in Biomedical AI"
 url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -23,9 +23,9 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Tianhao Luo"
   pronouns         : "he/him"
-  bio              : "Short biography for the left-hand sidebar"
+bio: "PhD student in Biomedical Informatics at Harvard Medical School. Passionate about AI in medicine, statistical genomics, and spatial transcriptomics."
   location         : "Boston/Philadelphia/LA"
   employer         : "Harvard University"
   uri              : # URL
@@ -50,7 +50,7 @@ author:
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          :  # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -59,7 +59,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : luo-tianhao
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
