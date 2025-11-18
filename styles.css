@@ -336,34 +336,87 @@ section {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 1000px;
+    max-width: 1200px;
+    width: 100%;
     padding: 0 2rem;
-    text-align: left;
-    /* Align text to left for better layout with image */
 }
 
-.hero-title-wrapper {
+.hero-container {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
+    justify-content: center;
+    gap: 4rem;
+    /* Space between image and text */
 }
 
-.hero-profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+.hero-image-container {
+    flex-shrink: 0;
+}
+
+.hero-profile-img-large {
+    width: 500px;
+    /* Narrower width */
+    height: 800px;
+    /* Longer height for portrait look */
     object-fit: cover;
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+    border-radius: 12px;
+    /* Rectangular with rounded corners */
+    border: 4px solid var(--accent);
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+    transition: var(--transition);
+}
+
+.hero-profile-img-large:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 50px rgba(100, 255, 218, 0.5);
+}
+
+.hero-text {
+    text-align: left;
+    /* Align text to the left */
+    max-width: 600px;
 }
 
 .hero-title {
-    font-size: 4.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin: 0;
-    /* Remove default margin */
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--lightest-slate);
+    /* Solid color for visibility */
+    /* Removed gradient text to ensure visibility */
+    font-family: 'Fira Code', monospace;
+}
+
+/* Responsive adjustments */
+@media (max-width: 968px) {
+    .hero-container {
+        flex-direction: column;
+        /* Stack on smaller screens */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-socials {
+        justify-content: center;
+    }
+
+    .hero-profile-img-large {
+        width: 200px;
+        /* Smaller on mobile */
+        height: 280px;
+        /* Maintain portrait ratio */
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
 }
 
 .hero-subtitle {
@@ -416,6 +469,13 @@ section {
     font-family: var(--font-mono);
     font-size: 0.9rem;
     cursor: pointer;
+    transition: var(--transition);
+}
+
+.hero-icon {
+    font-size: 4rem;
+    /* Significantly larger size */
+    color: var(--text-primary);
     transition: var(--transition);
 }
 
