@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,13 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <meta name="description" content="Tianhao Luo—AI-driven biomedicine researcher, VC fellow, and startup cofounder seeking collaborators.">
+    <meta name="description"
+        content="Tianhao Luo—AI-driven biomedicine researcher, VC fellow, and startup cofounder seeking collaborators.">
     <meta name="keywords" content="AI, biomedicine, spatial transcriptomics, single-cell, startup, cofounder, research">
     <meta name="google-site-verification" content="tt4Mkc_TPObA-Rl9YBzygHsHmSSLNeFZcc9Q9QDKKVg" />
     <title>Tianhao Luo | AI in Biomedicine & Startup Cofounder</title>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -22,10 +25,18 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#past-experiences" class="nav-link">Past Experiences</a>
                 <a href="#education" class="nav-link">Education</a>
-                <a href="#current-roles" class="nav-link">Current Roles</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#professional" class="nav-link">Professional</a>
+                <a href="#entrepreneurial" class="nav-link">Ventures</a>
+                <a href="#publications" class="nav-link">Publications</a>
                 <a href="#contact" class="nav-link">Contact</a>
+                <div class="nav-socials">
+                    <a href="mailto:tianhao_luo@g.harvard.edu" class="nav-icon" title="Email"><i
+                            class="fas fa-envelope"></i></a>
+                    <a href="https://linkedin.com/in/luo-tianhao/" target="_blank" class="nav-icon" title="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
             </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -37,19 +48,21 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-background"></div>
-        <div class="hero-overlay"></div>
+        <div class="hero-bg-image"></div>
+        <canvas id="particle-canvas"></canvas>
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">
-                    Hey, I’m Tianhao<br>
-                    an Biomedical AI Pioneer
-                </h1>
-        <p class="hero-subtitle">🔬 Engineering AI to unlock cures for the incurable—driving breakthroughs in biomedicine and co-founding the next wave of AI4S innovation</p>
-
-                <p class="hero-description"></p>
+                <div class="hero-title-wrapper">
+                    <h1 class="hero-title">Tianhao Luo</h1>
+                    <img src="grad.JPG" alt="Tianhao Luo Grad" class="hero-profile-img">
+                </div>
+                <h2 class="hero-subtitle">AI-driven Biomedicine Entrepreneur & PhD @ Harvard</h2>
+                <p class="hero-description">
+                    Boston, MA
+                </p>
                 <div class="hero-buttons">
-                    <a href="#research" class="btn btn-primary">What I'm working on</a>
+                    <a href="#research" class="btn btn-primary">View Research</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                 </div>
             </div>
         </div>
@@ -58,74 +71,31 @@
         </div>
     </section>
 
-    <!-- Founding Section -->
-    <section id="founding" class="founding">
-        <div class="founding-background"></div>
-        <div class="founding-overlay"></div>
-        <div class="container">
-            <h2 class="section-title">Founders & Collaborators Wanted</h2>
-            <div class="founding-content">
-                <div class="founding-text">
-                    <p class="founding-description">
-                        I'm actively seeking passionate collaborators to translate AI-biomedicine insights into real-world impact. Whether you're building the next generation of AI models or running breakthrough experiments, let's connect and build something extraordinary together.
-                    </p>
-                    <p class="founding-personal">
-                        The intersection of AI and biomedicine is where the future is being written. I'm looking for co-founders, experimental partners, and advisors who share this vision and want to push the boundaries of what's possible in computational biology and drug discovery.
-                    </p>
-                    <div class="founding-opportunities">
-                        <div class="opportunity" data-animation-delay="0s">
-                            <i class="fas fa-code"></i>
-                            <h4>Computational Co-founders</h4>
-                            <span>ML engineers, AI researchers</span>
-                        </div>
-                        <div class="opportunity" data-animation-delay="0.1s">
-                            <i class="fas fa-flask"></i>
-                            <h4>Experimental Partners</h4>
-                            <span>Wet-lab biologists, translational scientists</span>
-                        </div>
-                        <div class="opportunity" data-animation-delay="0.2s">
-                            <i class="fas fa-lightbulb"></i>
-                            <h4>Startup Advisors</h4>
-                            <span>VC partners, biotech mentors</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- About Section -->
     <section id="about" class="about">
-        <div class="about-background"></div>
-        <div class="about-overlay"></div>
         <div class="container">
-            <h2 class="section-title">A bit about me</h2>
+            <h2 class="section-title">About Me</h2>
             <div class="about-content">
+                <div class="about-image">
+                    <img src="profile_photo_1.jpg" alt="Tianhao Luo">
+                </div>
                 <div class="about-text">
                     <p class="about-description">
-                        I'm an incoming PhD student in the Harvard Biomedical Informatics (BIG) program, recently graduated from UPenn (Wharton and College) with triple majors in mathematics, computational biology, and statistics. 
-                        My undergraduate years were spent unraveling the complexities of single-cell genomics and spatial transcriptomics, and now I'm heading to Boston to advance research at the intersection of multi-modal AI, biology, and medicine. 
-                        Outside of research and coding, I enjoy playing violin (13 years and counting) and going for runs.
+                        I am a PhD student in Biomedical Informatics at Harvard Medical School, driven by the
+                        intersection of Artificial Intelligence and Biomedicine. My work focuses on developing
+                        multi-modal AI frameworks to decode complex biological systems and accelerate therapeutic
+                        discovery.
                     </p>
                     <p class="about-personal">
-                        What gets me up in the morning? Honestly, it's the chance to use AI to crack the code of human biology. Whether it's building smarter diagnostics, dreaming up virtual cells, or speeding up drug discovery, I'm all about using machine learning to dig into the mysteries of disease—and maybe even find some real solutions. Biomedicine is wild, and with AI in the mix, the possibilities are endless.
+                        Previously, I graduated summa cum laude from the University of Pennsylvania with degrees in
+                        Statistics, Mathematics, and Computational Biology. Beyond research, I am a violinist of 13
+                        years, an avid runner, and a co-founder of health-tech ventures.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <i class="fas fa-trophy"></i>
-                            <h4>340/340</h4>
-                            <span>GRE Score (yes, really!)</span>
-                        </div>
-                        <div class="stat">
-                            <i class="fas fa-research"></i>
-                            <h4>5+</h4>
-                            <span>Research projects (and counting)</span>
-                        </div>
-                        <div class="stat">
-                            <i class="fas fa-music"></i>
-                            <h4>13 years</h4>
-                            <span>Playing violin</span>
-                        </div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-music"></i> Hobbies</h3>
+                        <p>Classical Music, Violin, Running</p>
                     </div>
                 </div>
             </div>
@@ -134,366 +104,298 @@
 
     <!-- Education Section -->
     <section id="education" class="education">
-        <div class="education-background"></div>
-        <div class="education-overlay"></div>
         <div class="container">
-            <h2 class="section-title">My academic journey</h2>
-            
-            <!-- Harvard PhD -->
-            <div class="education-card">
-                <div class="education-header">
-                    <h3>Harvard University</h3>
-                    <span class="education-period">Starting in Fall 2025 </span>
-                </div>
-                <div class="education-subtitle">PhD in Biomedical Informatics </div>
-                <div class="education-degrees">
-                    <div class="degree">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>PhD in Biomedical Informatics</span>
-                    </div>
-                </div>
-                <div class="education-details">
-                    <p><strong>Focus:</strong> Multi-modal biomedical AI for precision medicine and clinical treatment</p>
-                    <p><strong>Program:</strong> Bioinformatics and Integrative Genomics (BIG) PhD Track</p>
-                    <p><strong>Department:</strong> Biomedical Informatics, Harvard Medical School</p>
-                    <p><strong>Location:</strong> Boston, MA</p>
-                </div>
-            </div>
+            <h2 class="section-title">Education</h2>
 
-            <!-- UPenn Undergraduate -->
-            <div class="education-card">
-                <div class="education-header">
-                    <h3>University of Pennsylvania</h3>
-                    <span class="education-period">2021 - 2025</span>
-                </div>
-                <div class="education-subtitle">Dual Degree at the Wharton School & College of Arts and Sciences</div>
-                <div class="education-degrees">
-                    <div class="degree">
-                        <i class="fas fa-certificate"></i>
-                        <span>B.A. in Mathematics, Computational Biology</span>
+            <div class="education-content">
+                <div class="education-cards">
+                    <div class="education-card">
+                        <div class="education-header">
+                            <h3>Harvard Medical School, Harvard University</h3>
+                            <span class="education-period">2025 - Present</span>
+                        </div>
+                        <div class="education-logos">
+                            <img src="harvard.png" alt="Harvard Logo" class="edu-logo">
+                            <img src="HMS.png" alt="HMS Logo" class="edu-logo">
+                        </div>
+                        <div class="education-subtitle">PhD Student in Biomedical Informatics</div>
+                        <div class="education-details">
+                            <p><strong>Location:</strong> Boston, MA</p>
+                        </div>
                     </div>
-                    <div class="degree">
-                        <i class="fas fa-certificate"></i>
-                        <span>B.S. in Statistics</span>
+
+                    <div class="education-card">
+                        <div class="education-header">
+                            <h3>University of Pennsylvania</h3>
+                            <span class="education-period">2021 - 2025</span>
+                        </div>
+                        <div class="education-logos">
+                            <img src="Penn.png" alt="Penn Logo" class="edu-logo">
+                            <img src="wharton.png" alt="Wharton Logo" class="edu-logo">
+                        </div>
+                        <div class="education-details">
+                            <p><strong>Dual Degree in Wharton and College</strong> (Summa Cum Laude)</p>
+                            <p><strong>B.S. in Statistics</strong>, The Wharton School</p>
+                            <p><strong>B.A. in Pure Mathematics, Computational Biology</strong>, College of Arts &
+                                Sciences</p>
+                            <p><strong>Minors:</strong> Computer Science, Data Science</p>
+                            <p><strong>Honors:</strong> Beta Gamma Sigma Honors Society</p>
+                            <p><strong>GRE (General):</strong> 340/340</p>
+                        </div>
                     </div>
                 </div>
-                <div class="education-details">
-                    <p><strong>Minors:</strong> Computer Science, Data Science</p>
-                    <p><strong>Honors:</strong> Summa Cum Laude, Beta Gamma Sigma Honors Society</p>
-                    <p><strong>Location:</strong> Philadelphia, PA (go Eagles!)</p>
-                </div>
-                <div class="coursework">
-                    <h4>Some courses that shaped my thinking</h4>
-                    <p class="coursework-intro">I've been lucky to take some graduate-level courses that really opened my eyes to the possibilities in computational biology:</p>
-                    <div class="courses">
-                        <span class="course grad">Machine Learning*</span>
-                        <span class="course grad">Statistical Methodology*</span>
-                        <span class="course grad">Statistical Genomics*</span>
-                        <span class="course grad">Mathematical Biology*</span>
-                        <span class="course grad">Genome Science*</span>
-                        <span class="course">Real Analysis</span>
-                        <span class="course">Probability</span>
-                        <span class="course">Advanced Linear Algebra</span>
-                        <span class="course">Mathematical Statistics</span>
-                        <span class="course">Molecular Biology and Genetics</span>
-                        <span class="course">Statistical Inference</span>
-                    </div>
-                    <p class="grad-note">* Graduate-level courses</p>
+                <div class="education-image">
+                    <img src="grad2.JPG" alt="Tianhao Luo Academic">
                 </div>
             </div>
         </div>
     </section>
-
-<!-- Current Ongoing Roles Section -->
-<section id="current-roles" class="current-roles">
-    <div class="current-roles-background"></div>
-    <div class="current-roles-overlay"></div>
-    <div class="container">
-        <h2 class="section-title">What I'm up to right now</h2>
-        <div class="current-roles-intro">
-            <p>I'm currently balancing two exciting roles that let me apply my computational biology background in very different ways:</p>
-        </div>
-        <div class="current-roles-timeline">
-            
-            <div class="current-role-item">
-                <div class="current-role-date">Jun 2025 - Present</div>
-                <div class="current-role-content">
-                    <h3>Summer VC Fellow at LiquidMetal Ventures</h3>
-                    <p class="current-role-subtitle">Life Science Sector</p>
-                    <p class="current-role-story">
-                        Never thought I'd be doing VC work, but here I am! It's been fascinating to evaluate AI/biomed startups 
-                        and craft investment theses that actually leverage my computational biology expertise.
-                    </p>
-                    <p class="current-role-description">Boston-based early-stage VC fellowship where I conduct due diligence on preclinical startups, interview key opinion leaders, build financial models, and advise portfolio companies on integrating AI/ML into their R&D.</p>
-                </div>
-            </div>
-
-            <div class="current-role-item">
-                <div class="current-role-date">Apr 2025 - Present</div>
-                <div class="current-role-content">
-                    <h3>Research Collaboration with Dr. Pranav Rajpurkar</h3>
-                    <p class="current-role-subtitle">Harvard Medical School</p>
-                    <p class="current-role-story">
-                        Working with Dr. Rajpurkar has been incredible - we're developing AI-driven single-cell transcriptional 
-                        models that could actually help discover new therapeutics. It's the perfect blend of cutting-edge ML and real biological validation.
-                    </p>
-                    <p class="current-role-description">Building diffusion-based single-cell modeling pipelines, profiling cell heterogeneity to identify conserved pathways, deploying AI agents for target prioritization, and translating insights into preclinical workflows.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
 
     <!-- Research Experience Section -->
-    
-  <!-- Past Experiences Section -->
-  <section id="past-experiences" class="past-experiences">
-    <div class="container">
-      <h2 class="section-title">Past Experiences</h2>
-      <div class="experience-item">
-        May 2022 – Aug 2022 | Cedars-Sinai | Dr. Jason Moore — Developed AutoQTL, an automated ML pipeline for genetic analysis.
-      </div>
-      <div class="experience-item">
-        Sep 2022 – May 2025 | Penn Biostatistics | Dr. Mingyao Li — Tackled batch effects in spatial transcriptomics and predicted cancer-relevant gene expression from tissue images.
-      </div>
-      <div class="experience-item">
-        Jun 2023 – Aug 2023 | Cold Spring Harbor Lab | Dr. Peter Koo — Enhanced scBasset interpretability via CNN saliency maps and TF-MoDISco visualizations.
-      </div>
-      <div class="experience-item">
-        Aug 2023 – May 2025 | Penn Biology | Dr. Brian Gregory — Used Oxford Nanopore direct RNA sequencing and ML (m6Anet) to study co-transcriptional m6A dynamics in plants.
-      </div>
-    </div>
-  </section>
-  
-    
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Research Experiences</h2>
+            <div class="timeline">
 
-    <!-- Publications Section -->
-     <!--
+                <div class="timeline-item">
+                    <div class="timeline-date">Sept 2025 - Present</div>
+                    <div class="timeline-content">
+                        <div class="research-image">
+                            <img src="Yu.webp" alt="Dr. Kun-Hsing Yu">
+                        </div>
+                        <div class="timeline-text-content">
+                            <h3>Generalizable Multi-Agent System for Spatial Proteomics</h3>
+                            <p class="timeline-subtitle">Dr. Kun-Hsing Yu, Dept. of Biomedical Informatics, Harvard
+                                University | Boston, MA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">April 2025 – Aug 2025</div>
+                    <div class="timeline-content">
+                        <div class="research-image">
+                            <img src="Pranav.png" alt="Dr. Pranav Rajpurkar">
+                        </div>
+                        <div class="timeline-text-content">
+                            <h3>Understanding Single-Cell Transcriptional Responses to Drug Perturbations</h3>
+                            <p class="timeline-subtitle">Dr. Pranav Rajpurkar, Dept. of Biomedical Informatics, Harvard
+                                University | Boston, MA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2022 – May 2025</div>
+                    <div class="timeline-content">
+                        <div class="research-image">
+                            <img src="Li.jpeg" alt="Dr. Mingyao Li">
+                        </div>
+                        <div class="timeline-text-content">
+                            <h3>Integrating Foundation Models to Rectify Batch Effects in Spatial Transcriptomics</h3>
+                            <p class="timeline-subtitle">Dr. Mingyao Li, Dept. of Biostatistics, University of
+                                Pennsylvania
+                                | Philadelphia, PA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2023 – May 2025</div>
+                    <div class="timeline-content">
+                        <div class="research-image">
+                            <img src="brian.jpg" alt="Dr. Brian Gregory">
+                        </div>
+                        <div class="timeline-text-content">
+                            <h3>Exploring RNA Modification in A. Thaliana Using Nanopore Direct RNA Sequencing</h3>
+                            <p class="timeline-subtitle">Dr. Brian Gregory, Dept. of Biology, University of Pennsylvania
+                                |
+                                Philadelphia, PA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jun 2023 - Aug 2023</div>
+                    <div class="timeline-content">
+                        <div class="research-image">
+                            <img src="Koo.png" alt="Dr. Peter Koo">
+                        </div>
+                        <div class="timeline-text-content">
+                            <h3>REU at CSHL: Improving Interpretability of CNN for Single-Cell Chromatin Accessibility
+                            </h3>
+                            <p class="timeline-subtitle">Dr. Peter Koo, NSF-funded REU, Cold Spring Harbor Laboratory |
+                                Cold
+                                Spring Harbor, NY</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2022 – Aug 2022</div>
+                    <div class="timeline-content">
+                        <div class="research-image">
+                            <img src="Jason.webp" alt="Dr. Jason Moore">
+                        </div>
+                        <div class="timeline-text-content">
+                            <h3>Automated Quantitative Trait Locus Analysis Using Auto-ML</h3>
+                            <p class="timeline-subtitle">Dr. Jason Moore, Dept. of Computational Biomedicine,
+                                Cedars-Sinai
+                                Medical Center | Los Angeles, CA</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="professional" class="professional">
+        <div class="container">
+            <h2 class="section-title">Professional Experiences</h2>
+            <div class="card-grid">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Machine Learning Fellow</h3>
+                        <span class="card-date">Aug 2025 - Present</span>
+                    </div>
+                    <p class="card-subtitle">OpenAI | Remote</p>
+                    <ul>
+                        <li>Advancing reproducibility standards for SOTA ML research by refining evaluation rubrics and
+                            delivering rigorous model assessments.</li>
+                    </ul>
+                    <div class="venture-image">
+                        <img src="OpenAI-Logo-2022.png" alt="OpenAI Logo">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Summer VC Fellow, Life Science Sector</h3>
+                        <span class="card-date">June 2025 – Aug 2025</span>
+                    </div>
+                    <p class="card-subtitle">LiquidMetal Ventures | Boston, MA</p>
+                    <ul>
+                        <li>Conducting due diligence on AI-driven drug discovery startups and organizing expert salons
+                            at the Boston-Cambridge biotech hub.</li>
+                    </ul>
+                    <div class="venture-image">
+                        <img src="liquidmetal_ventures__logo.jpeg" alt="LiquidMetal Ventures Logo">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Entrepreneurial Experience Section -->
+    <section id="entrepreneurial" class="entrepreneurial">
+        <div class="container">
+            <h2 class="section-title">Entrepreneurial Experiences</h2>
+            <div class="card-grid">
+
+                <div class="card venture-card">
+                    <div class="venture-image medpen-bg"></div>
+                    <div class="venture-content">
+                        <div class="card-header">
+                            <h3>Co-Founder, MedPen</h3>
+                            <span class="card-date">June 2025 – Present</span>
+                        </div>
+                        <p>A multimodal, HIPAA-compliant smart pen digitizing clinical notes for seamless Epic
+                            integration. Valued at $14M+.</p>
+                    </div>
+                </div>
+
+                <div class="card venture-card">
+                    <div class="venture-image medjourney-bg"></div>
+                    <div class="venture-content">
+                        <div class="card-header">
+                            <h3>Founder, MedJourney</h3>
+                            <span class="card-date">July 2025 – Present</span>
+                        </div>
+                        <p>AI-powered voice-first companion for Alzheimer’s patients. AdventureX 1st Prize Winner.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications & Conferences -->
     <section id="publications" class="publications">
         <div class="container">
-            <h2 class="section-title">Things I've published (and submitted)</h2>
-            <div class="publications-grid">
-                
+            <h2 class="section-title">Publications & Conferences</h2>
+            <div class="publication-list">
                 <div class="publication-item">
-                    <div class="publication-type">Published</div>
-                    <h3>Automated quantitative trait locus analysis (AutoQTL)</h3>
-                    <p class="authors">Freda, P.J., Ghosh, A., <strong>Luo, T.</strong>, et al.</p>
-                    <p class="journal">BioData Mining 16, 14 (2023)</p>
-                    <p class="publication-story">My first publication! Working on this project taught me so much about the intersection of machine learning and genetics.</p>
-                    <a href="https://doi.org/10.1186/s13040-023-00331-3" target="_blank" class="publication-link">
-                        <i class="fas fa-external-link-alt"></i> Read the paper
-                    </a>
+                    <p><strong>Yuan, M., Jin, K., Yan, H., Luo, T. et al.</strong> Designing Smart Spatial Omics
+                        Experiments with S2Omics. (2025) Accepted at <em>Nature Cell Biology</em>.</p>
                 </div>
-
                 <div class="publication-item">
-                    <div class="publication-type">Under Review</div>
-                    <h3>Designing Smart Spatial Omics Experiments with S2Omics</h3>
-                    <p class="authors">Yuan, M., Jin, K., Yan, H., <strong>Luo, T.</strong> et al.</p>
-                    <p class="journal">Submitted to Nature Methods (2024)</p>
-                    <p class="publication-story">Fingers crossed! This collaboration has been amazing - we're trying to help researchers design better spatial omics experiments.</p>
+                    <p><strong>Freda, P.J., Ghosh, A., Luo, T., et al.</strong> Automated quantitative trait locus
+                        analysis (AutoQTL). <em>BioData Mining</em> 16, 14 (2023). <a
+                            href="https://doi.org/10.1186/s13040-023-00331-3"
+                            target="_blank">https://doi.org/10.1186/s13040-023-00331-3</a>.</p>
                 </div>
-
                 <div class="publication-item">
-                    <div class="publication-type">Conference</div>
-                    <h3>Making scBasset More Interpretable</h3>
-                    <p class="authors"><strong>Luo, T.</strong>, & Koo, P.</p>
-                    <p class="conference">Research Exposition, University of Pennsylvania (2023)</p>
-                    <p class="publication-story">My first poster presentation! Nerve-wracking but so worth it.</p>
+                    <p><strong>Luo, T., & Koo, P.</strong> Deciphering the Genetic Code behind Single-Cell Chromatin
+                        Accessibility: Interpreting scBasset (2023). [Poster]. Research Exposition, University of
+                        Pennsylvania, Philadelphia, PA.</p>
                 </div>
-
                 <div class="publication-item">
-                    <div class="publication-type">Conference Talks</div>
-                    <h3>Spatial Transcriptomics Batch Effects</h3>
-                    <p class="authors"><strong>Luo, T.</strong>, & Li, M.</p>
-                    <div class="conferences">
-                        <p>• MidAtlantic Bioinformatics Conference, Philadelphia</p>
-                        <p>• Harvard Quantitative Genomics Conference, Boston</p>
-                        <p>• Rice University Gulf Coast Research Symposium, Houston</p>
-                    </div>
-                    <div class="award">
-                        <i class="fas fa-trophy"></i>
-                        <span>Won Outstanding Presentation Award at Rice University! Still buzzing from that.</span>
-                    </div>
+                    <p><strong>Luo, T., & Li, M.</strong> (2024). Integrating Foundation Models to Address Batch Effects
+                        in Spatial Transcriptomics Analysis.</p>
+                    <ul class="sub-list">
+                        <li>[Poster] MidAtlantic Bioinformatics Conference, Philadelphia, PA.</li>
+                        <li>[Poster] Harvard University Program in Quantitative Genomics Conference, Boston, MA.</li>
+                        <li>[Oral Presentation] Rice University Gulf Coast Undergraduate Research Symposium, Houston,
+                            TX.</li>
+                    </ul>
                 </div>
-
             </div>
         </div>
     </section>
-    -->
 
-    <!-- Teaching Experience Section -->
+    <!-- Teaching Experiences -->
     <section id="teaching" class="teaching">
-        <div class="teaching-background"></div>
-        <div class="teaching-overlay"></div>
         <div class="container">
-            <h2 class="section-title">Teaching & mentoring</h2>
-            <div class="teaching-grid">
-                
-                <div class="teaching-item">
-                    <div class="teaching-header">
-                        <h3>TA for Statistical Inference</h3>
-                        <span class="teaching-period">Jan 2024 - May 2025</span>
-                    </div>
-                </div>
-
-                <div class="teaching-item">
-                    <div class="teaching-header">
-                        <h3>TA for Bayesian Statistics</h3>
-                        <span class="teaching-period">Jan 2024 - May 2024</span>
-                    </div>
-                </div>
-
-            </div>
+            <h2 class="section-title">Teaching Experiences</h2>
+            <ul class="teaching-list">
+                <li><strong>Teaching Assistant for Statistical Inference</strong> (Jan 2024 – May 2025)</li>
+                <li><strong>Head Teaching Assistant for Bayesian Statistics</strong> (Jan 2024 - May 2024)</li>
+            </ul>
         </div>
     </section>
-
-    <!-- Awards Section -->
-<!--
-    <section id="awards" class="awards">
-        <div class="container">
-            <h2 class="section-title">Some recognition along the way</h2>
-            <p class="awards-intro">I've been incredibly fortunate to receive support for my research and recognition for my work:</p>
-            <div class="awards-grid">
-                
-                <div class="award-item">
-                    <div class="award-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <h3>Outstanding Presentation Award</h3>
-                    <p>Gulf Coast Undergraduate Research Symposium at Rice University</p>
-                    <span class="award-date">Nov 2024</span>
-                    <p class="award-story">Still can't believe I won this! The competition was fierce.</p>
-                </div>
-
-                <div class="award-item">
-                    <div class="award-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3>$6,000 Research Grant</h3>
-                    <p>Wharton Summer Program for Undergraduate Research</p>
-                    <span class="award-date">Jun 2024</span>
-                    <p class="award-story">This funding let me focus entirely on research during the summer - game changer!</p>
-                </div>
-
-                <div class="award-item">
-                    <div class="award-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3>$6,000 NSF REU Grant</h3>
-                    <p>Cold Spring Harbor Laboratory</p>
-                    <span class="award-date">Jun 2023</span>
-                    <p class="award-story">Made my summer at CSHL possible - one of the best experiences of my life.</p>
-                </div>
-
-                <div class="award-item">
-                    <div class="award-icon">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3>Travel Awards</h3>
-                    <p>$600 from Rice + $600 from Penn</p>
-                    <span class="award-date">Oct 2024</span>
-                    <p class="award-story">Covered my travel to present at conferences - conferences are so much better when you're not broke!</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
--->
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <div class="contact-background"></div>
-        <div class="contact-overlay"></div>
         <div class="container">
-            <h2 class="section-title">Let's chat!</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Always up for a good conversation</h3>
-                    <p>Whether you want to talk about computational biology, collaborate on research, or just geek out about cool datasets, I'd love to hear from you. I'm particularly interested in connecting with other researchers in biomedical AI, entrepreneurs, co-founders, and ventures working at the intersection of ML and biology. I'm always open to coffee chats in Boston or virtual meetings via Zoom!</p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <span>tianhao_luo@g.harvard.edu</span>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Boston, MA (Starting in August 2025)</span>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://linkedin.com/in/luo-tianhao/" target="_blank">Connect on LinkedIn</a>
-                        </div>
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-content">
+                    <p>Feel free to reach out for collaborations or just a chat!</p>
+                    <div class="contact-info">
+                        <p class="email"><i class="fas fa-envelope"></i> <a
+                                href="mailto:tianhao_luo@g.harvard.edu">tianhao_luo@g.harvard.edu</a></p>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Boston, MA 02115</p>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="What's on your mind? Research ideas, collaboration opportunities, or just saying hi!" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send message</button>
-                    </form>
+                <div class="contact-image">
+                    <img src="violin.jpg" alt="Tianhao Luo Violin">
                 </div>
             </div>
         </div>
     </section>
-
-
-    <!-- Documents Section -->
-     <!--
-    <section id="documents" class="documents">
-        <div class="container">
-            <h2 class="section-title">Documents</h2>
-            <div class="documents-grid">
-                <div class="document-card">
-                    <div class="document-icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h3>CV & Research Portfolio</h3>
-                    <p>The full story of my academic journey and research experience</p>
-                    <a href="CV Research.pdf" target="_blank" class="btn btn-outline">
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-                <div class="document-card">
-                    <div class="document-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Academic Transcript</h3>
-                    <p>Official records from University of Pennsylvania</p>
-                    <a href="Transcript.pdf" target="_blank" class="btn btn-outline">
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
--->
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Tianhao Luo. Made with passion for science and good coffee.</p>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#past-experiences">Past Experiences</a>
-                    <a href="#education">Education</a>
-                    <a href="#current-roles">Current Roles</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
+            <p>&copy; 2025 Tianhao Luo. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html> 
+
+</html>
