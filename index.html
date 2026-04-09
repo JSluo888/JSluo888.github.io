@@ -1,409 +1,739 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tianhao Luo - Computational Biology Researcher</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <meta name="description"
-        content="Tianhao Luo—AI-driven biomedicine researcher, VC fellow, and startup cofounder seeking collaborators.">
-    <meta name="keywords" content="AI, biomedicine, spatial transcriptomics, single-cell, startup, cofounder, research">
+    <title>Tianhao Luo | AI × Biomedicine</title>
+    <meta name="description" content="Tianhao Luo — PhD student at Harvard Medical School, building AI systems for biomedicine. Founder of MedJourney.">
+    <meta name="keywords" content="AI, biomedicine, spatial transcriptomics, single-cell, startup, Harvard, computational biology">
     <meta name="google-site-verification" content="tt4Mkc_TPObA-Rl9YBzygHsHmSSLNeFZcc9Q9QDKKVg" />
-    <title>Tianhao Luo | AI in Biomedicine & Startup Cofounder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --paper: #f5f0eb;
+            --cream: #ebe4db;
+            --accent: #b44a2d;
+            --accent-light: #d4714f;
+            --muted: #8a8075;
+            --soft: #d4cdc4;
+            --white: #fff;
+            --serif: 'DM Serif Display', serif;
+            --sans: 'Outfit', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --max-w: 1200px;
+            --ease: cubic-bezier(.23,1,.32,1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--sans);
+            color: var(--ink);
+            background: var(--paper);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        ::selection { background: var(--accent); color: var(--white); }
+
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+
+        /* ─── NAV ─── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.25rem 2rem;
+            transition: background .4s var(--ease), box-shadow .4s var(--ease), padding .4s var(--ease);
+        }
+        .nav.scrolled {
+            background: rgba(245,240,235,.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 rgba(0,0,0,.06);
+            padding: .75rem 2rem;
+        }
+        .nav-inner {
+            max-width: var(--max-w); margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-brand {
+            font-family: var(--serif); font-size: 1.25rem; letter-spacing: -.02em;
+        }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a {
+            font-size: .8rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+            color: var(--muted);
+            transition: color .3s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+        .nav-links .sep { width: 1px; height: 14px; background: var(--soft); }
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 110;
+        }
+        .hamburger span {
+            width: 24px; height: 2px; background: var(--ink); transition: all .3s var(--ease);
+        }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; right: 0;
+            width: 55%; height: 100%;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--paper) 100%);
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            z-index: 0;
+        }
+        .hero-inner {
+            max-width: var(--max-w); margin: 0 auto; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+            position: relative; z-index: 1;
+        }
+        .hero-text { max-width: 540px; }
+        .hero-label {
+            font-family: var(--mono); font-size: .75rem; font-weight: 500;
+            letter-spacing: .15em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 1.5rem;
+            display: flex; align-items: center; gap: .75rem;
+        }
+        .hero-label::before {
+            content: ''; width: 32px; height: 1px; background: var(--accent);
+        }
+        .hero-name {
+            font-family: var(--serif); font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+            line-height: 1.05; letter-spacing: -.03em; margin-bottom: 1.25rem;
+        }
+        .hero-tagline {
+            font-size: 1.15rem; font-weight: 300; color: var(--muted);
+            line-height: 1.6; margin-bottom: 2rem; max-width: 440px;
+        }
+        .hero-meta {
+            display: flex; gap: 2.5rem; margin-bottom: 2.5rem;
+            font-size: .85rem; color: var(--muted);
+        }
+        .hero-meta span { display: flex; align-items: center; gap: .5rem; }
+        .hero-meta i { color: var(--accent); font-size: .75rem; }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: .5rem;
+            padding: .75rem 1.75rem; border-radius: 2px; font-size: .85rem;
+            font-weight: 500; letter-spacing: .04em; text-transform: uppercase;
+            transition: all .3s var(--ease); cursor: pointer; border: none;
+        }
+        .btn-fill { background: var(--ink); color: var(--paper); }
+        .btn-fill:hover { background: var(--accent); }
+        .btn-outline {
+            background: transparent; color: var(--ink);
+            box-shadow: inset 0 0 0 1.5px var(--ink);
+        }
+        .btn-outline:hover { box-shadow: inset 0 0 0 1.5px var(--accent); color: var(--accent); }
+
+        .hero-portrait {
+            position: relative; justify-self: center;
+        }
+        .hero-portrait img {
+            width: 380px; height: 480px; object-fit: cover;
+            filter: grayscale(15%);
+            box-shadow: 24px 24px 0 var(--cream);
+        }
+        .hero-portrait::before {
+            content: ''; position: absolute; top: -16px; left: -16px;
+            width: 100%; height: 100%;
+            border: 1.5px solid var(--accent); z-index: -1;
+        }
+
+        /* ─── SECTION COMMON ─── */
+        section { padding: 6rem 0; }
+        .section-label {
+            font-family: var(--mono); font-size: .7rem; letter-spacing: .18em;
+            text-transform: uppercase; color: var(--accent); margin-bottom: .75rem;
+        }
+        .section-heading {
+            font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 2.8rem);
+            letter-spacing: -.02em; margin-bottom: 1rem; line-height: 1.15;
+        }
+        .section-intro {
+            font-size: 1.05rem; color: var(--muted); max-width: 600px; line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+        .divider {
+            width: 48px; height: 1.5px; background: var(--accent); margin-bottom: 3rem;
+        }
+
+        /* ─── ABOUT ─── */
+        .about { background: var(--white); }
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+        }
+        .about-img {
+            position: relative;
+        }
+        .about-img img {
+            width: 100%; height: 500px; object-fit: cover;
+            filter: grayscale(10%);
+        }
+        .about-img::after {
+            content: ''; position: absolute; bottom: -12px; right: -12px;
+            width: 100%; height: 100%;
+            border: 1.5px solid var(--soft); z-index: -1;
+        }
+        .about-body p { margin-bottom: 1.25rem; color: var(--ink); font-weight: 300; font-size: 1.02rem; }
+        .about-body p:first-of-type { font-size: 1.1rem; font-weight: 400; }
+        .about-highlights {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+            margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--soft);
+        }
+        .highlight-item h4 {
+            font-family: var(--serif); font-size: 1.6rem; color: var(--accent); line-height: 1;
+        }
+        .highlight-item p { font-size: .8rem; color: var(--muted); margin-top: .25rem; text-transform: uppercase; letter-spacing: .06em; }
+
+        /* ─── EDUCATION ─── */
+        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .edu-card {
+            background: var(--white); padding: 2.5rem;
+            border: 1px solid var(--soft);
+            transition: border-color .3s, box-shadow .3s;
+        }
+        .edu-card:hover { border-color: var(--accent); box-shadow: 0 8px 32px rgba(0,0,0,.06); }
+        .edu-logos { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: center; }
+        .edu-logos img { height: 40px; width: auto; object-fit: contain; }
+        .edu-card h3 { font-family: var(--serif); font-size: 1.25rem; margin-bottom: .25rem; }
+        .edu-card .period {
+            font-family: var(--mono); font-size: .75rem; color: var(--accent);
+            letter-spacing: .08em; margin-bottom: 1rem; display: block;
+        }
+        .edu-card .details { font-size: .92rem; color: var(--muted); }
+        .edu-card .details p { margin-bottom: .35rem; }
+        .edu-card .details strong { color: var(--ink); font-weight: 500; }
+
+        /* ─── RESEARCH ─── */
+        .research-section { background: var(--white); }
+        .research-list { display: flex; flex-direction: column; gap: 0; }
+        .research-item {
+            display: grid; grid-template-columns: 140px 1fr; gap: 2.5rem;
+            padding: 2.5rem 0; border-bottom: 1px solid var(--soft);
+            align-items: start;
+            transition: background .3s;
+        }
+        .research-item:first-child { border-top: 1px solid var(--soft); }
+        .research-item:hover { background: rgba(180,74,45,.02); }
+        .research-date {
+            font-family: var(--mono); font-size: .72rem; color: var(--accent);
+            letter-spacing: .06em; padding-top: .25rem;
+        }
+        .research-body h3 { font-family: var(--serif); font-size: 1.15rem; margin-bottom: .5rem; line-height: 1.35; }
+        .research-body .advisor {
+            font-size: .88rem; color: var(--muted); display: flex; align-items: center; gap: .5rem;
+        }
+        .research-body .advisor img {
+            width: 32px; height: 32px; border-radius: 50%; object-fit: cover;
+        }
+
+        /* ─── PROFESSIONAL ─── */
+        .pro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .pro-card {
+            background: var(--white); padding: 2.5rem;
+            border: 1px solid var(--soft);
+            display: flex; flex-direction: column; gap: 1rem;
+            transition: border-color .3s;
+        }
+        .pro-card:hover { border-color: var(--accent); }
+        .pro-card .role { font-family: var(--serif); font-size: 1.15rem; }
+        .pro-card .org { font-size: .85rem; color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
+        .pro-card .period-sm { font-family: var(--mono); font-size: .72rem; color: var(--muted); }
+        .pro-card p.desc { font-size: .92rem; color: var(--muted); }
+        .pro-card .logo-sm { height: 28px; width: auto; object-fit: contain; margin-top: auto; opacity: .7; }
+
+        /* ─── VENTURES ─── */
+        .ventures-section { background: var(--ink); color: var(--paper); }
+        .ventures-section .section-label { color: var(--accent-light); }
+        .ventures-section .section-intro { color: rgba(245,240,235,.5); }
+        .ventures-section .divider { background: var(--accent-light); }
+        .venture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .venture-card {
+            border: 1px solid rgba(245,240,235,.12); padding: 2.5rem;
+            transition: border-color .3s, background .3s;
+        }
+        .venture-card:hover { border-color: var(--accent-light); background: rgba(245,240,235,.03); }
+        .venture-card h3 { font-family: var(--serif); font-size: 1.3rem; margin-bottom: .5rem; }
+        .venture-card .tagline {
+            font-family: var(--mono); font-size: .72rem; color: var(--accent-light);
+            letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem;
+        }
+        .venture-card p { font-size: .92rem; color: rgba(245,240,235,.6); line-height: 1.7; }
+
+        /* ─── PUBLICATIONS ─── */
+        .pub-list { display: flex; flex-direction: column; gap: 0; counter-reset: pub; }
+        .pub-item {
+            padding: 1.75rem 0; border-bottom: 1px solid var(--soft);
+            display: grid; grid-template-columns: 40px 1fr; gap: 1.5rem;
+            align-items: start;
+        }
+        .pub-item:first-child { border-top: 1px solid var(--soft); }
+        .pub-num {
+            font-family: var(--serif); font-size: 1.4rem; color: var(--soft);
+            counter-increment: pub;
+        }
+        .pub-num::before { content: counter(pub, decimal-leading-zero); }
+        .pub-text { font-size: .92rem; line-height: 1.7; }
+        .pub-text strong { font-weight: 600; }
+        .pub-text em { font-style: italic; color: var(--accent); }
+        .pub-text a { color: var(--accent); border-bottom: 1px solid transparent; transition: border-color .3s; }
+        .pub-text a:hover { border-color: var(--accent); }
+        .pub-sub { margin-top: .5rem; padding-left: 1rem; font-size: .85rem; color: var(--muted); }
+        .pub-sub li { margin-bottom: .25rem; list-style: none; }
+        .pub-sub li::before { content: '→ '; color: var(--accent); }
+
+        /* ─── TEACHING ─── */
+        .teaching-section { background: var(--white); }
+        .teaching-list { list-style: none; }
+        .teaching-list li {
+            padding: 1.25rem 0; border-bottom: 1px solid var(--soft);
+            font-size: .95rem; display: flex; align-items: center; gap: 1rem;
+        }
+        .teaching-list li::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent); flex-shrink: 0;
+        }
+
+        /* ─── CONTACT ─── */
+        .contact-section { background: var(--ink); color: var(--paper); }
+        .contact-section .section-label { color: var(--accent-light); }
+        .contact-section .divider { background: var(--accent-light); }
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+        }
+        .contact-body p { font-size: 1.05rem; color: rgba(245,240,235,.6); margin-bottom: 2rem; }
+        .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+        .contact-link {
+            display: flex; align-items: center; gap: 1rem;
+            font-size: 1rem; color: var(--paper);
+            transition: color .3s;
+        }
+        .contact-link:hover { color: var(--accent-light); }
+        .contact-link i { width: 20px; color: var(--accent-light); }
+        .contact-img img {
+            width: 100%; height: 400px; object-fit: cover;
+            filter: grayscale(20%);
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            padding: 2rem 0; text-align: center;
+            font-size: .8rem; color: var(--muted);
+            border-top: 1px solid var(--soft);
+        }
+
+        /* ─── ANIMATIONS ─── */
+        .fade-up {
+            opacity: 0; transform: translateY(28px);
+            transition: opacity .7s var(--ease), transform .7s var(--ease);
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ─── MOBILE ─── */
+        .mobile-menu {
+            display: none; position: fixed; inset: 0; z-index: 105;
+            background: var(--paper);
+            flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-family: var(--serif); font-size: 1.8rem;
+            color: var(--ink); transition: color .3s;
+        }
+        .mobile-menu a:hover { color: var(--accent); }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-text { max-width: 100%; }
+            .hero-meta { justify-content: center; }
+            .hero-cta { justify-content: center; }
+            .hero-portrait { order: -1; }
+            .hero-portrait img { width: 280px; height: 350px; margin: 0 auto; }
+            .hero::before { display: none; }
+
+            .about-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
+            .research-item { grid-template-columns: 1fr; gap: .75rem; }
+            .pro-grid { grid-template-columns: 1fr; }
+            .venture-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .about-highlights { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            section { padding: 4rem 0; }
+            .container { padding: 0 1.25rem; }
+            .hero { padding: 6rem 1.25rem 3rem; }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span>Tianhao Luo</span>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="#home" class="nav-brand">TL</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#research">Research</a>
+            <div class="sep"></div>
+            <a href="#professional">Industry</a>
+            <a href="#ventures">Ventures</a>
+            <a href="#publications">Publications</a>
+            <div class="sep"></div>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#education" onclick="closeMobile()">Education</a>
+    <a href="#research" onclick="closeMobile()">Research</a>
+    <a href="#professional" onclick="closeMobile()">Industry</a>
+    <a href="#ventures" onclick="closeMobile()">Ventures</a>
+    <a href="#publications" onclick="closeMobile()">Publications</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="hero-label">PhD @ Harvard Medical School</div>
+            <h1 class="hero-name">Tianhao<br>Luo</h1>
+            <p class="hero-tagline">Building AI systems that decode complex biological systems and accelerate therapeutic discovery.</p>
+            <div class="hero-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Boston, MA</span>
+                <span><i class="fas fa-flask"></i> Biomedical Informatics</span>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#research" class="nav-link">Research</a>
-                <a href="#professional" class="nav-link">Professional</a>
-                <a href="#entrepreneurial" class="nav-link">Ventures</a>
-                <a href="#publications" class="nav-link">Publications</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <div class="nav-socials">
-                    <a href="mailto:tianhao_luo@g.harvard.edu" class="nav-icon" title="Email"><i
-                            class="fas fa-envelope"></i></a>
-                    <a href="https://linkedin.com/in/luo-tianhao/" target="_blank" class="nav-icon" title="LinkedIn"><i
-                            class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="hero-cta">
+                <a href="#research" class="btn btn-fill">View Research</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
             </div>
         </div>
-    </nav>
+        <div class="hero-portrait">
+            <img src="grad.JPG" alt="Tianhao Luo">
+        </div>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg-image"></div>
-        <canvas id="particle-canvas"></canvas>
-        <div class="hero-content">
-            <div class="hero-container">
-                <div class="hero-image-container">
-                    <img src="grad.JPG" alt="Tianhao Luo Grad" class="hero-profile-img-large">
-                </div>
-                <div class="hero-text">
-                    <h1 class="hero-title">Tianhao Luo</h1>
-                    <h2 class="hero-subtitle">AI-driven Biomedicine Entrepreneur & PhD @ Harvard</h2>
-                    <p class="hero-description">
-                        Boston, MA
-                    </p>
-                    <div class="hero-socials">
-                        <a href="mailto:tianhao_luo@g.harvard.edu" class="hero-icon" title="Email"><i
-                                class="fas fa-envelope"></i></a>
-                        <a href="https://linkedin.com/in/luo-tianhao/" target="_blank" class="hero-icon"
-                            title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#research" class="btn btn-primary">View Research</a>
-                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                    </div>
-                </div>
+<!-- ABOUT -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-img fade-up">
+                <img src="photo_paris.jpg" alt="Tianhao Luo in Paris">
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="photo_paris.jpg" alt="Tianhao Luo Paris">
-                </div>
-                <div class="about-text">
-                    <p class="about-description">
-                        I am a PhD student in Biomedical Informatics at Harvard Medical School, driven by the
-                        intersection of Artificial Intelligence and Biomedicine. My work focuses on developing
-                        multi-modal AI frameworks to decode complex biological systems and accelerate therapeutic
-                        discovery.
-                    </p>
-                    <p class="about-personal">
-                        Previously, I graduated summa cum laude from the University of Pennsylvania with degrees in
-                        Statistics, Mathematics, and Computational Biology. Beyond research, I am a violinist of 13
-                        years, an avid runner, and a co-founder of health-tech ventures.
-                    </p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3><i class="fas fa-music"></i> Hobbies</h3>
-                        <p>Classical Music, Violin, Running</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-
-            <div class="education-content">
-                <div class="education-cards">
-                    <div class="education-card">
-                        <div class="education-header">
-                            <h3>Harvard Medical School, Harvard University</h3>
-                            <span class="education-period">2025 - Present</span>
-                        </div>
-                        <div class="education-logos">
-                            <img src="harvard.png" alt="Harvard Logo" class="edu-logo">
-                            <img src="HMS.png" alt="HMS Logo" class="edu-logo">
-                        </div>
-                        <div class="education-subtitle">PhD Student in Biomedical Informatics</div>
-                        <div class="education-details">
-                            <p><strong>Location:</strong> Boston, MA</p>
-                        </div>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <h3>University of Pennsylvania</h3>
-                            <span class="education-period">2021 - 2025</span>
-                        </div>
-                        <div class="education-logos">
-                            <img src="Penn.png" alt="Penn Logo" class="edu-logo">
-                            <img src="wharton.png" alt="Wharton Logo" class="edu-logo">
-                        </div>
-                        <div class="education-details">
-                            <p><strong>Dual Degree in Wharton and College</strong> (Summa Cum Laude)</p>
-                            <p><strong>B.S. in Statistics</strong>, The Wharton School</p>
-                            <p><strong>B.A. in Pure Mathematics, Computational Biology</strong>, College of Arts &
-                                Sciences</p>
-                            <p><strong>Minors:</strong> Computer Science, Data Science</p>
-                            <p><strong>Honors:</strong> Beta Gamma Sigma Honors Society</p>
-                            <p><strong>GRE (General):</strong> 340/340</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="education-image">
-                    <img src="grad2.JPG" alt="Tianhao Luo Academic">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Experience Section -->
-    <section id="research" class="research">
-        <div class="container">
-            <h2 class="section-title">Research Experiences</h2>
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="timeline-date">Sept 2025 - Present</div>
-                    <div class="timeline-content">
-                        <div class="research-image">
-                            <img src="Yu.webp" alt="Dr. Kun-Hsing Yu">
-                        </div>
-                        <div class="timeline-text-content">
-                            <h3>Generalizable Multi-Agent System for Spatial Proteomics</h3>
-                            <p class="timeline-subtitle">Dr. Kun-Hsing Yu, Dept. of Biomedical Informatics, Harvard
-                                University | Boston, MA</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">April 2025 – Aug 2025</div>
-                    <div class="timeline-content">
-                        <div class="research-image">
-                            <img src="Pranav.png" alt="Dr. Pranav Rajpurkar">
-                        </div>
-                        <div class="timeline-text-content">
-                            <h3>Understanding Single-Cell Transcriptional Responses to Drug Perturbations</h3>
-                            <p class="timeline-subtitle">Dr. Pranav Rajpurkar, Dept. of Biomedical Informatics, Harvard
-                                University | Boston, MA</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">Sep 2022 – May 2025</div>
-                    <div class="timeline-content">
-                        <div class="research-image">
-                            <img src="Li.jpeg" alt="Dr. Mingyao Li">
-                        </div>
-                        <div class="timeline-text-content">
-                            <h3>Integrating Foundation Models to Rectify Batch Effects in Spatial Transcriptomics</h3>
-                            <p class="timeline-subtitle">Dr. Mingyao Li, Dept. of Biostatistics, University of
-                                Pennsylvania
-                                | Philadelphia, PA</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">Aug 2023 – May 2025</div>
-                    <div class="timeline-content">
-                        <div class="research-image">
-                            <img src="brian.jpg" alt="Dr. Brian Gregory">
-                        </div>
-                        <div class="timeline-text-content">
-                            <h3>Exploring RNA Modification in A. Thaliana Using Nanopore Direct RNA Sequencing</h3>
-                            <p class="timeline-subtitle">Dr. Brian Gregory, Dept. of Biology, University of Pennsylvania
-                                |
-                                Philadelphia, PA</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">Jun 2023 - Aug 2023</div>
-                    <div class="timeline-content">
-                        <div class="research-image">
-                            <img src="Koo.png" alt="Dr. Peter Koo">
-                        </div>
-                        <div class="timeline-text-content">
-                            <h3>REU at CSHL: Improving Interpretability of CNN for Single-Cell Chromatin Accessibility
-                            </h3>
-                            <p class="timeline-subtitle">Dr. Peter Koo, NSF-funded REU, Cold Spring Harbor Laboratory |
-                                Cold
-                                Spring Harbor, NY</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">May 2022 – Aug 2022</div>
-                    <div class="timeline-content">
-                        <div class="research-image">
-                            <img src="Jason.webp" alt="Dr. Jason Moore">
-                        </div>
-                        <div class="timeline-text-content">
-                            <h3>Automated Quantitative Trait Locus Analysis Using Auto-ML</h3>
-                            <p class="timeline-subtitle">Dr. Jason Moore, Dept. of Computational Biomedicine,
-                                Cedars-Sinai
-                                Medical Center | Los Angeles, CA</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="about-body fade-up">
+                <div class="section-label">About</div>
+                <h2 class="section-heading">At the intersection of<br>AI & biomedicine</h2>
+                <div class="divider"></div>
+                <p>I am a PhD student in Biomedical Informatics at Harvard Medical School, developing multi-modal AI frameworks to decode complex biological systems and accelerate therapeutic discovery.</p>
+                <p>Previously, I graduated <em>summa cum laude</em> from the University of Pennsylvania with triple degrees in Statistics (Wharton), Mathematics, and Computational Biology. Beyond the lab, I am a violinist of 13 years, an avid runner, and a founder of health-tech ventures.</p>
 
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Professional Experience Section -->
-    <section id="professional" class="professional">
-        <div class="container">
-            <h2 class="section-title">Professional Experiences</h2>
-            <div class="card-grid">
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Machine Learning Fellow</h3>
-                        <span class="card-date">Aug 2025 - Present</span>
-                    </div>
-                    <p class="card-subtitle">OpenAI | Remote</p>
-                    <ul>
-                        <li>Advancing reproducibility standards for SOTA ML research by refining evaluation rubrics and
-                            delivering rigorous model assessments.</li>
-                    </ul>
-                    <div class="venture-image">
-                        <img src="OpenAI-Logo-2022.png" alt="OpenAI Logo">
-                    </div>
+<!-- EDUCATION -->
+<section id="education">
+    <div class="container">
+        <div class="section-label fade-up">Education</div>
+        <h2 class="section-heading fade-up">Academic Foundation</h2>
+        <div class="divider fade-up"></div>
+        <div class="edu-grid">
+            <div class="edu-card fade-up">
+                <div class="edu-logos">
+                    <img src="harvard.png" alt="Harvard">
+                    <img src="HMS.png" alt="HMS">
                 </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Summer VC Fellow, Life Science Sector</h3>
-                        <span class="card-date">June 2025 – Aug 2025</span>
-                    </div>
-                    <p class="card-subtitle">LiquidMetal Ventures | Boston, MA</p>
-                    <ul>
-                        <li>Conducting due diligence on AI-driven drug discovery startups and organizing expert salons
-                            at the Boston-Cambridge biotech hub.</li>
-                    </ul>
-                    <div class="venture-image">
-                        <img src="liquidmetal_ventures__logo.jpeg" alt="LiquidMetal Ventures Logo">
-                    </div>
+                <h3>Harvard Medical School</h3>
+                <span class="period">2025 — Present</span>
+                <div class="details">
+                    <p><strong>PhD</strong> in Biomedical Informatics</p>
+                    <p>Rotation advisors: Omar Abudayyeh & Jonathan Gootenberg, Kun-Hsing Yu, Faisal Mahmood</p>
                 </div>
-
+            </div>
+            <div class="edu-card fade-up">
+                <div class="edu-logos">
+                    <img src="Penn.png" alt="Penn">
+                    <img src="wharton.png" alt="Wharton">
+                </div>
+                <h3>University of Pennsylvania</h3>
+                <span class="period">2021 — 2025</span>
+                <div class="details">
+                    <p><strong>B.S. Statistics</strong>, The Wharton School</p>
+                    <p><strong>B.A. Mathematics & Computational Biology</strong>, College of Arts & Sciences</p>
+                    <p><strong>Summa Cum Laude</strong> · Beta Gamma Sigma</p>
+                    <p>Minors in Computer Science & Data Science</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Entrepreneurial Experience Section -->
-    <section id="entrepreneurial" class="entrepreneurial">
-        <div class="container">
-            <h2 class="section-title">Entrepreneurial Experiences</h2>
-            <div class="card-grid">
-
-                <div class="card venture-card">
-                    <div class="venture-image medpen-bg"></div>
-                    <div class="venture-content">
-                        <div class="card-header">
-                            <h3>Co-Founder, MedPen</h3>
-                            <span class="card-date">June 2025 – Present</span>
-                        </div>
-                        <p>A multimodal, HIPAA-compliant smart pen digitizing clinical notes for seamless Epic
-                            integration. Valued at $14M+.</p>
-                    </div>
+<!-- RESEARCH -->
+<section id="research" class="research-section">
+    <div class="container">
+        <div class="section-label fade-up">Research</div>
+        <h2 class="section-heading fade-up">Selected Experiences</h2>
+        <div class="divider fade-up"></div>
+        <div class="research-list">
+            <div class="research-item fade-up">
+                <div class="research-date">Mar 2026 –<br>Present</div>
+                <div class="research-body">
+                    <h3>Multi-Modal Foundation Model for AI Virtual Patients</h3>
+                    <div class="advisor"><img src="Mahmood.jpg" alt="Mahmood"> Dr. Faisal Mahmood · Harvard Medical School / BWH</div>
                 </div>
-
-                <div class="card venture-card">
-                    <div class="venture-image medjourney-bg"></div>
-                    <div class="venture-content">
-                        <div class="card-header">
-                            <h3>Founder, MedJourney</h3>
-                            <span class="card-date">July 2025 – Present</span>
-                        </div>
-                        <p>AI-powered voice-first companion for Alzheimer’s patients. AdventureX 1st Prize Winner.</p>
-                    </div>
+            </div>
+            <div class="research-item fade-up">
+                <div class="research-date">Dec 2025 –<br>Mar 2026</div>
+                <div class="research-body">
+                    <h3>AI Virtual Cell Using Generative Modeling</h3>
+                    <div class="advisor"><img src="Abudayyeh.jpg" alt="Abudayyeh"> Drs. Omar Abudayyeh & Jonathan Gootenberg · Harvard Medical School</div>
                 </div>
-
+            </div>
+            <div class="research-item fade-up">
+                <div class="research-date">Sep 2025 –<br>Dec 2025</div>
+                <div class="research-body">
+                    <h3>Generalizable Multi-Agent System for Spatial Proteomics</h3>
+                    <div class="advisor"><img src="Yu.webp" alt="Yu"> Dr. Kun-Hsing Yu · Harvard University</div>
+                </div>
+            </div>
+            <div class="research-item fade-up">
+                <div class="research-date">Apr 2025 –<br>Aug 2025</div>
+                <div class="research-body">
+                    <h3>Understanding Single-Cell Transcriptional Responses to Drug Perturbations</h3>
+                    <div class="advisor"><img src="Pranav.png" alt="Pranav"> Dr. Pranav Rajpurkar · Harvard University</div>
+                </div>
+            </div>
+            <div class="research-item fade-up">
+                <div class="research-date">Sep 2022 –<br>May 2025</div>
+                <div class="research-body">
+                    <h3>Integrating Foundation Models to Rectify Batch Effects in Spatial Transcriptomics</h3>
+                    <div class="advisor"><img src="Li.jpeg" alt="Li"> Dr. Mingyao Li · University of Pennsylvania</div>
+                </div>
+            </div>
+            <div class="research-item fade-up">
+                <div class="research-date">Aug 2023 –<br>May 2025</div>
+                <div class="research-body">
+                    <h3>RNA Modification in <em>A. thaliana</em> via Nanopore Direct RNA Sequencing</h3>
+                    <div class="advisor"><img src="brian.jpg" alt="Brian"> Dr. Brian Gregory · University of Pennsylvania</div>
+                </div>
+            </div>
+            <div class="research-item fade-up">
+                <div class="research-date">Jun 2023 –<br>Aug 2023</div>
+                <div class="research-body">
+                    <h3>Improving Interpretability of CNNs for Single-Cell Chromatin Accessibility</h3>
+                    <div class="advisor"><img src="Koo.png" alt="Koo"> Dr. Peter Koo · Cold Spring Harbor Laboratory (NSF REU)</div>
+                </div>
+            </div>
+            <div class="research-item fade-up">
+                <div class="research-date">May 2022 –<br>Aug 2022</div>
+                <div class="research-body">
+                    <h3>Automated Quantitative Trait Locus Analysis Using Auto-ML</h3>
+                    <div class="advisor"><img src="Jason.webp" alt="Jason"> Dr. Jason Moore · Cedars-Sinai Medical Center</div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Publications & Conferences -->
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Publications & Conferences</h2>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <p><strong>Yuan, M., Jin, K., Yan, H., Luo, T. et al.</strong> Designing Smart Spatial Omics
-                        Experiments with S2Omics. (2025) Accepted at <em>Nature Cell Biology</em>.</p>
+<!-- PROFESSIONAL -->
+<section id="professional">
+    <div class="container">
+        <div class="section-label fade-up">Industry</div>
+        <h2 class="section-heading fade-up">Professional Experience</h2>
+        <div class="divider fade-up"></div>
+        <div class="pro-grid">
+            <div class="pro-card fade-up">
+                <div class="role">Machine Learning Fellow</div>
+                <div class="org">OpenAI</div>
+                <div class="period-sm">Aug 2025 — Present · Remote</div>
+                <p class="desc">Advancing reproducibility standards for state-of-the-art ML research through rigorous evaluation rubrics and model assessments.</p>
+                <img src="OpenAI-Logo-2022.png" alt="OpenAI" class="logo-sm">
+            </div>
+            <div class="pro-card fade-up">
+                <div class="role">Summer VC Fellow, Life Science</div>
+                <div class="org">LiquidMetal Ventures</div>
+                <div class="period-sm">Jun 2025 — Aug 2025 · Boston, MA</div>
+                <p class="desc">Due diligence on AI-driven drug discovery startups; organizing expert salons at the Boston-Cambridge biotech hub.</p>
+                <img src="liquidmetal_ventures__logo.jpeg" alt="LiquidMetal" class="logo-sm">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VENTURES -->
+<section id="ventures" class="ventures-section">
+    <div class="container">
+        <div class="section-label fade-up">Ventures</div>
+        <h2 class="section-heading fade-up" style="color:var(--paper)">Entrepreneurial Work</h2>
+        <div class="divider fade-up"></div>
+        <div class="venture-grid">
+            <div class="venture-card fade-up">
+                <h3>MedJourney</h3>
+                <div class="tagline">Founder · Jul 2025 – Present</div>
+                <p>AI-powered voice-first companion for Alzheimer's patients. AdventureX 1st Prize winner; incubated by Tsinghua X-Lab with Meiling Scientist Fellowship.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+    <div class="container">
+        <div class="section-label fade-up">Publications</div>
+        <h2 class="section-heading fade-up">Selected Works</h2>
+        <div class="divider fade-up"></div>
+        <div class="pub-list">
+            <div class="pub-item fade-up">
+                <div class="pub-num"></div>
+                <div>
+                    <div class="pub-text"><strong>Yuan, M., Jin, K., Yan, H., Luo, T. et al.</strong> Designing Smart Spatial Omics Experiments with S2Omics. (2025) Accepted at <em>Nature Cell Biology</em>.</div>
                 </div>
-                <div class="publication-item">
-                    <p><strong>Freda, P.J., Ghosh, A., Luo, T., et al.</strong> Automated quantitative trait locus
-                        analysis (AutoQTL). <em>BioData Mining</em> 16, 14 (2023). <a
-                            href="https://doi.org/10.1186/s13040-023-00331-3"
-                            target="_blank">https://doi.org/10.1186/s13040-023-00331-3</a>.</p>
+            </div>
+            <div class="pub-item fade-up">
+                <div class="pub-num"></div>
+                <div>
+                    <div class="pub-text"><strong>Freda, P.J., Ghosh, A., Luo, T., et al.</strong> Automated quantitative trait locus analysis (AutoQTL). <em>BioData Mining</em> 16, 14 (2023). <a href="https://doi.org/10.1186/s13040-023-00331-3" target="_blank">doi:10.1186/s13040-023-00331-3</a></div>
                 </div>
-                <div class="publication-item">
-                    <p><strong>Luo, T., & Koo, P.</strong> Deciphering the Genetic Code behind Single-Cell Chromatin
-                        Accessibility: Interpreting scBasset (2023). [Poster]. Research Exposition, University of
-                        Pennsylvania, Philadelphia, PA.</p>
+            </div>
+            <div class="pub-item fade-up">
+                <div class="pub-num"></div>
+                <div>
+                    <div class="pub-text"><strong>Luo, T. & Koo, P.</strong> Deciphering the Genetic Code behind Single-Cell Chromatin Accessibility: Interpreting scBasset (2023). [Poster] Research Exposition, University of Pennsylvania.</div>
                 </div>
-                <div class="publication-item">
-                    <p><strong>Luo, T., & Li, M.</strong> (2024). Integrating Foundation Models to Address Batch Effects
-                        in Spatial Transcriptomics Analysis.</p>
-                    <ul class="sub-list">
-                        <li>[Poster] MidAtlantic Bioinformatics Conference, Philadelphia, PA.</li>
-                        <li>[Poster] Harvard University Program in Quantitative Genomics Conference, Boston, MA.</li>
-                        <li>[Oral Presentation] Rice University Gulf Coast Undergraduate Research Symposium, Houston,
-                            TX.</li>
+            </div>
+            <div class="pub-item fade-up">
+                <div class="pub-num"></div>
+                <div>
+                    <div class="pub-text"><strong>Luo, T. & Li, M.</strong> Integrating Foundation Models to Address Batch Effects in Spatial Transcriptomics Analysis (2024).</div>
+                    <ul class="pub-sub">
+                        <li>Poster at MidAtlantic Bioinformatics Conference</li>
+                        <li>Poster at Harvard Quantitative Genomics Conference</li>
+                        <li>Oral Presentation at Rice University Gulf Coast Symposium</li>
                     </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Teaching Experiences -->
-    <section id="teaching" class="teaching">
-        <div class="container">
-            <h2 class="section-title">Teaching Experiences</h2>
-            <ul class="teaching-list">
-                <li><strong>Teaching Assistant for Statistical Inference</strong> (Jan 2024 – May 2025)</li>
-                <li><strong>Head Teaching Assistant for Bayesian Statistics</strong> (Jan 2024 - May 2024)</li>
-            </ul>
-        </div>
-    </section>
+<!-- TEACHING -->
+<section class="teaching-section">
+    <div class="container">
+        <div class="section-label fade-up">Teaching</div>
+        <h2 class="section-heading fade-up">Instruction</h2>
+        <div class="divider fade-up"></div>
+        <ul class="teaching-list">
+            <li class="fade-up"><strong>Teaching Assistant</strong> — Statistical Inference (Jan 2024 – May 2025)</li>
+            <li class="fade-up"><strong>Head Teaching Assistant</strong> — Bayesian Statistics (Jan 2024 – May 2024)</li>
+        </ul>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-grid">
-                <div class="contact-content">
-                    <p>Feel free to reach out for collaborations or just a chat!</p>
-                    <div class="contact-info">
-                        <p class="email"><i class="fas fa-envelope"></i> <a
-                                href="mailto:tianhao_luo@g.harvard.edu">tianhao_luo@g.harvard.edu</a></p>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Boston, MA 02115</p>
-                    </div>
-                </div>
-                <div class="contact-image">
-                    <img src="violin.jpg" alt="Tianhao Luo Violin">
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="fade-up">
+                <div class="section-label">Contact</div>
+                <h2 class="section-heading" style="color:var(--paper)">Let's connect</h2>
+                <div class="divider"></div>
+                <p>Open to research collaborations, startup conversations, and new connections.</p>
+                <div class="contact-links">
+                    <a href="mailto:tianhao_luo@g.harvard.edu" class="contact-link"><i class="fas fa-envelope"></i> tianhao_luo@g.harvard.edu</a>
+                    <a href="https://linkedin.com/in/luo-tianhao/" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> linkedin.com/in/luo-tianhao</a>
+                    <span class="contact-link"><i class="fas fa-map-marker-alt"></i> Boston, MA 02115</span>
                 </div>
             </div>
+            <div class="contact-img fade-up">
+                <img src="violin.jpg" alt="Tianhao Luo playing violin">
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Tianhao Luo. All Rights Reserved.</p>
-        </div>
-    </footer>
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Tianhao Luo. All Rights Reserved.</p>
+    </div>
+</footer>
 
-    <script src="script.js"></script>
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+function closeMobile() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add('visible'), i * 80);
+            observer.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Active nav link
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+});
+</script>
 </body>
-
 </html>
