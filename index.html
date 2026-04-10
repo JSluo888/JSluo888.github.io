@@ -119,15 +119,16 @@
             line-height: 1.05; letter-spacing: -.03em; margin-bottom: 1.25rem;
         }
         .hero-tagline {
-            font-size: 1.15rem; font-weight: 300; color: var(--muted);
-            line-height: 1.6; margin-bottom: 2rem; max-width: 440px;
+            font-size: 1.35rem; font-weight: 300; color: var(--muted);
+            line-height: 1.55; margin-bottom: 2rem; max-width: 500px;
         }
         .hero-meta {
             display: flex; gap: 2.5rem; margin-bottom: 2.5rem;
-            font-size: .85rem; color: var(--muted);
+            font-size: 1.05rem; color: var(--ink); flex-wrap: wrap;
+            font-weight: 400;
         }
-        .hero-meta span { display: flex; align-items: center; gap: .5rem; }
-        .hero-meta i { color: var(--accent); font-size: .75rem; }
+        .hero-meta span { display: flex; align-items: center; gap: .65rem; }
+        .hero-meta i { color: var(--accent); font-size: .95rem; }
         .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
         .btn {
             display: inline-flex; align-items: center; gap: .5rem;
@@ -202,6 +203,38 @@
             font-family: var(--serif); font-size: 1.6rem; color: var(--accent); line-height: 1;
         }
         .highlight-item p { font-size: .8rem; color: var(--muted); margin-top: .25rem; text-transform: uppercase; letter-spacing: .06em; }
+
+        /* ─── NEWS ─── */
+        .news-section { background: var(--paper); }
+        .news-list { display: flex; flex-direction: column; gap: 0; }
+        .news-item {
+            display: grid; grid-template-columns: 140px 1fr; gap: 2.5rem;
+            padding: 1.75rem 0; border-bottom: 1px solid var(--soft);
+            align-items: start;
+            transition: background .3s, padding-left .3s;
+        }
+        .news-item:first-child { border-top: 1px solid var(--soft); }
+        .news-item:hover { background: rgba(180,74,45,.03); padding-left: 1rem; }
+        .news-date {
+            font-family: var(--mono); font-size: .72rem; color: var(--accent);
+            letter-spacing: .06em; padding-top: .35rem;
+        }
+        .news-body { display: flex; flex-direction: column; gap: .5rem; }
+        .news-tag {
+            font-family: var(--mono); font-size: .62rem;
+            text-transform: uppercase; letter-spacing: .14em;
+            padding: .3rem .65rem;
+            align-self: flex-start;
+            border: 1px solid; border-radius: 2px;
+        }
+        .news-tag.tag-pub { border-color: #b44a2d; color: #b44a2d; background: rgba(180,74,45,.06); }
+        .news-tag.tag-award { border-color: #2a8a4f; color: #2a8a4f; background: rgba(42,138,79,.06); }
+        .news-tag.tag-funding { border-color: #c07a1a; color: #c07a1a; background: rgba(192,122,26,.06); }
+        .news-tag.tag-news { border-color: var(--muted); color: var(--muted); }
+        .news-body p { font-size: .98rem; line-height: 1.6; color: var(--ink); font-weight: 300; }
+        .news-body p em { font-style: italic; color: var(--accent); }
+        .news-body p a { color: var(--accent); border-bottom: 1px solid transparent; transition: border-color .3s; }
+        .news-body p a:hover { border-color: var(--accent); }
 
         /* ─── EDUCATION ─── */
         .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -351,25 +384,28 @@
         /* ─── STATUS STRIP ─── */
         .status-strip {
             border-top: 1px solid var(--soft); border-bottom: 1px solid var(--soft);
-            background: rgba(255,255,255,.4);
+            background: rgba(255,255,255,.55);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            overflow: hidden;
         }
         .status-inner {
             max-width: var(--max-w); margin: 0 auto;
-            padding: .85rem 2rem;
-            display: flex; align-items: center; gap: 1.25rem;
-            font-family: var(--mono); font-size: .72rem;
+            padding: .95rem 2rem;
+            display: flex; align-items: center; gap: 1.5rem;
+            font-family: var(--mono); font-size: .78rem;
             color: var(--muted); letter-spacing: .04em;
-            white-space: nowrap; overflow: hidden;
         }
-        .status-inner .label {
+        .status-fixed {
+            display: flex; align-items: center; gap: 1rem;
+            flex-shrink: 0; z-index: 2; position: relative;
+            padding-right: 1.25rem; border-right: 1px solid var(--soft);
+        }
+        .status-fixed .label {
             color: var(--accent); text-transform: uppercase;
-            letter-spacing: .12em; flex-shrink: 0;
+            letter-spacing: .14em; font-weight: 500;
         }
         .pulse {
-            width: 8px; height: 8px; border-radius: 50%;
+            width: 9px; height: 9px; border-radius: 50%;
             background: #2ecc71; flex-shrink: 0;
             box-shadow: 0 0 0 0 rgba(46,204,113,.7);
             animation: pulse 2s infinite;
@@ -379,9 +415,15 @@
             70% { box-shadow: 0 0 0 10px rgba(46,204,113,0); }
             100% { box-shadow: 0 0 0 0 rgba(46,204,113,0); }
         }
+        .status-track {
+            flex: 1; overflow: hidden; position: relative;
+            mask-image: linear-gradient(90deg, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%);
+        }
         .status-items {
-            display: flex; gap: 2rem; animation: marquee 38s linear infinite;
-            flex-shrink: 0;
+            display: inline-flex; gap: 2.5rem;
+            animation: marquee 42s linear infinite;
+            white-space: nowrap; width: max-content;
         }
         .status-items span { color: var(--ink); }
         .status-items span::before { content: '→ '; color: var(--accent); margin-right: .35rem; }
@@ -467,6 +509,7 @@
             .about-grid { grid-template-columns: 1fr; }
             .edu-grid { grid-template-columns: 1fr; }
             .research-item { grid-template-columns: 1fr; gap: .75rem; }
+            .news-item { grid-template-columns: 1fr; gap: .75rem; }
             .pro-grid { grid-template-columns: 1fr; }
             .venture-grid { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
@@ -491,6 +534,7 @@
         <a href="#home" class="nav-brand">TL</a>
         <div class="nav-links">
             <a href="#about">About</a>
+            <a href="#news">News</a>
             <a href="#education">Education</a>
             <a href="#research">Research</a>
             <div class="sep"></div>
@@ -509,6 +553,7 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#news" onclick="closeMobile()">News</a>
     <a href="#education" onclick="closeMobile()">Education</a>
     <a href="#research" onclick="closeMobile()">Research</a>
     <a href="#professional" onclick="closeMobile()">Industry</a>
@@ -526,7 +571,7 @@
             <p class="hero-tagline">Building <span class="cycle-wrap" id="cycle">AI systems</span><br>that decode biology and accelerate therapeutic discovery.</p>
             <div class="hero-meta">
                 <span><i class="fas fa-map-marker-alt"></i> Boston, MA</span>
-                <span><i class="fas fa-flask"></i> Biomedical Informatics</span>
+                <span><i class="fas fa-flask"></i> AI for Biomedicine &amp; Healthcare</span>
             </div>
             <div class="hero-cta">
                 <a href="#research" class="btn btn-fill">View Research</a>
@@ -542,17 +587,21 @@
 <!-- STATUS STRIP -->
 <div class="status-strip">
     <div class="status-inner">
-        <span class="pulse"></span>
-        <span class="label">Currently</span>
-        <div class="status-items" id="statusItems">
-            <span>Training multi-modal foundation models @ Mahmood Lab</span>
-            <span>Building stealth AI startup on probiotics</span>
-            <span>Scaling MedJourney with X-Lab</span>
-            <span>Based in Boston · Open to collaborators</span>
-            <span>Training multi-modal foundation models @ Mahmood Lab</span>
-            <span>Building stealth AI startup on probiotics</span>
-            <span>Scaling MedJourney with X-Lab</span>
-            <span>Based in Boston · Open to collaborators</span>
+        <div class="status-fixed">
+            <span class="pulse"></span>
+            <span class="label">Currently</span>
+        </div>
+        <div class="status-track">
+            <div class="status-items" id="statusItems">
+                <span>Training multi-modal foundation models @ Mahmood Lab</span>
+                <span>Building stealth AI startup on probiotics</span>
+                <span>Scaling MedJourney with X-Lab</span>
+                <span>Based in Boston · Open to collaborators</span>
+                <span>Training multi-modal foundation models @ Mahmood Lab</span>
+                <span>Building stealth AI startup on probiotics</span>
+                <span>Scaling MedJourney with X-Lab</span>
+                <span>Based in Boston · Open to collaborators</span>
+            </div>
         </div>
     </div>
 </div>
@@ -571,6 +620,50 @@
                 <p>I am a PhD student in Biomedical Informatics at Harvard Medical School, developing multi-modal AI frameworks to decode complex biological systems and accelerate therapeutic discovery.</p>
                 <p>Previously, I graduated <em>summa cum laude</em> from the University of Pennsylvania with triple degrees in Statistics (Wharton), Mathematics, and Computational Biology. Beyond the lab, I am a violinist of 13 years, an avid runner, and a founder of health-tech ventures.</p>
 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEWS -->
+<!--
+    HOW TO ADD A NEWS ITEM:
+    Copy a .news-item block below and paste it at the top of .news-list.
+    Available tag classes: tag-pub | tag-award | tag-funding | tag-news
+-->
+<section id="news" class="news-section">
+    <div class="container">
+        <div class="section-label fade-up">News</div>
+        <h2 class="section-heading fade-up">Recent Updates</h2>
+        <div class="divider fade-up"></div>
+        <div class="news-list">
+            <div class="news-item fade-up">
+                <div class="news-date">Apr 2026</div>
+                <div class="news-body">
+                    <span class="news-tag tag-news">New Role</span>
+                    <p>Started stealth AI startup building AI-designed probiotics — more details coming soon.</p>
+                </div>
+            </div>
+            <div class="news-item fade-up">
+                <div class="news-date">Mar 2026</div>
+                <div class="news-body">
+                    <span class="news-tag tag-news">New Role</span>
+                    <p>Joined Dr. Faisal Mahmood's lab at Harvard Medical School / BWH to work on multi-modal foundation models for AI virtual patients.</p>
+                </div>
+            </div>
+            <div class="news-item fade-up">
+                <div class="news-date">2025</div>
+                <div class="news-body">
+                    <span class="news-tag tag-pub">Publication</span>
+                    <p><strong>Yuan, M., Jin, K., Yan, H., Luo, T. et al.</strong> "Designing Smart Spatial Omics Experiments with S2Omics" accepted at <em>Nature Cell Biology</em>.</p>
+                </div>
+            </div>
+            <div class="news-item fade-up">
+                <div class="news-date">Jul 2025</div>
+                <div class="news-body">
+                    <span class="news-tag tag-award">Award</span>
+                    <p>MedJourney won 1st Prize at AdventureX and received the Meiling Scientist Fellowship from Tsinghua X-Lab incubator.</p>
+                </div>
             </div>
         </div>
     </div>
