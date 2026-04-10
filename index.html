@@ -333,12 +333,104 @@
             filter: grayscale(20%);
         }
 
+        /* ─── SCROLL PROGRESS ─── */
+        .scroll-prog {
+            position: fixed; top: 0; left: 0; height: 2px;
+            background: var(--accent); z-index: 200; width: 0;
+            transition: width .08s linear;
+        }
+
+        /* ─── SECTION NUMBERING ─── */
+        body { counter-reset: sec; }
+        .section-label { counter-increment: sec; }
+        .section-label::before {
+            content: counter(sec, decimal-leading-zero) " / ";
+            opacity: .55;
+        }
+
+        /* ─── STATUS STRIP ─── */
+        .status-strip {
+            border-top: 1px solid var(--soft); border-bottom: 1px solid var(--soft);
+            background: rgba(255,255,255,.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            overflow: hidden;
+        }
+        .status-inner {
+            max-width: var(--max-w); margin: 0 auto;
+            padding: .85rem 2rem;
+            display: flex; align-items: center; gap: 1.25rem;
+            font-family: var(--mono); font-size: .72rem;
+            color: var(--muted); letter-spacing: .04em;
+            white-space: nowrap; overflow: hidden;
+        }
+        .status-inner .label {
+            color: var(--accent); text-transform: uppercase;
+            letter-spacing: .12em; flex-shrink: 0;
+        }
+        .pulse {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #2ecc71; flex-shrink: 0;
+            box-shadow: 0 0 0 0 rgba(46,204,113,.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(46,204,113,.7); }
+            70% { box-shadow: 0 0 0 10px rgba(46,204,113,0); }
+            100% { box-shadow: 0 0 0 0 rgba(46,204,113,0); }
+        }
+        .status-items {
+            display: flex; gap: 2rem; animation: marquee 38s linear infinite;
+            flex-shrink: 0;
+        }
+        .status-items span { color: var(--ink); }
+        .status-items span::before { content: '→ '; color: var(--accent); margin-right: .35rem; }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ─── TYPING CURSOR ─── */
+        .cycle-wrap {
+            display: inline-block; color: var(--accent); font-weight: 500;
+        }
+        .cycle-wrap::after {
+            content: '▌'; color: var(--accent);
+            animation: blink 1s steps(2) infinite;
+            margin-left: 1px;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* ─── GRID OVERLAY (dark sections) ─── */
+        .ventures-section, .contact-section {
+            background-image:
+                linear-gradient(rgba(245,240,235,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(245,240,235,.025) 1px, transparent 1px);
+            background-size: 48px 48px;
+            background-position: -1px -1px;
+        }
+
+        /* ─── VENTURE CARD TILT ─── */
+        .venture-card {
+            transform-style: preserve-3d;
+            will-change: transform;
+            transition: border-color .3s, background .3s, transform .15s var(--ease);
+        }
+        .venture-card h3, .venture-card .tagline, .venture-card p {
+            transform: translateZ(20px);
+        }
+
         /* ─── FOOTER ─── */
         footer {
             padding: 2rem 0; text-align: center;
-            font-size: .8rem; color: var(--muted);
+            font-size: .75rem; color: var(--muted);
             border-top: 1px solid var(--soft);
+            font-family: var(--mono); letter-spacing: .04em;
         }
+        footer .build-info {
+            margin-top: .5rem; opacity: .6; font-size: .68rem;
+        }
+        footer .build-info span { color: var(--accent); }
 
         /* ─── ANIMATIONS ─── */
         .fade-up {
@@ -390,6 +482,9 @@
 </head>
 <body>
 
+<!-- SCROLL PROGRESS -->
+<div class="scroll-prog" id="scrollProg"></div>
+
 <!-- NAV -->
 <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -428,7 +523,7 @@
         <div class="hero-text">
             <div class="hero-label">PhD @ Harvard Medical School</div>
             <h1 class="hero-name">Tianhao<br>Luo</h1>
-            <p class="hero-tagline">Building AI systems that decode complex biological systems and accelerate therapeutic discovery.</p>
+            <p class="hero-tagline">Building <span class="cycle-wrap" id="cycle">AI systems</span><br>that decode biology and accelerate therapeutic discovery.</p>
             <div class="hero-meta">
                 <span><i class="fas fa-map-marker-alt"></i> Boston, MA</span>
                 <span><i class="fas fa-flask"></i> Biomedical Informatics</span>
@@ -443,6 +538,24 @@
         </div>
     </div>
 </section>
+
+<!-- STATUS STRIP -->
+<div class="status-strip">
+    <div class="status-inner">
+        <span class="pulse"></span>
+        <span class="label">Currently</span>
+        <div class="status-items" id="statusItems">
+            <span>Training multi-modal foundation models @ Mahmood Lab</span>
+            <span>Building stealth AI startup on probiotics</span>
+            <span>Scaling MedJourney with X-Lab</span>
+            <span>Based in Boston · Open to collaborators</span>
+            <span>Training multi-modal foundation models @ Mahmood Lab</span>
+            <span>Building stealth AI startup on probiotics</span>
+            <span>Scaling MedJourney with X-Lab</span>
+            <span>Based in Boston · Open to collaborators</span>
+        </div>
+    </div>
+</div>
 
 <!-- ABOUT -->
 <section id="about" class="about">
@@ -691,7 +804,10 @@
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <p>&copy; 2025 Tianhao Luo. All Rights Reserved.</p>
+        <p>&copy; 2026 TIANHAO LUO · ALL RIGHTS RESERVED</p>
+        <p class="build-info">
+            <span>●</span> v2.3 · last deployed <span id="lastUpdate">—</span> · built with caffeine & curiosity
+        </p>
     </div>
 </footer>
 
@@ -739,6 +855,56 @@ window.addEventListener('scroll', () => {
         a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
 });
+
+// Scroll progress bar
+const scrollProg = document.getElementById('scrollProg');
+window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    scrollProg.style.width = pct + '%';
+});
+
+// Hero cycling text (typewriter)
+const cycleEl = document.getElementById('cycle');
+const phrases = [
+    'AI systems',
+    'foundation models',
+    'virtual cells',
+    'living therapeutics',
+    'voice-first agents',
+    'generative biology'
+];
+let pIdx = 0, cIdx = 0, deleting = false;
+function tick() {
+    const full = phrases[pIdx];
+    cIdx += deleting ? -1 : 1;
+    cycleEl.textContent = full.slice(0, cIdx);
+    let wait = deleting ? 45 : 85;
+    if (!deleting && cIdx === full.length) { wait = 1800; deleting = true; }
+    else if (deleting && cIdx === 0) { deleting = false; pIdx = (pIdx + 1) % phrases.length; wait = 300; }
+    setTimeout(tick, wait);
+}
+tick();
+
+// Venture card 3D tilt
+document.querySelectorAll('.venture-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateZ(0)`;
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+    });
+});
+
+// Last updated timestamp
+const lu = document.getElementById('lastUpdate');
+if (lu) {
+    const d = new Date(document.lastModified);
+    lu.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
 </script>
 </body>
 </html>
