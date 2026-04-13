@@ -197,32 +197,109 @@
 
         /* ─── NEWS ─── */
         .news-section { background: var(--paper); }
-        .news-list { display: flex; flex-direction: column; gap: 0; }
+
+        /* LIVE badge next to section heading */
+        .live-badge {
+            display: inline-flex; align-items: center; gap: .5rem;
+            margin-left: 1rem; padding: .3rem .75rem;
+            background: rgba(239,68,68,.08);
+            border: 1px solid rgba(239,68,68,.3);
+            border-radius: 99px;
+            font-family: var(--mono); font-size: .65rem; letter-spacing: .16em;
+            text-transform: uppercase; color: #ef4444; font-weight: 500;
+            vertical-align: middle;
+        }
+        .live-badge::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%;
+            background: #ef4444;
+            animation: livePulse 1.5s ease-in-out infinite;
+        }
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .3; transform: scale(.7); }
+        }
+
+        .news-list { display: flex; flex-direction: column; gap: 0; position: relative; }
         .news-item {
             display: grid; grid-template-columns: 140px 1fr; gap: 2.5rem;
-            padding: 1.75rem 0; border-bottom: 1px solid var(--soft);
+            padding: 1.9rem 1.25rem 1.9rem 1.5rem;
+            border-bottom: 1px solid var(--soft);
             align-items: start;
-            transition: background .3s, padding-left .3s;
+            position: relative; overflow: hidden;
+            transition: background .4s var(--ease), padding-left .4s var(--ease);
         }
         .news-item:first-child { border-top: 1px solid var(--soft); }
-        .news-item:hover { background: rgba(180,74,45,.03); padding-left: 1rem; }
-        .news-date {
-            font-family: var(--mono); font-size: .72rem; color: var(--accent);
-            letter-spacing: .06em; padding-top: .35rem;
+
+        /* Slide-in-from-left entrance (overrides generic fade-up) */
+        .news-item.fade-up { opacity: 0; transform: translateX(-60px); }
+        .news-item.fade-up.visible { opacity: 1; transform: translateX(0); }
+
+        /* Left accent bar that grows on hover */
+        .news-item::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+            width: 3px; background: var(--accent);
+            transform: scaleY(0); transform-origin: top;
+            transition: transform .5s var(--ease);
         }
-        .news-body { display: flex; flex-direction: column; gap: .5rem; }
+        .news-item:hover::before { transform: scaleY(1); }
+        .news-item:hover {
+            background: rgba(30,95,170,.04);
+            padding-left: 2.5rem;
+        }
+
+        /* The most-recent item: highlight, pulse, shimmer */
+        .news-item.is-new {
+            background: linear-gradient(90deg, rgba(30,95,170,.055) 0%, rgba(30,95,170,.015) 60%, transparent 100%);
+        }
+        .news-item.is-new::after {
+            content: ''; position: absolute; top: 0; left: -40%;
+            width: 40%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(30,95,170,.09), transparent);
+            animation: shimmer 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes shimmer {
+            0% { left: -40%; }
+            60%, 100% { left: 120%; }
+        }
+
+        .news-date {
+            font-family: var(--mono); font-size: .74rem; color: var(--accent);
+            letter-spacing: .06em; padding-top: .35rem;
+            display: flex; align-items: center; flex-wrap: wrap; gap: .5rem;
+        }
+        .news-item.is-new .news-date::after {
+            content: 'NEW';
+            padding: .18rem .48rem;
+            background: #ef4444; color: #fff;
+            font-family: var(--mono); font-size: .56rem;
+            letter-spacing: .16em; font-weight: 600; border-radius: 2px;
+            animation: newPulse 1.8s ease-in-out infinite;
+        }
+        @keyframes newPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,.6); }
+            70% { box-shadow: 0 0 0 8px rgba(239,68,68,0); }
+        }
+
+        .news-body { display: flex; flex-direction: column; gap: .6rem; }
         .news-tag {
             font-family: var(--mono); font-size: .62rem;
             text-transform: uppercase; letter-spacing: .14em;
-            padding: .3rem .65rem;
+            padding: .32rem .7rem;
             align-self: flex-start;
             border: 1px solid; border-radius: 2px;
+            transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+        }
+        .news-item:hover .news-tag {
+            transform: translateX(3px);
+            box-shadow: 0 3px 12px rgba(30,95,170,.1);
         }
         .news-tag.tag-pub { border-color: #b44a2d; color: #b44a2d; background: rgba(180,74,45,.06); }
         .news-tag.tag-award { border-color: #2a8a4f; color: #2a8a4f; background: rgba(42,138,79,.06); }
         .news-tag.tag-funding { border-color: #c07a1a; color: #c07a1a; background: rgba(192,122,26,.06); }
         .news-tag.tag-news { border-color: var(--muted); color: var(--muted); }
-        .news-body p { font-size: .98rem; line-height: 1.6; color: var(--ink); font-weight: 300; }
+        .news-body p { font-size: 1rem; line-height: 1.65; color: var(--ink); font-weight: 300; }
+        .news-body p strong { font-weight: 500; }
         .news-body p em { font-style: italic; color: var(--accent); }
         .news-body p a { color: var(--accent); border-bottom: 1px solid transparent; transition: border-color .3s; }
         .news-body p a:hover { border-color: var(--accent); }
@@ -604,16 +681,19 @@
 <!-- NEWS -->
 <!--
     HOW TO ADD A NEWS ITEM:
-    Copy a .news-item block below and paste it at the top of .news-list.
-    Available tag classes: tag-pub | tag-award | tag-funding | tag-news
+    1. Copy a .news-item block and paste it at the TOP of .news-list.
+    2. Move the `is-new` class from the previous top item to your new item
+       (only the most-recent item should have `is-new` — it gets the shimmer,
+       NEW badge, and highlighted background).
+    3. Tag classes: tag-pub | tag-award | tag-funding | tag-news
 -->
 <section id="news" class="news-section">
     <div class="container">
         <div class="section-label fade-up">News</div>
-        <h2 class="section-heading fade-up">Recent Updates</h2>
+        <h2 class="section-heading fade-up">Recent Updates <span class="live-badge">Live</span></h2>
         <div class="divider fade-up"></div>
         <div class="news-list">
-            <div class="news-item fade-up">
+            <div class="news-item is-new fade-up">
                 <div class="news-date">Apr 2026</div>
                 <div class="news-body">
                     <span class="news-tag tag-funding">Fellowship</span>
