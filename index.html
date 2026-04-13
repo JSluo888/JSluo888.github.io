@@ -124,7 +124,22 @@
         }
         .hero-meta span { display: flex; align-items: center; gap: .75rem; }
         .hero-meta i { color: var(--accent); font-size: 1.05rem; }
-        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+        .hero-social {
+            display: flex; gap: 1.1rem; align-items: center;
+            margin-left: .75rem; padding-left: 1.25rem;
+            border-left: 1px solid var(--soft);
+        }
+        .hero-social a {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 42px; height: 42px; border-radius: 50%;
+            color: var(--muted); font-size: 1.1rem;
+            transition: color .3s var(--ease), transform .3s var(--ease), background .3s var(--ease);
+        }
+        .hero-social a:hover {
+            color: var(--accent); background: rgba(30,95,170,.08);
+            transform: translateY(-2px);
+        }
         .btn {
             display: inline-flex; align-items: center; gap: .5rem;
             padding: .9rem 2rem; border-radius: 2px; font-size: .95rem;
@@ -629,6 +644,11 @@
             <div class="hero-cta">
                 <a href="#research" class="btn btn-fill">View Research</a>
                 <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                <div class="hero-social">
+                    <a href="mailto:tianhao_luo@g.harvard.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://linkedin.com/in/luo-tianhao/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/tianhaocl" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
             </div>
         </div>
         <div class="hero-portrait">
