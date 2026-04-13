@@ -13,18 +13,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
-            --ink: #1a1a1a;
-            --paper: #f5f0eb;
-            --cream: #ebe4db;
-            --accent: #b44a2d;
-            --accent-light: #d4714f;
-            --muted: #8a8075;
-            --soft: #d4cdc4;
+            --ink: #111827;
+            --paper: #ffffff;
+            --cream: #f8f9fb;
+            --accent: #1e5faa;
+            --accent-light: #3b7dc9;
+            --muted: #6b7280;
+            --soft: #e5e7eb;
             --white: #fff;
             --serif: 'DM Serif Display', serif;
             --sans: 'Outfit', sans-serif;
             --mono: 'JetBrains Mono', monospace;
-            --max-w: 1200px;
+            --max-w: 1160px;
             --ease: cubic-bezier(.23,1,.32,1);
         }
 
@@ -55,10 +55,10 @@
             transition: background .4s var(--ease), box-shadow .4s var(--ease), padding .4s var(--ease);
         }
         .nav.scrolled {
-            background: rgba(245,240,235,.92);
+            background: rgba(255,255,255,.92);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 1px 0 rgba(0,0,0,.06);
+            box-shadow: 0 1px 0 rgba(17,24,39,.06);
             padding: .75rem 2rem;
         }
         .nav-inner {
@@ -88,16 +88,11 @@
 
         /* ─── HERO ─── */
         .hero {
-            min-height: 100vh; display: flex; align-items: center;
+            min-height: 92vh; display: flex; align-items: center;
             padding: 8rem 2rem 4rem;
             position: relative;
-        }
-        .hero::before {
-            content: ''; position: absolute; top: 0; right: 0;
-            width: 55%; height: 100%;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--paper) 100%);
-            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-            z-index: 0;
+            background: var(--paper);
+            border-bottom: 1px solid var(--soft);
         }
         .hero-inner {
             max-width: var(--max-w); margin: 0 auto; width: 100%;
@@ -136,11 +131,11 @@
             font-weight: 500; letter-spacing: .04em; text-transform: uppercase;
             transition: all .3s var(--ease); cursor: pointer; border: none;
         }
-        .btn-fill { background: var(--ink); color: var(--paper); }
-        .btn-fill:hover { background: var(--accent); }
+        .btn-fill { background: var(--accent); color: var(--white); border-radius: 4px; }
+        .btn-fill:hover { background: var(--ink); }
         .btn-outline {
-            background: transparent; color: var(--ink);
-            box-shadow: inset 0 0 0 1.5px var(--ink);
+            background: transparent; color: var(--ink); border-radius: 4px;
+            box-shadow: inset 0 0 0 1.5px var(--soft);
         }
         .btn-outline:hover { box-shadow: inset 0 0 0 1.5px var(--accent); color: var(--accent); }
 
@@ -149,13 +144,9 @@
         }
         .hero-portrait img {
             width: 380px; height: 480px; object-fit: cover;
-            filter: grayscale(15%);
-            box-shadow: 24px 24px 0 var(--cream);
-        }
-        .hero-portrait::before {
-            content: ''; position: absolute; top: -16px; left: -16px;
-            width: 100%; height: 100%;
-            border: 1.5px solid var(--accent); z-index: -1;
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(17,24,39,.08),
+                        0 4px 12px rgba(17,24,39,.04);
         }
 
         /* ─── SECTION COMMON ─── */
@@ -294,22 +285,23 @@
         .pro-card .logo-sm { height: 28px; width: auto; object-fit: contain; margin-top: auto; opacity: .7; }
 
         /* ─── VENTURES ─── */
-        .ventures-section { background: var(--ink); color: var(--paper); }
-        .ventures-section .section-label { color: var(--accent-light); }
-        .ventures-section .section-intro { color: rgba(245,240,235,.5); }
-        .ventures-section .divider { background: var(--accent-light); }
+        .ventures-section { background: var(--cream); }
         .venture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .venture-card {
-            border: 1px solid rgba(245,240,235,.12); padding: 2.5rem;
-            transition: border-color .3s, background .3s;
+            background: var(--white);
+            border: 1px solid var(--soft); border-radius: 4px; padding: 2.5rem;
+            transition: border-color .3s, box-shadow .3s, transform .3s;
         }
-        .venture-card:hover { border-color: var(--accent-light); background: rgba(245,240,235,.03); }
-        .venture-card h3 { font-family: var(--serif); font-size: 1.3rem; margin-bottom: .5rem; }
+        .venture-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 40px rgba(30,95,170,.08);
+        }
+        .venture-card h3 { font-family: var(--serif); font-size: 1.35rem; margin-bottom: .5rem; color: var(--ink); }
         .venture-card .tagline {
-            font-family: var(--mono); font-size: .72rem; color: var(--accent-light);
+            font-family: var(--mono); font-size: .72rem; color: var(--accent);
             letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem;
         }
-        .venture-card p { font-size: .92rem; color: rgba(245,240,235,.6); line-height: 1.7; }
+        .venture-card p { font-size: .95rem; color: var(--muted); line-height: 1.75; }
 
         /* ─── PUBLICATIONS ─── */
         .pub-list { display: flex; flex-direction: column; gap: 0; counter-reset: pub; }
@@ -346,24 +338,22 @@
         }
 
         /* ─── CONTACT ─── */
-        .contact-section { background: var(--ink); color: var(--paper); }
-        .contact-section .section-label { color: var(--accent-light); }
-        .contact-section .divider { background: var(--accent-light); }
+        .contact-section { background: var(--cream); border-top: 1px solid var(--soft); }
         .contact-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
         }
-        .contact-body p { font-size: 1.05rem; color: rgba(245,240,235,.6); margin-bottom: 2rem; }
+        .contact-body p { font-size: 1.05rem; color: var(--muted); margin-bottom: 2rem; }
         .contact-links { display: flex; flex-direction: column; gap: 1rem; }
         .contact-link {
             display: flex; align-items: center; gap: 1rem;
-            font-size: 1rem; color: var(--paper);
+            font-size: 1rem; color: var(--ink);
             transition: color .3s;
         }
-        .contact-link:hover { color: var(--accent-light); }
-        .contact-link i { width: 20px; color: var(--accent-light); }
+        .contact-link:hover { color: var(--accent); }
+        .contact-link i { width: 20px; color: var(--accent); }
         .contact-img img {
-            width: 100%; max-height: 400px; height: auto; object-fit: contain;
-            filter: grayscale(20%);
+            width: 100%; max-height: 420px; height: auto; object-fit: contain;
+            border-radius: 4px;
         }
 
         /* ─── SCROLL PROGRESS ─── */
@@ -383,96 +373,46 @@
 
         /* ─── STATUS STRIP ─── */
         .status-strip {
-            border-top: 1px solid var(--soft); border-bottom: 1px solid var(--soft);
-            background: rgba(255,255,255,.55);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--soft);
+            background: var(--cream);
         }
         .status-inner {
             max-width: var(--max-w); margin: 0 auto;
-            padding: .95rem 2rem;
-            display: flex; align-items: center; gap: 1.5rem;
-            font-family: var(--mono); font-size: .78rem;
-            color: var(--muted); letter-spacing: .04em;
-        }
-        .status-fixed {
+            padding: .85rem 2rem;
             display: flex; align-items: center; gap: 1rem;
-            flex-shrink: 0; z-index: 2; position: relative;
-            padding-right: 1.25rem; border-right: 1px solid var(--soft);
+            font-family: var(--mono); font-size: .78rem;
+            color: var(--muted); letter-spacing: .03em;
+            flex-wrap: wrap;
         }
-        .status-fixed .label {
+        .status-inner .label {
             color: var(--accent); text-transform: uppercase;
             letter-spacing: .14em; font-weight: 500;
+            display: flex; align-items: center; gap: .75rem;
         }
         .pulse {
-            width: 9px; height: 9px; border-radius: 50%;
-            background: #2ecc71; flex-shrink: 0;
-            box-shadow: 0 0 0 0 rgba(46,204,113,.7);
-            animation: pulse 2s infinite;
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 0 0 rgba(34,197,94,.6);
+            animation: pulse 2.4s infinite;
         }
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(46,204,113,.7); }
-            70% { box-shadow: 0 0 0 10px rgba(46,204,113,0); }
-            100% { box-shadow: 0 0 0 0 rgba(46,204,113,0); }
+            0% { box-shadow: 0 0 0 0 rgba(34,197,94,.6); }
+            70% { box-shadow: 0 0 0 10px rgba(34,197,94,0); }
+            100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
         }
-        .status-track {
-            flex: 1; overflow: hidden; position: relative;
-            mask-image: linear-gradient(90deg, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%);
-            -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 30px, #000 calc(100% - 30px), transparent 100%);
-        }
-        .status-items {
-            display: inline-flex; gap: 2.5rem;
-            animation: marquee 42s linear infinite;
-            white-space: nowrap; width: max-content;
-        }
-        .status-items span { color: var(--ink); }
-        .status-items span::before { content: '→ '; color: var(--accent); margin-right: .35rem; }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* ─── TYPING CURSOR ─── */
-        .cycle-wrap {
-            display: inline-block; color: var(--accent); font-weight: 500;
-        }
-        .cycle-wrap::after {
-            content: '▌'; color: var(--accent);
-            animation: blink 1s steps(2) infinite;
-            margin-left: 1px;
-        }
-        @keyframes blink { 50% { opacity: 0; } }
-
-        /* ─── GRID OVERLAY (dark sections) ─── */
-        .ventures-section, .contact-section {
-            background-image:
-                linear-gradient(rgba(245,240,235,.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(245,240,235,.025) 1px, transparent 1px);
-            background-size: 48px 48px;
-            background-position: -1px -1px;
-        }
-
-        /* ─── VENTURE CARD TILT ─── */
-        .venture-card {
-            transform-style: preserve-3d;
-            will-change: transform;
-            transition: border-color .3s, background .3s, transform .15s var(--ease);
-        }
-        .venture-card h3, .venture-card .tagline, .venture-card p {
-            transform: translateZ(20px);
-        }
+        .status-text { color: var(--ink); }
+        .status-text a { color: var(--accent); border-bottom: 1px solid transparent; transition: border-color .3s; }
+        .status-text a:hover { border-color: var(--accent); }
 
         /* ─── FOOTER ─── */
         footer {
-            padding: 2rem 0; text-align: center;
-            font-size: .75rem; color: var(--muted);
+            padding: 2.5rem 0; text-align: center;
+            font-size: .82rem; color: var(--muted);
             border-top: 1px solid var(--soft);
-            font-family: var(--mono); letter-spacing: .04em;
         }
         footer .build-info {
-            margin-top: .5rem; opacity: .6; font-size: .68rem;
+            margin-top: .35rem; font-family: var(--mono); font-size: .7rem; opacity: .65;
         }
-        footer .build-info span { color: var(--accent); }
 
         /* ─── ANIMATIONS ─── */
         .fade-up {
@@ -568,7 +508,7 @@
         <div class="hero-text">
             <div class="hero-label">PhD @ Harvard Medical School</div>
             <h1 class="hero-name">Tianhao<br>Luo</h1>
-            <p class="hero-tagline">Building <span class="cycle-wrap" id="cycle">AI systems</span><br>that decode biology and accelerate therapeutic discovery.</p>
+            <p class="hero-tagline">Building AI systems that decode biology and accelerate therapeutic discovery.</p>
             <div class="hero-meta">
                 <span><i class="fas fa-map-marker-alt"></i> Boston, MA</span>
                 <span><i class="fas fa-flask"></i> AI for Biomedicine &amp; Healthcare</span>
@@ -587,22 +527,8 @@
 <!-- STATUS STRIP -->
 <div class="status-strip">
     <div class="status-inner">
-        <div class="status-fixed">
-            <span class="pulse"></span>
-            <span class="label">Currently</span>
-        </div>
-        <div class="status-track">
-            <div class="status-items" id="statusItems">
-                <span>Training multi-modal foundation models @ Mahmood Lab</span>
-                <span>Building stealth AI startup on probiotics</span>
-                <span>Scaling MedJourney with X-Lab</span>
-                <span>Based in Boston · Open to collaborators</span>
-                <span>Training multi-modal foundation models @ Mahmood Lab</span>
-                <span>Building stealth AI startup on probiotics</span>
-                <span>Scaling MedJourney with X-Lab</span>
-                <span>Based in Boston · Open to collaborators</span>
-            </div>
-        </div>
+        <span class="label"><span class="pulse"></span> Currently</span>
+        <span class="status-text">Training multi-modal foundation models @ Mahmood Lab · Building a stealth AI startup on probiotics · Based in Boston, open to collaborators.</span>
     </div>
 </div>
 
@@ -637,6 +563,13 @@
         <h2 class="section-heading fade-up">Recent Updates</h2>
         <div class="divider fade-up"></div>
         <div class="news-list">
+            <div class="news-item fade-up">
+                <div class="news-date">Apr 2026</div>
+                <div class="news-body">
+                    <span class="news-tag tag-funding">Fellowship</span>
+                    <p>Awarded the <strong>NSF Graduate Research Fellowship (GRFP)</strong> with a focus on <em>AI for Life Sciences</em>. Grateful to advisors, collaborators, and reviewers!</p>
+                </div>
+            </div>
             <div class="news-item fade-up">
                 <div class="news-date">Apr 2026</div>
                 <div class="news-body">
@@ -788,7 +721,7 @@
 <section id="ventures" class="ventures-section">
     <div class="container">
         <div class="section-label fade-up">Ventures</div>
-        <h2 class="section-heading fade-up" style="color:var(--paper)">Entrepreneurial Work</h2>
+        <h2 class="section-heading fade-up">Entrepreneurial Work</h2>
         <div class="divider fade-up"></div>
         <div class="venture-grid">
             <div class="venture-card fade-up">
@@ -864,7 +797,7 @@
         <div class="contact-grid">
             <div class="fade-up">
                 <div class="section-label">Contact</div>
-                <h2 class="section-heading" style="color:var(--paper)">Let's connect</h2>
+                <h2 class="section-heading">Let's connect</h2>
                 <div class="divider"></div>
                 <p>Open to research collaborations, startup conversations, and new connections.</p>
                 <div class="contact-links">
@@ -883,10 +816,8 @@
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <p>&copy; 2026 TIANHAO LUO · ALL RIGHTS RESERVED</p>
-        <p class="build-info">
-            <span>●</span> v2.3 · last deployed <span id="lastUpdate">—</span> · built with caffeine & curiosity
-        </p>
+        <p>&copy; 2026 Tianhao Luo</p>
+        <p class="build-info">Last updated <span id="lastUpdate">—</span></p>
     </div>
 </footer>
 
@@ -941,41 +872,6 @@ window.addEventListener('scroll', () => {
     const h = document.documentElement;
     const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
     scrollProg.style.width = pct + '%';
-});
-
-// Hero cycling text (typewriter)
-const cycleEl = document.getElementById('cycle');
-const phrases = [
-    'AI systems',
-    'foundation models',
-    'virtual cells',
-    'AI-designed probiotics',
-    'voice-first agents',
-    'generative biology'
-];
-let pIdx = 0, cIdx = 0, deleting = false;
-function tick() {
-    const full = phrases[pIdx];
-    cIdx += deleting ? -1 : 1;
-    cycleEl.textContent = full.slice(0, cIdx);
-    let wait = deleting ? 45 : 85;
-    if (!deleting && cIdx === full.length) { wait = 1800; deleting = true; }
-    else if (deleting && cIdx === 0) { deleting = false; pIdx = (pIdx + 1) % phrases.length; wait = 300; }
-    setTimeout(tick, wait);
-}
-tick();
-
-// Venture card 3D tilt
-document.querySelectorAll('.venture-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateZ(0)`;
-    });
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-    });
 });
 
 // Last updated timestamp
