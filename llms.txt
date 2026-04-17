@@ -1,0 +1,57 @@
+# Tianhao Luo
+
+> PhD student in Biomedical Informatics at Harvard Medical School. Building AI systems to understand disease mechanisms and translate them into clinically actionable insights. NSF Graduate Research Fellow (AI for Life Sciences).
+
+## About
+
+- **Name:** Tianhao Luo
+- **Role:** PhD student, Biomedical Informatics — Harvard Medical School (2025 — present)
+- **Focus:** AI for biomedicine and healthcare; multi-modal foundation models; computational pathology; spatial and single-cell genomics; generative models for biology
+- **Location:** Boston, MA
+- **Contact:** tianhao_luo@g.harvard.edu
+
+## Education
+
+- **Harvard Medical School** (2025 — Present) — PhD, Biomedical Informatics. Rotations with Omar Abudayyeh & Jonathan Gootenberg, Kun-Hsing Yu, and Faisal Mahmood.
+- **University of Pennsylvania** — triple degree (summa cum laude) in Statistics (Wharton), Mathematics, and Computational Biology.
+
+## Research (selected experiences)
+
+- **Mar 2026 — Present:** Multi-modal foundation models for AI virtual patients — Mahmood Lab, Harvard Medical School / Brigham and Women's Hospital.
+- **Dec 2025 — Mar 2026:** AI virtual cells using generative modeling — Abudayyeh-Gootenberg Lab, Harvard Medical School.
+
+## Ventures
+
+- **MedJourney** — Founder (Jul 2025 — Present). AI-powered voice-first companion for Alzheimer's patients. 1st prize, AdventureX. Meiling Scientist Fellowship (Tsinghua X-Lab).
+- **Stealth AI Startup** — Founder (2026 — Present). AI-designed probiotics using generative models and microbiome foundation models.
+
+## Professional experience
+
+- **OpenAI** — prior role.
+- **LiquidMetal Ventures** — due diligence on AI-driven drug discovery startups; expert salons at the Boston-Cambridge biotech hub.
+
+## Awards
+
+- NSF Graduate Research Fellowship (GRFP), 2026 — AI for Life Sciences
+- AdventureX 1st Prize — MedJourney
+- Meiling Scientist Fellowship — Tsinghua X-Lab
+
+## Selected publications
+
+- Yuan, M., Jin, K., Yan, H., Luo, T. et al. *Designing Smart Spatial Omics Experiments with S2Omics.* Nature Cell Biology (accepted, 2025).
+- Freda, P.J., Ghosh, A., Luo, T., et al. *Automated quantitative trait locus analysis (AutoQTL).* BioData Mining 16, 14 (2023). https://doi.org/10.1186/s13040-023-00331-3
+- Luo, T. & Li, M. *Integrating Foundation Models to Address Batch Effects in Spatial Transcriptomics Analysis* (2024). Presented at MidAtlantic Bioinformatics Conference, Harvard Quantitative Genomics Conference, Rice University Gulf Coast Symposium.
+- Luo, T. & Koo, P. *Deciphering the Genetic Code behind Single-Cell Chromatin Accessibility: Interpreting scBasset* (2023).
+
+## Teaching
+
+- Teaching Assistant — Statistical Inference (Jan 2024 — May 2025)
+- Head Teaching Assistant — Bayesian Statistics (Jan 2024 — May 2024)
+
+## Links
+
+- Website: https://tianhaoluo.com
+- Email: tianhao_luo@g.harvard.edu
+- LinkedIn: https://linkedin.com/in/luo-tianhao
+- X (Twitter): https://x.com/tianhaocl
+- GitHub: https://github.com/JSluo888
