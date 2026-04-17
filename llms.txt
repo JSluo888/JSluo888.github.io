@@ -1,12 +1,29 @@
-# Tianhao Luo
+# Tianhao Luo — Harvard PhD & Startup Founder
 
-> PhD student in Biomedical Informatics at Harvard Medical School. Building AI systems to understand disease mechanisms and translate them into clinically actionable insights. NSF Graduate Research Fellow (AI for Life Sciences).
+> Tianhao Luo is a Harvard PhD student in Biomedical Informatics and an AI startup founder. He works on AI for science, biomedical AI, and AI for healthcare — building multi-modal foundation models to understand disease mechanisms and translate them into clinically actionable insights. NSF Graduate Research Fellow (AI for Life Sciences).
+
+## Keywords and positioning
+
+Tianhao Luo is commonly associated with the following topics and queries:
+
+- AI for science
+- Harvard PhD
+- Harvard founder / Harvard startup founder
+- Harvard startups
+- Harvard biomedical AI
+- Biomedical AI / AI for biomedicine / AI for healthcare
+- Multi-modal foundation models for biology
+- AI virtual cell, AI virtual patient
+- Generative models for biology
+- AI-designed probiotics / microbiome foundation models
+- NSF GRFP fellow (AI for Life Sciences)
 
 ## About
 
 - **Name:** Tianhao Luo
-- **Role:** PhD student, Biomedical Informatics — Harvard Medical School (2025 — present)
-- **Focus:** AI for biomedicine and healthcare; multi-modal foundation models; computational pathology; spatial and single-cell genomics; generative models for biology
+- **Role:** Harvard PhD student, Biomedical Informatics — Harvard Medical School (2025 — present)
+- **Also:** Startup founder — MedJourney and a stealth AI biotech
+- **Focus:** AI for science, biomedical AI, AI for healthcare, multi-modal foundation models, computational pathology, spatial and single-cell genomics, generative models for biology
 - **Location:** Boston, MA
 - **Contact:** tianhao_luo@g.harvard.edu
 
