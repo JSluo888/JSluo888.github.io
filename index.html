@@ -668,12 +668,12 @@
             .hero { padding: 6rem 1.25rem 3rem; }
         }
 
-        /* ─── DOT GRID BG ─── */
+        /* ─── RIPPLE BG ─── */
         .dot-bg {
             position: fixed; inset: 0;
             width: 100vw; height: 100vh;
             z-index: 0; pointer-events: none;
-            opacity: .55;
+            opacity: .85;
         }
         .nav, .hero, section, .status-strip, footer, .mobile-menu, .scroll-prog {
             position: relative; z-index: 1;
@@ -1215,8 +1215,8 @@ if (lu) {
     lu.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
-// ─── DOT GRID BACKGROUND + PARALLAX ───
-(function dotGrid() {
+// ─── RIPPLE BACKGROUND ───
+(function ripples() {
     const canvas = document.getElementById('dotBg');
     if (!canvas) return;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1224,12 +1224,6 @@ if (lu) {
     const ctx = canvas.getContext('2d');
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     let w = 0, h = 0;
-    const spacing = 34;
-    const baseRadius = 1.1;
-    const hoverRadius = 2.6;
-    const influence = 140;
-    const mouse = { x: -9999, y: -9999, tx: -9999, ty: -9999 };
-    let scrollY = window.scrollY;
 
     function resize() {
         w = window.innerWidth;
@@ -1243,42 +1237,78 @@ if (lu) {
     resize();
     window.addEventListener('resize', resize);
 
+    const ripples = [];
+    const MAX = 40;
+
+    // Ambient slow ripples — drift in automatically
+    function spawnAmbient() {
+        ripples.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: 0,
+            maxR: 240 + Math.random() * 220,
+            life: 0,
+            maxLife: 280 + Math.random() * 180,
+            thickness: 1.2,
+            alpha: 0.20 + Math.random() * 0.12,
+            ambient: true
+        });
+        if (ripples.length > MAX) ripples.shift();
+    }
+    spawnAmbient();
+    setInterval(spawnAmbient, 1400);
+
+    // Cursor-trail ripples
+    let lastSpawn = 0, lastX = 0, lastY = 0;
     window.addEventListener('mousemove', e => {
-        mouse.tx = e.clientX;
-        mouse.ty = e.clientY;
+        const now = performance.now();
+        const dx = e.clientX - lastX, dy = e.clientY - lastY;
+        const moved = Math.sqrt(dx * dx + dy * dy);
+        if (now - lastSpawn > 110 && moved > 18) {
+            ripples.push({
+                x: e.clientX, y: e.clientY,
+                r: 0, maxR: 90 + Math.random() * 40,
+                life: 0, maxLife: 90,
+                thickness: 1.4, alpha: 0.45, ambient: false
+            });
+            if (ripples.length > MAX) ripples.shift();
+            lastSpawn = now; lastX = e.clientX; lastY = e.clientY;
+        }
     }, { passive: true });
-    window.addEventListener('scroll', () => { scrollY = window.scrollY; }, { passive: true });
+
+    // Click ripple — bigger, bolder
+    window.addEventListener('click', e => {
+        ripples.push({
+            x: e.clientX, y: e.clientY,
+            r: 0, maxR: 260, life: 0, maxLife: 110,
+            thickness: 2.2, alpha: 0.7, ambient: false
+        });
+        ripples.push({
+            x: e.clientX, y: e.clientY,
+            r: 0, maxR: 180, life: 0, maxLife: 90,
+            thickness: 1.8, alpha: 0.5, ambient: false, delay: 8
+        });
+        if (ripples.length > MAX) ripples.shift();
+    }, { passive: true });
 
     function draw() {
-        mouse.x += (mouse.tx - mouse.x) * 0.12;
-        mouse.y += (mouse.ty - mouse.y) * 0.12;
         ctx.clearRect(0, 0, w, h);
-
-        const parY = (scrollY * 0.15) % spacing;
-        const parX = (mouse.x - w / 2) * 0.012;
-
-        const cols = Math.ceil(w / spacing) + 2;
-        const rows = Math.ceil(h / spacing) + 2;
-
-        for (let i = -1; i < cols; i++) {
-            for (let j = -1; j < rows; j++) {
-                const x = i * spacing + spacing / 2 - parX;
-                const y = j * spacing + spacing / 2 - parY;
-                const dx = x - mouse.x;
-                const dy = y - mouse.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                let r = baseRadius;
-                let alpha = 0.22;
-                if (dist < influence) {
-                    const t = 1 - dist / influence;
-                    r = baseRadius + (hoverRadius - baseRadius) * t;
-                    alpha = 0.22 + 0.75 * t;
-                }
-                ctx.beginPath();
-                ctx.arc(x, y, r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(30, 95, 170, ${alpha})`;
-                ctx.fill();
-            }
+        for (let i = ripples.length - 1; i >= 0; i--) {
+            const p = ripples[i];
+            if (p.delay && p.delay > 0) { p.delay--; continue; }
+            p.life++;
+            const t = p.life / p.maxLife;
+            if (t >= 1) { ripples.splice(i, 1); continue; }
+            // Ease-out for radius, ease-out for fade
+            const rT = 1 - Math.pow(1 - t, 2.4);
+            p.r = p.maxR * rT;
+            const fade = 1 - t;
+            const a = p.alpha * fade * fade;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.lineWidth = p.thickness;
+            ctx.strokeStyle = `rgba(30, 95, 170, ${a})`;
+            ctx.stroke();
         }
         requestAnimationFrame(draw);
     }
