@@ -668,20 +668,6 @@
             .hero { padding: 6rem 1.25rem 3rem; }
         }
 
-        /* ─── RIPPLE BG ─── */
-        .dot-bg {
-            position: fixed; inset: 0;
-            width: 100vw; height: 100vh;
-            z-index: 0; pointer-events: none;
-            opacity: .85;
-        }
-        .nav, .hero, section, .status-strip, footer, .mobile-menu, .scroll-prog {
-            position: relative; z-index: 1;
-        }
-        .nav { z-index: 100; }
-        .mobile-menu { z-index: 105; }
-        .scroll-prog { z-index: 200; }
-
         /* ─── CUSTOM CURSOR ─── */
         @media (hover: hover) and (pointer: fine) {
             html, body { cursor: none; }
@@ -724,16 +710,12 @@
             }
         }
         @media (prefers-reduced-motion: reduce) {
-            .dot-bg { display: none; }
             .cursor-dot, .cursor-ring { display: none; }
             html, body, a, button, .btn { cursor: auto; }
         }
     </style>
 </head>
 <body>
-
-<!-- DOT GRID BACKGROUND -->
-<canvas class="dot-bg" id="dotBg" aria-hidden="true"></canvas>
 
 <!-- CUSTOM CURSOR -->
 <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
@@ -1221,106 +1203,6 @@ if (lu) {
     const d = new Date(document.lastModified);
     lu.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 }
-
-// ─── RIPPLE BACKGROUND ───
-(function ripples() {
-    const canvas = document.getElementById('dotBg');
-    if (!canvas) return;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) return;
-    const ctx = canvas.getContext('2d');
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    let w = 0, h = 0;
-
-    function resize() {
-        w = window.innerWidth;
-        h = window.innerHeight;
-        canvas.width = w * dpr;
-        canvas.height = h * dpr;
-        canvas.style.width = w + 'px';
-        canvas.style.height = h + 'px';
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    const ripples = [];
-    const MAX = 40;
-
-    // Ambient slow ripples — drift in automatically
-    function spawnAmbient() {
-        ripples.push({
-            x: Math.random() * w,
-            y: Math.random() * h,
-            r: 0,
-            maxR: 240 + Math.random() * 220,
-            life: 0,
-            maxLife: 280 + Math.random() * 180,
-            thickness: 1.2,
-            alpha: 0.20 + Math.random() * 0.12,
-            ambient: true
-        });
-        if (ripples.length > MAX) ripples.shift();
-    }
-    spawnAmbient();
-    setInterval(spawnAmbient, 1400);
-
-    // Cursor-trail ripples
-    let lastSpawn = 0, lastX = 0, lastY = 0;
-    window.addEventListener('mousemove', e => {
-        const now = performance.now();
-        const dx = e.clientX - lastX, dy = e.clientY - lastY;
-        const moved = Math.sqrt(dx * dx + dy * dy);
-        if (now - lastSpawn > 110 && moved > 18) {
-            ripples.push({
-                x: e.clientX, y: e.clientY,
-                r: 0, maxR: 90 + Math.random() * 40,
-                life: 0, maxLife: 90,
-                thickness: 1.4, alpha: 0.45, ambient: false
-            });
-            if (ripples.length > MAX) ripples.shift();
-            lastSpawn = now; lastX = e.clientX; lastY = e.clientY;
-        }
-    }, { passive: true });
-
-    // Click ripple — bigger, bolder
-    window.addEventListener('click', e => {
-        ripples.push({
-            x: e.clientX, y: e.clientY,
-            r: 0, maxR: 260, life: 0, maxLife: 110,
-            thickness: 2.2, alpha: 0.7, ambient: false
-        });
-        ripples.push({
-            x: e.clientX, y: e.clientY,
-            r: 0, maxR: 180, life: 0, maxLife: 90,
-            thickness: 1.8, alpha: 0.5, ambient: false, delay: 8
-        });
-        if (ripples.length > MAX) ripples.shift();
-    }, { passive: true });
-
-    function draw() {
-        ctx.clearRect(0, 0, w, h);
-        for (let i = ripples.length - 1; i >= 0; i--) {
-            const p = ripples[i];
-            if (p.delay && p.delay > 0) { p.delay--; continue; }
-            p.life++;
-            const t = p.life / p.maxLife;
-            if (t >= 1) { ripples.splice(i, 1); continue; }
-            // Ease-out for radius, ease-out for fade
-            const rT = 1 - Math.pow(1 - t, 2.4);
-            p.r = p.maxR * rT;
-            const fade = 1 - t;
-            const a = p.alpha * fade * fade;
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.lineWidth = p.thickness;
-            ctx.strokeStyle = `rgba(30, 95, 170, ${a})`;
-            ctx.stroke();
-        }
-        requestAnimationFrame(draw);
-    }
-    draw();
-})();
 
 // ─── CUSTOM CURSOR ───
 (function cursor() {
