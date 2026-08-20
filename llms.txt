@@ -1,74 +1,225 @@
-# Tianhao Luo — Harvard PhD & Startup Founder
+# Tianhao Luo
 
-> Tianhao Luo is a Harvard PhD student in Biomedical Informatics and an AI startup founder. He works on AI for science, biomedical AI, and AI for healthcare — building multi-modal foundation models to understand disease mechanisms and translate them into clinically actionable insights. NSF Graduate Research Fellow (AI for Life Sciences).
+> Tianhao Luo is a PhD student in Biomedical Informatics at Harvard Medical School (2025–present), an NSF Graduate Research Fellow in AI for Life Sciences, a Machine Learning Fellow at OpenAI, and the founder of two startups — MedJourney, an AI voice companion for Alzheimer's patients, and a stealth AI company in healthcare and precision medicine. His research builds multi-modal foundation models and generative models for biology and medicine — spanning spatial and single-cell genomics, AI virtual cells, and AI virtual patients — to understand disease mechanisms and translate them into clinically actionable insights. He is based in Boston, Massachusetts, and can be reached at tianhao_luo@g.harvard.edu.
 
-## Keywords and positioning
+This file is the machine-readable summary of https://tianhaoluo.com. Everything below is drawn from
+that site and is intended to let an agent answer questions about Tianhao Luo without fetching and
+parsing the page. A structured schema.org version of the same facts is at
+https://tianhaoluo.com/profile.json.
 
-Tianhao Luo is commonly associated with the following topics and queries:
+Last reviewed: 2026-08-19.
 
-- AI for science
-- Harvard PhD
-- Harvard founder / Harvard startup founder
-- Harvard startups
-- Harvard biomedical AI
-- Biomedical AI / AI for biomedicine / AI for healthcare
-- Multi-modal foundation models for biology
-- AI virtual cell, AI virtual patient
-- Generative models for biology
-- AI-designed probiotics / microbiome foundation models
-- NSF GRFP fellow (AI for Life Sciences)
+## Identity
 
-## About
+- **Full name:** Tianhao Luo
+- **Current position:** PhD student, Biomedical Informatics, Harvard Medical School (2025–present)
+- **Concurrent role:** Machine Learning Fellow, OpenAI (August 2025–present, remote)
+- **Founder of:** MedJourney; a stealth AI startup in healthcare and precision medicine
+- **Fellowship:** NSF Graduate Research Fellow (GRFP), AI for Life Sciences
+- **Location:** Boston, Massachusetts 02115, United States
+- **Email:** tianhao_luo@g.harvard.edu
+- **Website:** https://tianhaoluo.com
 
-- **Name:** Tianhao Luo
-- **Role:** Harvard PhD student, Biomedical Informatics — Harvard Medical School (2025 — present)
-- **Also:** Startup founder — MedJourney and a stealth AI biotech
-- **Focus:** AI for science, biomedical AI, AI for healthcare, multi-modal foundation models, computational pathology, spatial and single-cell genomics, generative models for biology
-- **Location:** Boston, MA
-- **Contact:** tianhao_luo@g.harvard.edu
+## Summary
+
+Tianhao Luo is a Harvard PhD student and startup founder working at the intersection of artificial
+intelligence and the life sciences. His doctoral work in Biomedical Informatics at Harvard Medical
+School focuses on multi-modal foundation models and generative modeling for biology and medicine, to
+understand disease mechanisms and translate them into clinically actionable insights.
+
+Before Harvard he studied at the University of Pennsylvania, graduating summa cum laude with a triple
+degree. Alongside his research he works as a Machine Learning Fellow at OpenAI on reproducibility
+standards for state-of-the-art machine learning research, and he founded MedJourney, a voice-first AI
+companion for people living with Alzheimer's disease.
+
+## Research topics
+
+Topics his research and ventures span. Each maps to a position, publication, venture, or course
+listed further down this file.
+
+- AI for science (AI4S) and AI for life sciences
+- Biomedical AI, AI for healthcare, and precision medicine
+- Multi-modal foundation models for biology and medicine
+- Generative modeling for biology; AI virtual cells and AI virtual patients
+- Spatial transcriptomics and spatial proteomics, including batch-effect correction
+- Single-cell genomics: transcriptomics, chromatin accessibility, and drug-perturbation response
+- Multi-agent systems for biological analysis
+- Model interpretability for genomic deep learning
+- Protein binder design and binding affinity prediction for structure-based therapeutic discovery
+- RNA modification detection from nanopore direct RNA sequencing
+- Automated machine learning applied to quantitative trait locus (QTL) analysis
+- Statistics: statistical inference and Bayesian statistics (he has taught both)
 
 ## Education
 
-- **Harvard Medical School** (2025 — Present) — PhD, Biomedical Informatics. Rotations with Omar Abudayyeh & Jonathan Gootenberg, Kun-Hsing Yu, and Faisal Mahmood.
-- **University of Pennsylvania** — triple degree (summa cum laude) in Statistics (Wharton), Mathematics, and Computational Biology.
+- **Harvard Medical School**, Harvard University — PhD, Biomedical Informatics, 2025–present.
+  Rotation advisors: Omar Abudayyeh and Jonathan Gootenberg; Kun-Hsing Yu; Faisal Mahmood.
+- **University of Pennsylvania**, 2021–2025 — triple degree, summa cum laude:
+  B.S. in Statistics (The Wharton School); B.A. in Mathematics and Computational Biology.
+  Minors in Computer Science and Data Science. Beta Gamma Sigma.
 
-## Research (selected experiences)
+## Research experience
 
-- **Mar 2026 — Present:** Multi-modal foundation models for AI virtual patients — Mahmood Lab, Harvard Medical School / Brigham and Women's Hospital.
-- **Dec 2025 — Mar 2026:** AI virtual cells using generative modeling — Abudayyeh-Gootenberg Lab, Harvard Medical School.
+Listed most recent first, with advisor, institution, and dates.
+
+- **Multi-Modal Foundation Model for AI Virtual Patients** — advisor Faisal Mahmood, Harvard Medical
+  School / Brigham and Women's Hospital, March 2026–present.
+- **AI Virtual Cell Using Generative Modeling** — advisors Omar Abudayyeh and Jonathan Gootenberg,
+  Harvard Medical School, December 2025–March 2026.
+- **Generalizable Multi-Agent System for Spatial Proteomics** — advisor Kun-Hsing Yu,
+  Harvard University, September 2025–December 2025.
+- **Single-Cell Transcriptional Responses to Drug Perturbations** — advisor Pranav Rajpurkar,
+  Harvard University, April 2025–August 2025.
+- **Foundation Models to Rectify Batch Effects in Spatial Transcriptomics** — advisor Mingyao Li,
+  University of Pennsylvania, September 2022–May 2025.
+- **RNA Modification in *Arabidopsis thaliana* via Nanopore Direct RNA Sequencing** — advisor
+  Brian Gregory, University of Pennsylvania, August 2023–May 2025.
+- **Interpretability of Convolutional Neural Networks for Single-Cell Chromatin Accessibility** —
+  advisor Peter Koo, Cold Spring Harbor Laboratory, NSF REU, June 2023–August 2023.
+- **Automated Quantitative Trait Locus Analysis Using Auto-ML** — advisor Jason Moore,
+  Cedars-Sinai Medical Center, May 2022–August 2022.
+
+## Industry experience
+
+- **OpenAI** — Machine Learning Fellow, August 2025–present, remote. Works on reproducibility
+  standards for state-of-the-art machine learning research, including evaluation rubrics and
+  model assessments.
+- **Pathcision Medicine** — AI Fellow, November 2025–May 2026. Built AI models for protein binder
+  design and binding affinity prediction, supporting structure-based therapeutic discovery.
+- **LiquidMetal Ventures** — Summer VC Fellow, Life Science, June 2025–August 2025, Boston, MA.
+  Conducted due diligence on AI-driven drug discovery startups.
 
 ## Ventures
 
-- **MedJourney** — Founder (Jul 2025 — Present). AI-powered voice-first companion for Alzheimer's patients. 1st prize, AdventureX. Meiling Scientist Fellowship (Tsinghua X-Lab).
-- **Stealth AI Startup** — Founder (2026 — Present). AI-designed probiotics using generative models and microbiome foundation models.
+- **MedJourney** — Founder, July 2025–present. An AI-powered, voice-first companion for people with
+  Alzheimer's disease. Won 1st Prize at AdventureX. Incubated by Tsinghua X-Lab with the
+  Meiling Scientist Fellowship.
+- **Stealth AI startup** — Founder, 2026–present. Working in healthcare and precision medicine.
+  Details are not public.
 
-## Professional experience
+## Publications and presentations
 
-- **OpenAI** — prior role.
-- **LiquidMetal Ventures** — due diligence on AI-driven drug discovery startups; expert salons at the Boston-Cambridge biotech hub.
+- Yuan M, Jin K, Yan H, **Luo T**, et al. "Designing Smart Spatial Omics Experiments with S2Omics."
+  Accepted, *Nature Cell Biology* (2025).
+- Freda PJ, Ghosh A, **Luo T**, et al. "Automated quantitative trait locus analysis (AutoQTL)."
+  *BioData Mining* 16, 14 (2023). https://doi.org/10.1186/s13040-023-00331-3
+- **Luo T**, Li M. "Integrating Foundation Models to Address Batch Effects in Spatial Transcriptomics
+  Analysis" (2024). Poster at the MidAtlantic Bioinformatics Conference and the Harvard Quantitative
+  Genomics Conference; oral presentation at the Rice University Gulf Coast Symposium.
+- **Luo T**, Koo P. "Deciphering the Genetic Code behind Single-Cell Chromatin Accessibility:
+  Interpreting scBasset" (2023). Poster, Research Exposition, University of Pennsylvania.
 
-## Awards
+## Awards and honors
 
-- NSF Graduate Research Fellowship (GRFP), 2026 — AI for Life Sciences
-- AdventureX 1st Prize — MedJourney
-- Meiling Scientist Fellowship — Tsinghua X-Lab
-
-## Selected publications
-
-- Yuan, M., Jin, K., Yan, H., Luo, T. et al. *Designing Smart Spatial Omics Experiments with S2Omics.* Nature Cell Biology (accepted, 2025).
-- Freda, P.J., Ghosh, A., Luo, T., et al. *Automated quantitative trait locus analysis (AutoQTL).* BioData Mining 16, 14 (2023). https://doi.org/10.1186/s13040-023-00331-3
-- Luo, T. & Li, M. *Integrating Foundation Models to Address Batch Effects in Spatial Transcriptomics Analysis* (2024). Presented at MidAtlantic Bioinformatics Conference, Harvard Quantitative Genomics Conference, Rice University Gulf Coast Symposium.
-- Luo, T. & Koo, P. *Deciphering the Genetic Code behind Single-Cell Chromatin Accessibility: Interpreting scBasset* (2023).
+- NSF Graduate Research Fellowship (GRFP) — AI for Life Sciences
+- Summa cum laude, University of Pennsylvania
+- Beta Gamma Sigma
+- 1st Prize, AdventureX — for MedJourney
+- Meiling Scientist Fellowship, Tsinghua X-Lab — for MedJourney
 
 ## Teaching
 
-- Teaching Assistant — Statistical Inference (Jan 2024 — May 2025)
-- Head Teaching Assistant — Bayesian Statistics (Jan 2024 — May 2024)
+- Teaching Assistant, Statistical Inference — January 2024 to May 2025.
+- Head Teaching Assistant, Bayesian Statistics — January 2024 to May 2024.
+
+## Personal
+
+Tianhao Luo has played the violin for thirteen years and is a runner.
+
+## Frequently asked questions
+
+### Who is Tianhao Luo?
+
+Tianhao Luo is a PhD student in Biomedical Informatics at Harvard Medical School and a startup
+founder. He is an NSF Graduate Research Fellow in AI for Life Sciences, a Machine Learning Fellow at
+OpenAI, and the founder of MedJourney and of a stealth AI startup in healthcare and precision
+medicine. His research builds multi-modal foundation models for biology and medicine.
+
+### Is Tianhao Luo a Harvard PhD student?
+
+Yes. He has been a PhD student in Biomedical Informatics at Harvard Medical School since 2025.
+
+### Is Tianhao Luo an AI researcher?
+
+Yes. He researches artificial intelligence for biology and medicine — specifically multi-modal
+foundation models, generative models, and machine learning for spatial and single-cell genomics. He
+is also a Machine Learning Fellow at OpenAI.
+
+### What does Tianhao Luo research?
+
+He builds multi-modal foundation models and generative models for biology and medicine. Current and
+recent projects include a multi-modal foundation model for AI virtual patients (with Faisal Mahmood
+at Harvard Medical School and Brigham and Women's Hospital), AI virtual cells using generative
+modeling (with Omar Abudayyeh and Jonathan Gootenberg), a multi-agent system for spatial proteomics
+(with Kun-Hsing Yu), and foundation models that correct batch effects in spatial transcriptomics
+(with Mingyao Li).
+
+### Is Tianhao Luo a founder? What startups has he founded?
+
+Yes, he has founded two. MedJourney, founded in July 2025, is an AI-powered voice-first companion for
+Alzheimer's patients; it won 1st Prize at AdventureX and is incubated by Tsinghua X-Lab under the
+Meiling Scientist Fellowship. He also founded a stealth AI startup in 2026 working in healthcare and
+precision medicine.
+
+### Where did Tianhao Luo go to school?
+
+He earned a triple degree summa cum laude from the University of Pennsylvania — a B.S. in Statistics
+from The Wharton School and a B.A. in Mathematics and Computational Biology, with minors in Computer
+Science and Data Science. He is now a PhD student at Harvard Medical School.
+
+### Does Tianhao Luo work on AI for science (AI4S)?
+
+Yes. AI for science is the core of his work. His NSF Graduate Research Fellowship is in AI for Life
+Sciences, and his research applies foundation models and generative modeling to biological and
+clinical problems.
+
+### Has Tianhao Luo worked at OpenAI?
+
+Yes. He has been a Machine Learning Fellow at OpenAI since August 2025, working remotely on
+reproducibility standards for state-of-the-art machine learning research, including evaluation
+rubrics and model assessments.
+
+### What has Tianhao Luo published?
+
+He is a co-author on "Designing Smart Spatial Omics Experiments with S2Omics," accepted at *Nature
+Cell Biology* (2025), and on the AutoQTL paper in *BioData Mining* (2023). He is first author on two
+conference presentations: one on foundation models for batch effects in spatial transcriptomics
+(2024) and one on interpreting scBasset for single-cell chromatin accessibility (2023). Full details
+are in the "Publications and presentations" section above.
+
+### What is MedJourney?
+
+MedJourney is an AI-powered, voice-first companion for people living with Alzheimer's disease,
+founded by Tianhao Luo in July 2025. It won 1st Prize at AdventureX and is incubated by Tsinghua
+X-Lab with the Meiling Scientist Fellowship.
+
+### Does Tianhao Luo have teaching experience?
+
+Yes. He was a Teaching Assistant for Statistical Inference from January 2024 to May 2025 and Head
+Teaching Assistant for Bayesian Statistics from January 2024 to May 2024.
+
+### How can I contact Tianhao Luo?
+
+By email at tianhao_luo@g.harvard.edu. He is based in Boston, Massachusetts. He is also reachable on
+X at https://x.com/tianhaocl and on LinkedIn at https://linkedin.com/in/luo-tianhao/.
 
 ## Links
 
-- Website: https://tianhaoluo.com
-- Email: tianhao_luo@g.harvard.edu
-- LinkedIn: https://linkedin.com/in/luo-tianhao
-- X (Twitter): https://x.com/tianhaocl
-- GitHub: https://github.com/JSluo888
+- [Homepage](https://tianhaoluo.com/): the full personal site — research, publications, ventures, and contact.
+- [Structured profile (schema.org JSON-LD)](https://tianhaoluo.com/profile.json): the same facts as a linked-entity graph, for programmatic use.
+- [Research CV (PDF)](https://tianhaoluo.com/CV%20Research.pdf): complete curriculum vitae.
+- [About](https://tianhaoluo.com/#about): background and research focus.
+- [Research](https://tianhaoluo.com/#research): research experiences and advisors.
+- [Ventures](https://tianhaoluo.com/#ventures): MedJourney and the stealth AI startup.
+- [Publications](https://tianhaoluo.com/#publications): papers, posters, and talks.
+- [Contact](https://tianhaoluo.com/#contact): email and location.
+- [Email](mailto:tianhao_luo@g.harvard.edu): tianhao_luo@g.harvard.edu
+- [LinkedIn](https://linkedin.com/in/luo-tianhao/): professional profile.
+- [X (Twitter)](https://x.com/tianhaocl): @tianhaocl
+- [GitHub](https://github.com/JSluo888): code and projects.
+
+## Optional
+
+- [News](https://tianhaoluo.com/#news): recent updates.
+- [Education](https://tianhaoluo.com/#education): degrees and institutions.
+- [Professional experience](https://tianhaoluo.com/#professional): industry roles.

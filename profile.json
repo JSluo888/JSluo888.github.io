@@ -1,0 +1,769 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://tianhaoluo.com/#website",
+      "@type": "WebSite",
+      "url": "https://tianhaoluo.com/",
+      "name": "Tianhao Luo",
+      "alternateName": "tianhaoluo.com",
+      "description": "Personal site of Tianhao Luo, a Harvard PhD student in Biomedical Informatics, NSF Graduate Research Fellow in AI for Life Sciences, and startup founder working on AI for science, biomedical AI, and precision medicine.",
+      "inLanguage": "en",
+      "about": { "@id": "https://tianhaoluo.com/#person" },
+      "mainEntity": { "@id": "https://tianhaoluo.com/#person" },
+      "publisher": { "@id": "https://tianhaoluo.com/#person" },
+      "copyrightHolder": { "@id": "https://tianhaoluo.com/#person" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#webpage",
+      "@type": ["ProfilePage", "WebPage"],
+      "url": "https://tianhaoluo.com/",
+      "name": "Tianhao Luo — Harvard PhD, AI for Science Researcher & Founder",
+      "description": "Profile of Tianhao Luo, a PhD student in Biomedical Informatics at Harvard Medical School and founder of two AI startups. He builds multi-modal foundation models for biology and medicine and is an NSF Graduate Research Fellow in AI for Life Sciences.",
+      "inLanguage": "en",
+      "dateModified": "2026-08-19",
+      "isPartOf": { "@id": "https://tianhaoluo.com/#website" },
+      "about": { "@id": "https://tianhaoluo.com/#person" },
+      "mainEntity": { "@id": "https://tianhaoluo.com/#person" },
+      "primaryImageOfPage": { "@id": "https://tianhaoluo.com/#primaryimage" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#primaryimage",
+      "@type": "ImageObject",
+      "url": "https://tianhaoluo.com/grad.JPG",
+      "contentUrl": "https://tianhaoluo.com/grad.JPG",
+      "caption": "Tianhao Luo in a suit and University of Pennsylvania graduation stole, standing on Broad Street with Philadelphia City Hall behind him."
+    },
+    {
+      "@id": "https://tianhaoluo.com/#cv",
+      "@type": ["DigitalDocument", "CreativeWork"],
+      "name": "Tianhao Luo — Research CV",
+      "url": "https://tianhaoluo.com/CV%20Research.pdf",
+      "encodingFormat": "application/pdf",
+      "inLanguage": "en",
+      "author": { "@id": "https://tianhaoluo.com/#person" },
+      "about": { "@id": "https://tianhaoluo.com/#person" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#llmstxt",
+      "@type": "CreativeWork",
+      "name": "Tianhao Luo — llms.txt profile for AI agents",
+      "url": "https://tianhaoluo.com/llms.txt",
+      "encodingFormat": "text/markdown",
+      "inLanguage": "en",
+      "author": { "@id": "https://tianhaoluo.com/#person" },
+      "about": { "@id": "https://tianhaoluo.com/#person" }
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#person",
+      "@type": "Person",
+      "name": "Tianhao Luo",
+      "alternateName": ["Luo Tianhao", "T. Luo"],
+      "givenName": "Tianhao",
+      "familyName": "Luo",
+      "url": "https://tianhaoluo.com/",
+      "mainEntityOfPage": { "@id": "https://tianhaoluo.com/#webpage" },
+      "image": { "@id": "https://tianhaoluo.com/#primaryimage" },
+      "description": "Tianhao Luo is a PhD student in Biomedical Informatics at Harvard Medical School and an NSF Graduate Research Fellow in AI for Life Sciences. He builds multi-modal foundation models and generative models for biology and medicine — AI virtual cells and AI virtual patients, spatial and single-cell genomics — to understand disease mechanisms and translate them into clinically actionable insights. He is also the founder of MedJourney, an AI-powered voice-first companion for Alzheimer's patients, and of a stealth AI startup in healthcare and precision medicine. He graduated summa cum laude from the University of Pennsylvania with a B.S. in Statistics from The Wharton School and a B.A. in Mathematics and Computational Biology.",
+      "disambiguatingDescription": "Harvard PhD student in Biomedical Informatics, AI researcher, and AI startup founder based in Boston, Massachusetts.",
+      "jobTitle": [
+        "PhD Student in Biomedical Informatics",
+        "AI Researcher",
+        "Machine Learning Fellow",
+        "Founder"
+      ],
+      "email": "tianhao_luo@g.harvard.edu",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Boston",
+        "addressRegion": "MA",
+        "postalCode": "02115",
+        "addressCountry": "US"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "name": "Boston, Massachusetts, United States"
+      },
+      "knowsLanguage": [
+        { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "AI for Science",
+        "AI for Life Sciences",
+        "Biomedical AI",
+        "AI for Healthcare",
+        "Precision Medicine",
+        "Foundation Models",
+        "Multi-Modal Foundation Models",
+        "Generative Modeling",
+        "Machine Learning",
+        "Computational Biology",
+        "Biomedical Informatics",
+        "AI Virtual Cell",
+        "AI Virtual Patient",
+        "Spatial Transcriptomics",
+        "Spatial Proteomics",
+        "Single-Cell Genomics",
+        "Single-Cell Chromatin Accessibility",
+        "Drug Perturbation Response Prediction",
+        "Protein Binder Design",
+        "Binding Affinity Prediction",
+        "Structure-Based Therapeutic Discovery",
+        "Multi-Agent Systems",
+        "Nanopore Direct RNA Sequencing",
+        "RNA Modification",
+        "Quantitative Trait Locus Analysis",
+        "Automated Machine Learning",
+        "Statistical Inference",
+        "Bayesian Statistics",
+        "Technology Entrepreneurship"
+      ],
+      "hasOccupation": [
+        { "@id": "https://tianhaoluo.com/#occupation-ai-researcher" },
+        { "@id": "https://tianhaoluo.com/#occupation-founder" }
+      ],
+      "affiliation": [
+        { "@id": "https://tianhaoluo.com/#org-hms" },
+        { "@id": "https://tianhaoluo.com/#org-harvard" },
+        { "@id": "https://tianhaoluo.com/#role-phd-hms" }
+      ],
+      "alumniOf": [
+        { "@id": "https://tianhaoluo.com/#org-penn" },
+        { "@id": "https://tianhaoluo.com/#org-wharton" },
+        { "@id": "https://tianhaoluo.com/#role-undergrad-penn" }
+      ],
+      "worksFor": [
+        { "@id": "https://tianhaoluo.com/#role-openai" },
+        { "@id": "https://tianhaoluo.com/#role-pathcision" },
+        { "@id": "https://tianhaoluo.com/#role-liquidmetal" },
+        { "@id": "https://tianhaoluo.com/#role-medjourney" },
+        { "@id": "https://tianhaoluo.com/#role-stealth" }
+      ],
+      "memberOf": { "@id": "https://tianhaoluo.com/#org-beta-gamma-sigma" },
+      "funding": { "@id": "https://tianhaoluo.com/#grant-nsf-grfp" },
+      "hasCredential": [
+        { "@id": "https://tianhaoluo.com/#credential-bs-statistics" },
+        { "@id": "https://tianhaoluo.com/#credential-ba-math-compbio" }
+      ],
+      "award": [
+        "NSF Graduate Research Fellowship (GRFP) — AI for Life Sciences",
+        "Summa Cum Laude, University of Pennsylvania",
+        "Beta Gamma Sigma",
+        "AdventureX 1st Prize (MedJourney)",
+        "Meiling Scientist Fellowship, Tsinghua X-Lab (MedJourney)"
+      ],
+      "subjectOf": [
+        { "@id": "https://tianhaoluo.com/#webpage" },
+        { "@id": "https://tianhaoluo.com/#cv" },
+        { "@id": "https://tianhaoluo.com/#llmstxt" }
+      ],
+      "sameAs": [
+        "https://x.com/tianhaocl",
+        "https://linkedin.com/in/luo-tianhao/",
+        "https://github.com/JSluo888"
+      ]
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#occupation-ai-researcher",
+      "@type": "Occupation",
+      "name": "AI Researcher in Biomedical Informatics",
+      "occupationalCategory": "Artificial intelligence and biomedical informatics research",
+      "description": "Develops artificial intelligence methods for the life sciences: multi-modal foundation models, generative models for biology, AI virtual cells and AI virtual patients, and spatial and single-cell genomics.",
+      "skills": [
+        "Machine Learning",
+        "Foundation Models",
+        "Generative Modeling",
+        "Computational Biology",
+        "Statistics"
+      ]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#occupation-founder",
+      "@type": "Occupation",
+      "name": "Startup Founder",
+      "occupationalCategory": "Entrepreneurship in AI and healthcare",
+      "description": "Founds and builds AI companies in healthcare and precision medicine, including MedJourney and a stealth AI startup.",
+      "skills": ["Entrepreneurship", "AI Product Development", "Healthcare Technology"]
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#grant-nsf-grfp",
+      "@type": ["MonetaryGrant", "Grant"],
+      "name": "NSF Graduate Research Fellowship (GRFP) — AI for Life Sciences",
+      "description": "National Science Foundation Graduate Research Fellowship awarded to Tianhao Luo in the AI for Life Sciences area.",
+      "funder": { "@id": "https://tianhaoluo.com/#org-nsf" },
+      "fundedItem": { "@id": "https://tianhaoluo.com/#person" }
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#role-phd-hms",
+      "@type": "OrganizationRole",
+      "roleName": "PhD Student, Biomedical Informatics",
+      "name": "PhD in Biomedical Informatics, Harvard Medical School",
+      "startDate": "2025",
+      "description": "Doctoral study in Biomedical Informatics at Harvard Medical School, with laboratory rotations advised by Omar Abudayyeh and Jonathan Gootenberg, Kun-Hsing Yu, and Faisal Mahmood.",
+      "affiliation": { "@id": "https://tianhaoluo.com/#org-hms" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#role-undergrad-penn",
+      "@type": "OrganizationRole",
+      "roleName": "Undergraduate Student",
+      "name": "Triple degree, University of Pennsylvania",
+      "startDate": "2021",
+      "endDate": "2025",
+      "description": "Graduated summa cum laude with a B.S. in Statistics from The Wharton School and a B.A. in Mathematics and Computational Biology, with minors in Computer Science and Data Science. Member of Beta Gamma Sigma.",
+      "alumniOf": { "@id": "https://tianhaoluo.com/#org-penn" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#role-openai",
+      "@type": "OrganizationRole",
+      "roleName": "Machine Learning Fellow",
+      "name": "Machine Learning Fellow, OpenAI",
+      "startDate": "2025-08",
+      "description": "Remote fellowship advancing reproducibility standards for state-of-the-art machine learning research through evaluation rubrics and model assessments.",
+      "worksFor": { "@id": "https://tianhaoluo.com/#org-openai" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#role-pathcision",
+      "@type": "OrganizationRole",
+      "roleName": "AI Fellow",
+      "name": "AI Fellow, Pathcision Medicine",
+      "startDate": "2025-11",
+      "endDate": "2026-05",
+      "description": "Built AI models for protein binder design and binding affinity prediction, supporting structure-based therapeutic discovery.",
+      "worksFor": { "@id": "https://tianhaoluo.com/#org-pathcision" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#role-liquidmetal",
+      "@type": "OrganizationRole",
+      "roleName": "Summer VC Fellow, Life Science",
+      "name": "Summer VC Fellow (Life Science), LiquidMetal Ventures",
+      "startDate": "2025-06",
+      "endDate": "2025-08",
+      "description": "Conducted due diligence on AI-driven drug discovery startups, based in Boston, Massachusetts.",
+      "worksFor": { "@id": "https://tianhaoluo.com/#org-liquidmetal" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#role-medjourney",
+      "@type": "OrganizationRole",
+      "roleName": "Founder",
+      "name": "Founder, MedJourney",
+      "startDate": "2025-07",
+      "description": "Founded MedJourney, an AI-powered voice-first companion for Alzheimer's patients.",
+      "worksFor": { "@id": "https://tianhaoluo.com/#org-medjourney" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#role-stealth",
+      "@type": "OrganizationRole",
+      "roleName": "Founder",
+      "name": "Founder, stealth AI startup",
+      "startDate": "2026",
+      "description": "Founded a stealth AI startup working in healthcare and precision medicine.",
+      "worksFor": { "@id": "https://tianhaoluo.com/#org-stealth" }
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#credential-bs-statistics",
+      "@type": "EducationalOccupationalCredential",
+      "name": "Bachelor of Science in Statistics",
+      "credentialCategory": "Bachelor's Degree",
+      "educationalLevel": "Undergraduate",
+      "description": "B.S. in Statistics, The Wharton School, University of Pennsylvania. Awarded summa cum laude.",
+      "recognizedBy": { "@id": "https://tianhaoluo.com/#org-wharton" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#credential-ba-math-compbio",
+      "@type": "EducationalOccupationalCredential",
+      "name": "Bachelor of Arts in Mathematics and Computational Biology",
+      "credentialCategory": "Bachelor's Degree",
+      "educationalLevel": "Undergraduate",
+      "description": "B.A. in Mathematics and Computational Biology, University of Pennsylvania, with minors in Computer Science and Data Science. Awarded summa cum laude.",
+      "recognizedBy": { "@id": "https://tianhaoluo.com/#org-penn" }
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#org-harvard",
+      "@type": ["CollegeOrUniversity", "EducationalOrganization"],
+      "name": "Harvard University",
+      "url": "https://www.harvard.edu/",
+      "sameAs": ["https://www.wikidata.org/wiki/Q13371", "https://en.wikipedia.org/wiki/Harvard_University"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-hms",
+      "@type": ["CollegeOrUniversity", "EducationalOrganization"],
+      "name": "Harvard Medical School",
+      "url": "https://hms.harvard.edu/",
+      "parentOrganization": { "@id": "https://tianhaoluo.com/#org-harvard" },
+      "sameAs": ["https://www.wikidata.org/wiki/Q49121", "https://en.wikipedia.org/wiki/Harvard_Medical_School"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-bwh",
+      "@type": ["Hospital", "MedicalOrganization"],
+      "name": "Brigham and Women's Hospital",
+      "url": "https://www.brighamandwomens.org/",
+      "sameAs": ["https://www.wikidata.org/wiki/Q2900977", "https://en.wikipedia.org/wiki/Brigham_and_Women%27s_Hospital"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-penn",
+      "@type": ["CollegeOrUniversity", "EducationalOrganization"],
+      "name": "University of Pennsylvania",
+      "alternateName": "Penn",
+      "url": "https://www.upenn.edu/",
+      "sameAs": ["https://www.wikidata.org/wiki/Q49117", "https://en.wikipedia.org/wiki/University_of_Pennsylvania"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-wharton",
+      "@type": ["CollegeOrUniversity", "EducationalOrganization"],
+      "name": "The Wharton School",
+      "url": "https://www.wharton.upenn.edu/",
+      "parentOrganization": { "@id": "https://tianhaoluo.com/#org-penn" },
+      "sameAs": ["https://www.wikidata.org/wiki/Q1329269", "https://en.wikipedia.org/wiki/Wharton_School"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-cshl",
+      "@type": ["ResearchOrganization", "Organization"],
+      "name": "Cold Spring Harbor Laboratory",
+      "url": "https://www.cshl.edu/",
+      "sameAs": ["https://www.wikidata.org/wiki/Q609768", "https://en.wikipedia.org/wiki/Cold_Spring_Harbor_Laboratory"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-cedars-sinai",
+      "@type": ["MedicalOrganization", "Organization"],
+      "name": "Cedars-Sinai Medical Center",
+      "url": "https://www.cedars-sinai.org/",
+      "sameAs": ["https://www.wikidata.org/wiki/Q1052562", "https://en.wikipedia.org/wiki/Cedars-Sinai_Medical_Center"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-nsf",
+      "@type": ["GovernmentOrganization", "Organization"],
+      "name": "National Science Foundation",
+      "alternateName": "NSF",
+      "url": "https://www.nsf.gov/",
+      "sameAs": ["https://www.wikidata.org/wiki/Q304878", "https://en.wikipedia.org/wiki/National_Science_Foundation"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-openai",
+      "@type": "Organization",
+      "name": "OpenAI",
+      "url": "https://openai.com/",
+      "sameAs": ["https://www.wikidata.org/wiki/Q21708200", "https://en.wikipedia.org/wiki/OpenAI"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-pathcision",
+      "@type": "Organization",
+      "name": "Pathcision Medicine",
+      "url": "https://pathcisionmedicine.com/"
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-liquidmetal",
+      "@type": "Organization",
+      "name": "LiquidMetal Ventures",
+      "url": "https://www.liquidmetalvc.com/"
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-xlab",
+      "@type": "Organization",
+      "name": "Tsinghua X-Lab",
+      "url": "https://www.x-lab.tsinghua.edu.cn/"
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-medjourney",
+      "@type": "Organization",
+      "name": "MedJourney",
+      "description": "AI-powered voice-first companion for Alzheimer's patients. Winner of 1st Prize at AdventureX; incubated by Tsinghua X-Lab with the Meiling Scientist Fellowship.",
+      "foundingDate": "2025-07",
+      "founder": { "@id": "https://tianhaoluo.com/#person" },
+      "award": "AdventureX 1st Prize",
+      "sponsor": { "@id": "https://tianhaoluo.com/#org-xlab" },
+      "knowsAbout": ["Alzheimer's Disease Care", "Voice AI", "AI for Healthcare"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-stealth",
+      "@type": "Organization",
+      "name": "Stealth AI Startup",
+      "description": "A stealth-mode AI startup founded by Tianhao Luo in healthcare and precision medicine.",
+      "foundingDate": "2026",
+      "founder": { "@id": "https://tianhaoluo.com/#person" },
+      "knowsAbout": ["Artificial Intelligence", "Healthcare", "Precision Medicine"]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#org-beta-gamma-sigma",
+      "@type": "Organization",
+      "name": "Beta Gamma Sigma",
+      "url": "https://www.betagammasigma.org/"
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#advisor-mahmood",
+      "@type": "Person",
+      "name": "Faisal Mahmood",
+      "affiliation": [
+        { "@id": "https://tianhaoluo.com/#org-hms" },
+        { "@id": "https://tianhaoluo.com/#org-bwh" }
+      ]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#advisor-abudayyeh",
+      "@type": "Person",
+      "name": "Omar Abudayyeh",
+      "affiliation": { "@id": "https://tianhaoluo.com/#org-hms" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#advisor-gootenberg",
+      "@type": "Person",
+      "name": "Jonathan Gootenberg",
+      "affiliation": { "@id": "https://tianhaoluo.com/#org-hms" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#advisor-yu",
+      "@type": "Person",
+      "name": "Kun-Hsing Yu",
+      "affiliation": { "@id": "https://tianhaoluo.com/#org-harvard" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#advisor-rajpurkar",
+      "@type": "Person",
+      "name": "Pranav Rajpurkar",
+      "affiliation": { "@id": "https://tianhaoluo.com/#org-harvard" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#advisor-li",
+      "@type": "Person",
+      "name": "Mingyao Li",
+      "affiliation": { "@id": "https://tianhaoluo.com/#org-penn" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#advisor-gregory",
+      "@type": "Person",
+      "name": "Brian Gregory",
+      "affiliation": { "@id": "https://tianhaoluo.com/#org-penn" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#advisor-koo",
+      "@type": "Person",
+      "name": "Peter Koo",
+      "affiliation": { "@id": "https://tianhaoluo.com/#org-cshl" }
+    },
+    {
+      "@id": "https://tianhaoluo.com/#advisor-moore",
+      "@type": "Person",
+      "name": "Jason Moore",
+      "affiliation": { "@id": "https://tianhaoluo.com/#org-cedars-sinai" }
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#research-experience",
+      "@type": "ItemList",
+      "name": "Research experience of Tianhao Luo",
+      "description": "Research positions held by Tianhao Luo, with advisor, host institution, and dates, listed most recent first.",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://tianhaoluo.com/#research-mahmood",
+            "@type": "Role",
+            "name": "Multi-Modal Foundation Model for AI Virtual Patients",
+            "roleName": "Researcher",
+            "startDate": "2026-03",
+            "description": "Research on multi-modal foundation models for AI virtual patients, advised by Dr. Faisal Mahmood at Harvard Medical School and Brigham and Women's Hospital.",
+            "affiliation": [
+              { "@id": "https://tianhaoluo.com/#org-hms" },
+              { "@id": "https://tianhaoluo.com/#org-bwh" }
+            ],
+            "contributor": { "@id": "https://tianhaoluo.com/#advisor-mahmood" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://tianhaoluo.com/#research-abudayyeh-gootenberg",
+            "@type": "Role",
+            "name": "AI Virtual Cell Using Generative Modeling",
+            "roleName": "Researcher",
+            "startDate": "2025-12",
+            "endDate": "2026-03",
+            "description": "Research on AI virtual cells using generative modeling, advised by Drs. Omar Abudayyeh and Jonathan Gootenberg at Harvard Medical School.",
+            "affiliation": { "@id": "https://tianhaoluo.com/#org-hms" },
+            "contributor": [
+              { "@id": "https://tianhaoluo.com/#advisor-abudayyeh" },
+              { "@id": "https://tianhaoluo.com/#advisor-gootenberg" }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "https://tianhaoluo.com/#research-yu",
+            "@type": "Role",
+            "name": "Generalizable Multi-Agent System for Spatial Proteomics",
+            "roleName": "Researcher",
+            "startDate": "2025-09",
+            "endDate": "2025-12",
+            "description": "Research on a generalizable multi-agent system for spatial proteomics, advised by Dr. Kun-Hsing Yu at Harvard University.",
+            "affiliation": { "@id": "https://tianhaoluo.com/#org-harvard" },
+            "contributor": { "@id": "https://tianhaoluo.com/#advisor-yu" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@id": "https://tianhaoluo.com/#research-rajpurkar",
+            "@type": "Role",
+            "name": "Understanding Single-Cell Transcriptional Responses to Drug Perturbations",
+            "roleName": "Researcher",
+            "startDate": "2025-04",
+            "endDate": "2025-08",
+            "description": "Research on single-cell transcriptional responses to drug perturbations, advised by Dr. Pranav Rajpurkar at Harvard University.",
+            "affiliation": { "@id": "https://tianhaoluo.com/#org-harvard" },
+            "contributor": { "@id": "https://tianhaoluo.com/#advisor-rajpurkar" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@id": "https://tianhaoluo.com/#research-li",
+            "@type": "Role",
+            "name": "Integrating Foundation Models to Rectify Batch Effects in Spatial Transcriptomics",
+            "roleName": "Researcher",
+            "startDate": "2022-09",
+            "endDate": "2025-05",
+            "description": "Research on foundation models for correcting batch effects in spatial transcriptomics, advised by Dr. Mingyao Li at the University of Pennsylvania.",
+            "affiliation": { "@id": "https://tianhaoluo.com/#org-penn" },
+            "contributor": { "@id": "https://tianhaoluo.com/#advisor-li" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@id": "https://tianhaoluo.com/#research-gregory",
+            "@type": "Role",
+            "name": "RNA Modification in Arabidopsis thaliana via Nanopore Direct RNA Sequencing",
+            "roleName": "Researcher",
+            "startDate": "2023-08",
+            "endDate": "2025-05",
+            "description": "Research on RNA modification in Arabidopsis thaliana using nanopore direct RNA sequencing, advised by Dr. Brian Gregory at the University of Pennsylvania.",
+            "affiliation": { "@id": "https://tianhaoluo.com/#org-penn" },
+            "contributor": { "@id": "https://tianhaoluo.com/#advisor-gregory" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@id": "https://tianhaoluo.com/#research-koo",
+            "@type": "Role",
+            "name": "Improving Interpretability of CNNs for Single-Cell Chromatin Accessibility",
+            "roleName": "NSF REU Researcher",
+            "startDate": "2023-06",
+            "endDate": "2023-08",
+            "description": "NSF Research Experiences for Undergraduates project on the interpretability of convolutional neural networks for single-cell chromatin accessibility, advised by Dr. Peter Koo at Cold Spring Harbor Laboratory.",
+            "affiliation": { "@id": "https://tianhaoluo.com/#org-cshl" },
+            "contributor": { "@id": "https://tianhaoluo.com/#advisor-koo" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@id": "https://tianhaoluo.com/#research-moore",
+            "@type": "Role",
+            "name": "Automated Quantitative Trait Locus Analysis Using Auto-ML",
+            "roleName": "Researcher",
+            "startDate": "2022-05",
+            "endDate": "2022-08",
+            "description": "Research on automated quantitative trait locus analysis using automated machine learning, advised by Dr. Jason Moore at Cedars-Sinai Medical Center.",
+            "affiliation": { "@id": "https://tianhaoluo.com/#org-cedars-sinai" },
+            "contributor": { "@id": "https://tianhaoluo.com/#advisor-moore" }
+          }
+        }
+      ]
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#teaching",
+      "@type": "ItemList",
+      "name": "Teaching experience of Tianhao Luo",
+      "numberOfItems": 2,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://tianhaoluo.com/#teaching-statistical-inference",
+            "@type": "Role",
+            "name": "Statistical Inference",
+            "roleName": "Teaching Assistant",
+            "startDate": "2024-01",
+            "endDate": "2025-05"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://tianhaoluo.com/#teaching-bayesian-statistics",
+            "@type": "Role",
+            "name": "Bayesian Statistics",
+            "roleName": "Head Teaching Assistant",
+            "startDate": "2024-01",
+            "endDate": "2024-05"
+          }
+        }
+      ]
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#periodical-nature-cell-biology",
+      "@type": "Periodical",
+      "name": "Nature Cell Biology",
+      "issn": ["1465-7392", "1476-4679"],
+      "url": "https://www.nature.com/ncb/",
+      "publisher": { "@type": "Organization", "name": "Springer Nature" },
+      "sameAs": "https://www.wikidata.org/wiki/Q1574111"
+    },
+    {
+      "@id": "https://tianhaoluo.com/#periodical-biodata-mining",
+      "@type": "Periodical",
+      "name": "BioData Mining",
+      "issn": "1756-0381",
+      "url": "https://biodatamining.biomedcentral.com/",
+      "publisher": { "@type": "Organization", "name": "BioMed Central" }
+    },
+
+    {
+      "@id": "https://tianhaoluo.com/#publications",
+      "@type": "ItemList",
+      "name": "Publications and presentations by Tianhao Luo",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 4,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@id": "https://tianhaoluo.com/#pub-s2omics" } },
+        { "@type": "ListItem", "position": 2, "item": { "@id": "https://tianhaoluo.com/#pub-batch-effects" } },
+        { "@type": "ListItem", "position": 3, "item": { "@id": "https://tianhaoluo.com/#pub-autoqtl" } },
+        { "@type": "ListItem", "position": 4, "item": { "@id": "https://tianhaoluo.com/#pub-scbasset" } }
+      ]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#pub-s2omics",
+      "@type": "ScholarlyArticle",
+      "name": "Designing Smart Spatial Omics Experiments with S2Omics",
+      "headline": "Designing Smart Spatial Omics Experiments with S2Omics",
+      "creativeWorkStatus": "Accepted for publication",
+      "description": "Accepted at Nature Cell Biology (2025). Author list transcribed from the corresponding preprint, doi:10.1101/2025.09.21.677634.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://tianhaoluo.com/#periodical-nature-cell-biology" },
+      "about": ["Spatial Omics", "Experimental Design", "Computational Biology"],
+      "sameAs": "https://doi.org/10.1101/2025.09.21.677634",
+      "author": [
+        { "@type": "Person", "name": "Musu Yuan" },
+        { "@type": "Person", "name": "Kaitian Jin" },
+        { "@type": "Person", "name": "Hanying Yan" },
+        { "@type": "Person", "name": "Amelia Schroeder" },
+        { "@type": "Person", "name": "Chunyu Luo" },
+        { "@type": "Person", "name": "Sicong Yao" },
+        { "@type": "Person", "name": "Bernhard Domoulin" },
+        { "@type": "Person", "name": "Jonathan Levinsohn" },
+        { "@id": "https://tianhaoluo.com/#person" },
+        { "@type": "Person", "name": "Jean R. Clemenceau" },
+        { "@type": "Person", "name": "Inyeop Jang" },
+        { "@type": "Person", "name": "Minji Kim" },
+        { "@type": "Person", "name": "Yunhe Liu" },
+        { "@type": "Person", "name": "Minghua Deng" },
+        { "@type": "Person", "name": "Emma E. Furth" },
+        { "@type": "Person", "name": "Parker Wilson" },
+        { "@type": "Person", "name": "Anupma Nayak" },
+        { "@type": "Person", "name": "Idania Lubo" },
+        { "@type": "Person", "name": "Luisa Maren Solis Soto" },
+        { "@type": "Person", "name": "Linghua Wang" },
+        { "@type": "Person", "name": "Jeong Hwan Park" },
+        { "@type": "Person", "name": "Katalin Susztak" },
+        { "@type": "Person", "name": "Tae Hyun Hwang" },
+        { "@id": "https://tianhaoluo.com/#advisor-li" }
+      ]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#pub-autoqtl",
+      "@type": "ScholarlyArticle",
+      "name": "Automated quantitative trait locus analysis (AutoQTL)",
+      "headline": "Automated quantitative trait locus analysis (AutoQTL)",
+      "datePublished": "2023-04-10",
+      "inLanguage": "en",
+      "url": "https://doi.org/10.1186/s13040-023-00331-3",
+      "sameAs": "https://doi.org/10.1186/s13040-023-00331-3",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.1186/s13040-023-00331-3"
+      },
+      "about": ["Quantitative Trait Locus Analysis", "Automated Machine Learning", "Genomics"],
+      "isPartOf": {
+        "@type": "PublicationVolume",
+        "volumeNumber": "16",
+        "isPartOf": { "@id": "https://tianhaoluo.com/#periodical-biodata-mining" }
+      },
+      "author": [
+        { "@type": "Person", "name": "Philip J. Freda" },
+        { "@type": "Person", "name": "Attri Ghosh" },
+        { "@type": "Person", "name": "Elizabeth Zhang" },
+        { "@id": "https://tianhaoluo.com/#person" },
+        { "@type": "Person", "name": "Apurva S. Chitre" },
+        { "@type": "Person", "name": "Oksana Polesskaya" },
+        { "@type": "Person", "name": "Celine L. St. Pierre" },
+        { "@type": "Person", "name": "Jianjun Gao" },
+        { "@type": "Person", "name": "Connor D. Martin" },
+        { "@type": "Person", "name": "Hao Chen" },
+        { "@type": "Person", "name": "Angel G. Garcia-Martinez" },
+        { "@type": "Person", "name": "Tengfei Wang" },
+        { "@type": "Person", "name": "Wenyan Han" },
+        { "@type": "Person", "name": "Keita Ishiwari" },
+        { "@type": "Person", "name": "Paul Meyer" },
+        { "@type": "Person", "name": "Alexander Lamparelli" },
+        { "@type": "Person", "name": "Christopher P. King" },
+        { "@type": "Person", "name": "Abraham A. Palmer" },
+        { "@type": "Person", "name": "Ruowang Li" },
+        { "@id": "https://tianhaoluo.com/#advisor-moore" }
+      ]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#pub-batch-effects",
+      "@type": "CreativeWork",
+      "name": "Integrating Foundation Models to Address Batch Effects in Spatial Transcriptomics Analysis",
+      "headline": "Integrating Foundation Models to Address Batch Effects in Spatial Transcriptomics Analysis",
+      "datePublished": "2024",
+      "inLanguage": "en",
+      "creativeWorkStatus": "Conference poster and oral presentation",
+      "description": "Presented as a poster at the MidAtlantic Bioinformatics Conference and the Harvard Quantitative Genomics Conference, and as an oral presentation at the Rice University Gulf Coast Symposium.",
+      "about": ["Foundation Models", "Batch Effects", "Spatial Transcriptomics"],
+      "author": [
+        { "@id": "https://tianhaoluo.com/#person" },
+        { "@id": "https://tianhaoluo.com/#advisor-li" }
+      ]
+    },
+    {
+      "@id": "https://tianhaoluo.com/#pub-scbasset",
+      "@type": "CreativeWork",
+      "name": "Deciphering the Genetic Code behind Single-Cell Chromatin Accessibility: Interpreting scBasset",
+      "headline": "Deciphering the Genetic Code behind Single-Cell Chromatin Accessibility: Interpreting scBasset",
+      "datePublished": "2023",
+      "inLanguage": "en",
+      "creativeWorkStatus": "Conference poster",
+      "description": "Poster presented at the Research Exposition, University of Pennsylvania.",
+      "about": ["Single-Cell Chromatin Accessibility", "Model Interpretability", "Deep Learning"],
+      "author": [
+        { "@id": "https://tianhaoluo.com/#person" },
+        { "@id": "https://tianhaoluo.com/#advisor-koo" }
+      ]
+    }
+  ]
+}

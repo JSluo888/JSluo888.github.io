@@ -1,38 +1,113 @@
+# robots.txt for https://tianhaoluo.com
+# Personal site of Tianhao Luo — Harvard PhD student in Biomedical Informatics, AI researcher, founder.
+#
+# This site is fully open to search engines, AI crawlers, and AI assistants.
+# Everything here is public information and may be crawled, indexed, cited, and used.
+#
+# Machine-readable summaries for AI agents:
+#   https://tianhaoluo.com/llms.txt      — markdown profile (llmstxt.org convention)
+#   https://tianhaoluo.com/profile.json  — schema.org JSON-LD entity graph
+#   https://tianhaoluo.com/sitemap.xml   — sitemap
+#
+# Last reviewed: 2026-08-19
+
 User-agent: *
 Allow: /
 
-# Explicitly allow major AI crawlers
+# ── OpenAI ───────────────────────────────────────────────
 User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
 Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-AdsBot
+Allow: /
+
+# ── Anthropic ────────────────────────────────────────────
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Legacy Anthropic tokens, no longer in Anthropic's documentation.
+# Retained so any older crawler still matches an explicit group.
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
-User-agent: anthropic-ai
+# ── Google ───────────────────────────────────────────────
+User-agent: Googlebot
 Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# ── Microsoft / Bing ─────────────────────────────────────
+User-agent: bingbot
+Allow: /
+
+# ── Perplexity ───────────────────────────────────────────
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: Perplexity-User
 Allow: /
 
-User-agent: Google-Extended
-Allow: /
-
-User-agent: CCBot
+# ── Apple ────────────────────────────────────────────────
+User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
+Allow: /
+
+# ── Meta ─────────────────────────────────────────────────
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+# ── Amazon ───────────────────────────────────────────────
+User-agent: Amazonbot
+Allow: /
+
+# ── Common Crawl (feeds many open training corpora) ───────
+User-agent: CCBot
+Allow: /
+
+# ── Other AI assistants and search agents ────────────────
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Bytespider
 Allow: /
 
 Sitemap: https://tianhaoluo.com/sitemap.xml
