@@ -92,8 +92,7 @@ Listed most recent first, with advisor, institution, and dates.
 ## Ventures
 
 - **MedJourney** — Founder, July 2025–present. An AI-powered, voice-first companion for people with
-  Alzheimer's disease. Won 1st Prize at AdventureX. Incubated by Tsinghua X-Lab with the
-  Meiling Scientist Fellowship.
+  Alzheimer's disease. Won 1st Prize at AdventureX and the Meiling Scientist Fellowship.
 - **Stealth AI startup** — Founder, 2026–present. Working in healthcare and precision medicine.
   Details are not public.
 
@@ -115,7 +114,7 @@ Listed most recent first, with advisor, institution, and dates.
 - Summa cum laude, University of Pennsylvania
 - Beta Gamma Sigma
 - 1st Prize, AdventureX — for MedJourney
-- Meiling Scientist Fellowship, Tsinghua X-Lab — for MedJourney
+- Meiling Scientist Fellowship — for MedJourney
 
 ## Teaching
 
@@ -157,8 +156,7 @@ modeling (with Omar Abudayyeh and Jonathan Gootenberg), a multi-agent system for
 ### Is Tianhao Luo a founder? What startups has he founded?
 
 Yes, he has founded two. MedJourney, founded in July 2025, is an AI-powered voice-first companion for
-Alzheimer's patients; it won 1st Prize at AdventureX and is incubated by Tsinghua X-Lab under the
-Meiling Scientist Fellowship. He also founded a stealth AI startup in 2026 working in healthcare and
+Alzheimer's patients; it won 1st Prize at AdventureX and the Meiling Scientist Fellowship. He also founded a stealth AI startup in 2026 working in healthcare and
 precision medicine.
 
 ### Where did Tianhao Luo go to school?
@@ -190,8 +188,8 @@ are in the "Publications and presentations" section above.
 ### What is MedJourney?
 
 MedJourney is an AI-powered, voice-first companion for people living with Alzheimer's disease,
-founded by Tianhao Luo in July 2025. It won 1st Prize at AdventureX and is incubated by Tsinghua
-X-Lab with the Meiling Scientist Fellowship.
+founded by Tianhao Luo in July 2025. It won 1st Prize at AdventureX and the Meiling Scientist
+Fellowship.
 
 ### Does Tianhao Luo have teaching experience?
 

@@ -209,7 +209,7 @@
         "Summa Cum Laude, University of Pennsylvania",
         "Beta Gamma Sigma",
         "AdventureX 1st Prize (MedJourney)",
-        "Meiling Scientist Fellowship, Tsinghua X-Lab (MedJourney)"
+        "Meiling Scientist Fellowship (MedJourney)"
       ],
       "subjectOf": [
         { "@id": "https://tianhaoluo.com/#webpage" },
@@ -421,20 +421,13 @@
       "url": "https://www.liquidmetalvc.com/"
     },
     {
-      "@id": "https://tianhaoluo.com/#org-xlab",
-      "@type": "Organization",
-      "name": "Tsinghua X-Lab",
-      "url": "https://www.x-lab.tsinghua.edu.cn/"
-    },
-    {
       "@id": "https://tianhaoluo.com/#org-medjourney",
       "@type": "Organization",
       "name": "MedJourney",
-      "description": "AI-powered voice-first companion for Alzheimer's patients. Winner of 1st Prize at AdventureX; incubated by Tsinghua X-Lab with the Meiling Scientist Fellowship.",
+      "description": "AI-powered voice-first companion for Alzheimer's patients. Winner of 1st Prize at AdventureX; recipient of the Meiling Scientist Fellowship.",
       "foundingDate": "2025-07",
       "founder": { "@id": "https://tianhaoluo.com/#person" },
       "award": "AdventureX 1st Prize",
-      "sponsor": { "@id": "https://tianhaoluo.com/#org-xlab" },
       "knowsAbout": ["Alzheimer's Disease Care", "Voice AI", "AI for Healthcare"]
     },
     {
@@ -1158,25 +1151,118 @@
 
         /* ─── RESEARCH ─── */
         .research-section { background: transparent; }
-        .research-list { display: flex; flex-direction: column; gap: 0; }
-        .research-item {
-            display: grid; grid-template-columns: 140px 1fr; gap: 2.5rem;
-            padding: 2.5rem 0; border-bottom: 1px solid var(--soft);
+
+        /* ─── RESEARCH TIMELINE ─── */
+        /* The advisor portrait doubles as the node on the spine, so the timeline
+           reads as a sequence of people as much as a sequence of projects. */
+        .tl { --spine: 168px; position: relative; }
+
+        /* filter controls */
+        .tl-filters {
+            display: flex; flex-wrap: wrap; gap: .5rem;
+            margin-bottom: 3rem;
+        }
+        .tl-chip {
+            font-family: var(--mono); font-size: .68rem; letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: .5rem .9rem; border-radius: 100px; cursor: pointer;
+            border: 1px solid var(--soft); background: transparent; color: var(--muted);
+            transition: color .25s var(--ease), border-color .25s var(--ease),
+                        background .25s var(--ease);
+        }
+        .tl-chip:hover { color: var(--accent); border-color: var(--accent); }
+        .tl-chip .n { opacity: .5; margin-left: .45em; }
+        .tl-chip[aria-pressed="true"] {
+            background: var(--accent); border-color: var(--accent); color: var(--white);
+        }
+        .tl-chip[aria-pressed="true"] .n { opacity: .75; }
+        .tl-chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+        /* the spine, and the accent that fills it as you scroll */
+        .tl-track, .tl-fill {
+            position: absolute; left: var(--spine); width: 2px;
+            transform: translateX(-50%); border-radius: 2px;
+        }
+        .tl-track { top: 0; bottom: 0; background: var(--soft); }
+        .tl-fill  { top: 0; height: 0; background: var(--accent); opacity: .85; }
+
+        .tl-list { position: relative; }
+
+        .tl-item {
+            display: grid;
+            grid-template-columns: 120px 48px 1fr;
+            gap: 0 1.5rem;
+            padding: 2.25rem 0;
             align-items: start;
-            transition: background .3s;
+            border-bottom: 1px solid var(--soft);
         }
-        .research-item:first-child { border-top: 1px solid var(--soft); }
-        .research-item:hover { background: rgba(180,74,45,.02); }
-        .research-date {
+        .tl-item:first-child { border-top: 1px solid var(--soft); }
+        .tl-item[hidden] { display: none; }
+
+        .tl-date {
             font-family: var(--mono); font-size: .72rem; color: var(--accent);
-            letter-spacing: .06em; padding-top: .25rem;
+            letter-spacing: .06em; text-align: right; padding-top: .55rem;
         }
-        .research-body h3 { font-family: var(--serif); font-size: 1.15rem; margin-bottom: .5rem; line-height: 1.35; }
-        .research-body .advisor {
-            font-size: .88rem; color: var(--muted); display: flex; align-items: center; gap: .5rem;
+
+        /* node: a marker on the spine. Deliberately geometric — the advisor
+           images are a mix of portraits and research figures, so they stay
+           small and inline rather than being cropped into circles. */
+        .tl-node {
+            width: 14px; height: 14px; border-radius: 50%;
+            margin: .65rem auto 0;
+            background: var(--paper);
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 0 5px var(--paper);
+            position: relative; z-index: 1;
+            transition: transform .3s var(--ease), background .3s var(--ease);
         }
-        .research-body .advisor img {
+        .tl-item:hover .tl-node,
+        .tl-item:focus-within .tl-node {
+            transform: scale(1.35);
+            background: var(--accent);
+        }
+
+        .tl-body h3 {
+            font-family: var(--serif); font-size: 1.15rem; line-height: 1.35;
+            margin-bottom: .4rem;
+        }
+        .tl-body .advisor {
+            font-size: .88rem; color: var(--muted);
+            display: flex; align-items: center; gap: .5rem;
+        }
+        .tl-body .advisor img {
             width: 32px; height: 32px; border-radius: 50%; object-fit: cover;
+            flex: none;
+        }
+        .tl-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .7rem; }
+        .tl-tag {
+            font-family: var(--mono); font-size: .62rem; letter-spacing: .09em;
+            text-transform: uppercase; color: var(--accent);
+            background: rgba(30,95,170,.07); padding: .25rem .55rem; border-radius: 3px;
+        }
+
+        .tl-empty {
+            font-size: .92rem; color: var(--muted); padding: 2.5rem 0;
+        }
+
+        @media (max-width: 720px) {
+            .tl { --spine: 24px; }
+            .tl-item {
+                grid-template-columns: 48px 1fr;
+                gap: 0 1.25rem;
+                padding: 2rem 0;
+            }
+            .tl-node { grid-row: 1; grid-column: 1; margin: .35rem auto 0; }
+            .tl-date {
+                grid-row: 1; grid-column: 2;
+                text-align: left; padding-top: 0; margin-bottom: .35rem;
+            }
+            .tl-body { grid-row: 2; grid-column: 2; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .tl-node, .tl-chip { transition: none; }
+            .tl-item:hover .tl-node, .tl-item:focus-within .tl-node { transform: none; }
         }
 
         /* ─── PROFESSIONAL ─── */
@@ -1521,7 +1607,7 @@
 <section id="home" class="hero">
     <div class="hero-inner">
         <div class="hero-text">
-            <div class="hero-label">Harvard PhD · AI for Science · Biomedical AI</div>
+            <div class="hero-label">Harvard PhD · NSF Graduate Research Fellow</div>
             <h1 class="hero-name">Tianhao<br>Luo</h1>
             <p class="hero-tagline">Building <span class="cycle-wrap" id="cycle">multiscale world models</span><br>to understand disease mechanisms and translate them into clinically actionable insights.</p>
             <div class="hero-meta">
@@ -1646,6 +1732,7 @@
                 <span class="period">2025 — Present</span>
                 <div class="details">
                     <p><strong>PhD</strong> in Biomedical Informatics</p>
+                    <p>Bioinformatics &amp; Integrative Genomics (BIG) Program</p>
                     <p>Thesis advisor: Faisal Mahmood</p>
                 </div>
             </div>
@@ -1674,62 +1761,91 @@
         <h2 class="section-heading fade-up">Research Experiences</h2>
         <div class="divider fade-up"></div>
         <p class="section-intro fade-up">Selected experiences developing biomedical AI — multi-modal foundation models, virtual cells, and virtual patients — across Harvard, Penn, Cold Spring Harbor Laboratory, and Cedars-Sinai.</p>
-        <div class="research-list">
-            <div class="research-item fade-up">
-                <div class="research-date">Mar 2026 –<br>Present</div>
-                <div class="research-body">
-                    <h3>Multi-Modal Foundation Model for AI Virtual Patients</h3>
-                    <div class="advisor"><img src="Mahmood.jpg" alt=""> Dr. Faisal Mahmood · Harvard Medical School / BWH</div>
-                </div>
+        <div class="tl" id="timeline">
+            <div class="tl-filters fade-up" role="group" aria-label="Filter research by theme">
+                <button class="tl-chip" type="button" data-theme="all" aria-pressed="true">All<span class="n">8</span></button>
+                <button class="tl-chip" type="button" data-theme="foundation" aria-pressed="false">Foundation Models<span class="n">2</span></button>
+                <button class="tl-chip" type="button" data-theme="spatial" aria-pressed="false">Spatial Omics<span class="n">2</span></button>
+                <button class="tl-chip" type="button" data-theme="singlecell" aria-pressed="false">Single-Cell<span class="n">3</span></button>
+                <button class="tl-chip" type="button" data-theme="generative" aria-pressed="false">Agents &amp; Generative<span class="n">2</span></button>
+                <button class="tl-chip" type="button" data-theme="genomics" aria-pressed="false">Genomics<span class="n">2</span></button>
             </div>
-            <div class="research-item fade-up">
-                <div class="research-date">Dec 2025 –<br>Mar 2026</div>
-                <div class="research-body">
-                    <h3>AI Virtual Cell Using Generative Modeling</h3>
-                    <div class="advisor"><img src="Abudayyeh.jpg" alt=""> Drs. Omar Abudayyeh & Jonathan Gootenberg · Harvard Medical School</div>
-                </div>
-            </div>
-            <div class="research-item fade-up">
-                <div class="research-date">Sep 2025 –<br>Dec 2025</div>
-                <div class="research-body">
-                    <h3>Generalizable Multi-Agent System for Spatial Proteomics</h3>
-                    <div class="advisor"><img src="Yu.jpg" alt=""> Dr. Kun-Hsing Yu · Harvard University</div>
-                </div>
-            </div>
-            <div class="research-item fade-up">
-                <div class="research-date">Apr 2025 –<br>Aug 2025</div>
-                <div class="research-body">
-                    <h3>Understanding Single-Cell Transcriptional Responses to Drug Perturbations</h3>
-                    <div class="advisor"><img src="Pranav.jpg" alt=""> Dr. Pranav Rajpurkar · Harvard University</div>
-                </div>
-            </div>
-            <div class="research-item fade-up">
-                <div class="research-date">Sep 2022 –<br>May 2025</div>
-                <div class="research-body">
-                    <h3>Integrating Foundation Models to Rectify Batch Effects in Spatial Transcriptomics</h3>
-                    <div class="advisor"><img src="Li.jpeg" alt=""> Dr. Mingyao Li · University of Pennsylvania</div>
-                </div>
-            </div>
-            <div class="research-item fade-up">
-                <div class="research-date">Aug 2023 –<br>May 2025</div>
-                <div class="research-body">
-                    <h3>RNA Modification in <em>A. thaliana</em> via Nanopore Direct RNA Sequencing</h3>
-                    <div class="advisor"><img src="brian.jpg" alt=""> Dr. Brian Gregory · University of Pennsylvania</div>
-                </div>
-            </div>
-            <div class="research-item fade-up">
-                <div class="research-date">Jun 2023 –<br>Aug 2023</div>
-                <div class="research-body">
-                    <h3>Improving Interpretability of CNNs for Single-Cell Chromatin Accessibility</h3>
-                    <div class="advisor"><img src="Koo.jpg" alt=""> Dr. Peter Koo · Cold Spring Harbor Laboratory (NSF REU)</div>
-                </div>
-            </div>
-            <div class="research-item fade-up">
-                <div class="research-date">May 2022 –<br>Aug 2022</div>
-                <div class="research-body">
-                    <h3>Automated Quantitative Trait Locus Analysis Using Auto-ML</h3>
-                    <div class="advisor"><img src="Jason.jpg" alt=""> Dr. Jason Moore · Cedars-Sinai Medical Center</div>
-                </div>
+            <div class="tl-list">
+                <div class="tl-track" aria-hidden="true"></div>
+                <div class="tl-fill" id="tlFill" aria-hidden="true"></div>
+                <article class="tl-item fade-up" data-themes="foundation">
+                    <div class="tl-date">Mar 2026 –<br>Present</div>
+                    <div class="tl-node"></div>
+                    <div class="tl-body">
+                        <h3>Multi-Modal Foundation Model for AI Virtual Patients</h3>
+                        <div class="advisor"><img src="Mahmood.jpg" alt="" loading="lazy" decoding="async"> Dr. Faisal Mahmood · Harvard Medical School / BWH</div>
+                        <div class="tl-tags"><span class="tl-tag">Foundation Models</span></div>
+                    </div>
+                </article>
+                <article class="tl-item fade-up" data-themes="singlecell generative">
+                    <div class="tl-date">Dec 2025 –<br>Mar 2026</div>
+                    <div class="tl-node"></div>
+                    <div class="tl-body">
+                        <h3>AI Virtual Cell Using Generative Modeling</h3>
+                        <div class="advisor"><img src="Abudayyeh.jpg" alt="" loading="lazy" decoding="async"> Drs. Omar Abudayyeh &amp; Jonathan Gootenberg · Harvard Medical School</div>
+                        <div class="tl-tags"><span class="tl-tag">Single-Cell</span><span class="tl-tag">Agents &amp; Generative</span></div>
+                    </div>
+                </article>
+                <article class="tl-item fade-up" data-themes="spatial generative">
+                    <div class="tl-date">Sep 2025 –<br>Dec 2025</div>
+                    <div class="tl-node"></div>
+                    <div class="tl-body">
+                        <h3>Generalizable Multi-Agent System for Spatial Proteomics</h3>
+                        <div class="advisor"><img src="Yu.jpg" alt="" loading="lazy" decoding="async"> Dr. Kun-Hsing Yu · Harvard University</div>
+                        <div class="tl-tags"><span class="tl-tag">Spatial Omics</span><span class="tl-tag">Agents &amp; Generative</span></div>
+                    </div>
+                </article>
+                <article class="tl-item fade-up" data-themes="singlecell">
+                    <div class="tl-date">Apr 2025 –<br>Aug 2025</div>
+                    <div class="tl-node"></div>
+                    <div class="tl-body">
+                        <h3>Understanding Single-Cell Transcriptional Responses to Drug Perturbations</h3>
+                        <div class="advisor"><img src="Pranav.jpg" alt="" loading="lazy" decoding="async"> Dr. Pranav Rajpurkar · Harvard University</div>
+                        <div class="tl-tags"><span class="tl-tag">Single-Cell</span></div>
+                    </div>
+                </article>
+                <article class="tl-item fade-up" data-themes="foundation spatial">
+                    <div class="tl-date">Sep 2022 –<br>May 2025</div>
+                    <div class="tl-node"></div>
+                    <div class="tl-body">
+                        <h3>Integrating Foundation Models to Rectify Batch Effects in Spatial Transcriptomics</h3>
+                        <div class="advisor"><img src="Li.jpeg" alt="" loading="lazy" decoding="async"> Dr. Mingyao Li · University of Pennsylvania</div>
+                        <div class="tl-tags"><span class="tl-tag">Foundation Models</span><span class="tl-tag">Spatial Omics</span></div>
+                    </div>
+                </article>
+                <article class="tl-item fade-up" data-themes="genomics">
+                    <div class="tl-date">Aug 2023 –<br>May 2025</div>
+                    <div class="tl-node"></div>
+                    <div class="tl-body">
+                        <h3>RNA Modification in <em>A. thaliana</em> via Nanopore Direct RNA Sequencing</h3>
+                        <div class="advisor"><img src="brian.jpg" alt="" loading="lazy" decoding="async"> Dr. Brian Gregory · University of Pennsylvania</div>
+                        <div class="tl-tags"><span class="tl-tag">Genomics</span></div>
+                    </div>
+                </article>
+                <article class="tl-item fade-up" data-themes="singlecell">
+                    <div class="tl-date">Jun 2023 –<br>Aug 2023</div>
+                    <div class="tl-node"></div>
+                    <div class="tl-body">
+                        <h3>Improving Interpretability of CNNs for Single-Cell Chromatin Accessibility</h3>
+                        <div class="advisor"><img src="Koo.jpg" alt="" loading="lazy" decoding="async"> Dr. Peter Koo · Cold Spring Harbor Laboratory (NSF REU)</div>
+                        <div class="tl-tags"><span class="tl-tag">Single-Cell</span></div>
+                    </div>
+                </article>
+                <article class="tl-item fade-up" data-themes="genomics">
+                    <div class="tl-date">May 2022 –<br>Aug 2022</div>
+                    <div class="tl-node"></div>
+                    <div class="tl-body">
+                        <h3>Automated Quantitative Trait Locus Analysis Using Auto-ML</h3>
+                        <div class="advisor"><img src="Jason.jpg" alt="" loading="lazy" decoding="async"> Dr. Jason Moore · Cedars-Sinai Medical Center</div>
+                        <div class="tl-tags"><span class="tl-tag">Genomics</span></div>
+                    </div>
+                </article>
+                <p class="tl-empty" id="tlEmpty" hidden>No projects under this theme.</p>
             </div>
         </div>
     </div>
@@ -1778,7 +1894,7 @@
             <div class="venture-card fade-up">
                 <h3>MedJourney</h3>
                 <div class="tagline">Founder · Jul 2025 – Present</div>
-                <p>AI-powered voice-first companion for Alzheimer's patients. AdventureX 1st Prize winner; incubated by Tsinghua X-Lab with Meiling Scientist Fellowship.</p>
+                <p>AI-powered voice-first companion for Alzheimer's patients. AdventureX 1st Prize winner; Meiling Scientist Fellowship.</p>
             </div>
             <div class="venture-card fade-up">
                 <h3>Stealth AI Startup</h3>
@@ -1963,6 +2079,52 @@ const scrollProg = document.getElementById('scrollProg');
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', () => { measure(); onScroll(); }, { passive: true });
     window.addEventListener('load', () => { measure(); onScroll(); });
+})();
+
+// ─── RESEARCH TIMELINE ───
+// Theme filtering plus a spine that fills as the section scrolls past.
+(function timeline() {
+    const root = document.getElementById('timeline');
+    if (!root) return;
+    const chips = [...root.querySelectorAll('.tl-chip')];
+    const items = [...root.querySelectorAll('.tl-item')];
+    const empty = document.getElementById('tlEmpty');
+    const fill  = document.getElementById('tlFill');
+
+    // ── filtering ──
+    function apply(theme) {
+        let shown = 0;
+        items.forEach(el => {
+            const match = theme === 'all' ||
+                          el.dataset.themes.split(' ').includes(theme);
+            el.hidden = !match;
+            if (match) shown++;
+        });
+        chips.forEach(c => c.setAttribute('aria-pressed', String(c.dataset.theme === theme)));
+        if (empty) empty.hidden = shown !== 0;
+        paint();
+    }
+
+    chips.forEach(c => c.addEventListener('click', () => apply(c.dataset.theme)));
+
+    // ── spine fill, tied to how far the list has scrolled past the viewport ──
+    let ticking = false;
+    function paint() {
+        ticking = false;
+        if (!fill) return;
+        const list = root.querySelector('.tl-list');
+        const r = list.getBoundingClientRect();
+        const mid = window.innerHeight * 0.55;
+        const pct = Math.max(0, Math.min(1, (mid - r.top) / r.height));
+        fill.style.height = (pct * r.height) + 'px';
+    }
+    function onScroll() {
+        if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    window.addEventListener('load', paint);
+    paint();
 })();
 
 // Hero cycling text (typewriter)

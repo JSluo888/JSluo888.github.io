@@ -152,7 +152,7 @@
         "Summa Cum Laude, University of Pennsylvania",
         "Beta Gamma Sigma",
         "AdventureX 1st Prize (MedJourney)",
-        "Meiling Scientist Fellowship, Tsinghua X-Lab (MedJourney)"
+        "Meiling Scientist Fellowship (MedJourney)"
       ],
       "subjectOf": [
         { "@id": "https://tianhaoluo.com/#webpage" },
@@ -364,20 +364,13 @@
       "url": "https://www.liquidmetalvc.com/"
     },
     {
-      "@id": "https://tianhaoluo.com/#org-xlab",
-      "@type": "Organization",
-      "name": "Tsinghua X-Lab",
-      "url": "https://www.x-lab.tsinghua.edu.cn/"
-    },
-    {
       "@id": "https://tianhaoluo.com/#org-medjourney",
       "@type": "Organization",
       "name": "MedJourney",
-      "description": "AI-powered voice-first companion for Alzheimer's patients. Winner of 1st Prize at AdventureX; incubated by Tsinghua X-Lab with the Meiling Scientist Fellowship.",
+      "description": "AI-powered voice-first companion for Alzheimer's patients. Winner of 1st Prize at AdventureX; recipient of the Meiling Scientist Fellowship.",
       "foundingDate": "2025-07",
       "founder": { "@id": "https://tianhaoluo.com/#person" },
       "award": "AdventureX 1st Prize",
-      "sponsor": { "@id": "https://tianhaoluo.com/#org-xlab" },
       "knowsAbout": ["Alzheimer's Disease Care", "Voice AI", "AI for Healthcare"]
     },
     {
