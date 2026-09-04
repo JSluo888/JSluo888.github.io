@@ -1419,38 +1419,52 @@
             a, button, .btn, .venture-card, input, textarea, label, .hamburger,
             .news-item, .pub-item, .social-icons a, .hero-social a { cursor: none; }
 
+            /* The outer element carries POSITION only (transform, written by JS).
+               The ::before carries the VISUAL and resizes via scale(). Sizing the
+               hover/click states with width/height forced a layout on every hover;
+               scale runs entirely on the compositor. */
             .cursor-dot, .cursor-ring {
                 position: fixed; top: 0; left: 0;
+                width: 0; height: 0;
                 pointer-events: none; z-index: 9999;
+                will-change: transform;
+            }
+            .cursor-dot::before, .cursor-ring::before {
+                content: '';
+                position: absolute; top: 0; left: 0;
                 border-radius: 50%;
                 transform: translate(-50%, -50%);
-                will-change: transform, width, height;
+                will-change: transform;
             }
-            .cursor-dot {
+            .cursor-dot::before {
                 width: 6px; height: 6px;
                 background: var(--accent);
-                transition: width .2s var(--ease), height .2s var(--ease),
-                            background .2s var(--ease);
+                transition: transform .2s var(--ease), background .2s var(--ease);
             }
             .cursor-ring {
+                opacity: .55;
+                transition: opacity .25s var(--ease);
+            }
+            .cursor-ring::before {
                 width: 32px; height: 32px;
                 border: 1.5px solid var(--accent);
-                opacity: .55;
-                transition: width .25s var(--ease), height .25s var(--ease),
-                            border-color .25s var(--ease), opacity .25s var(--ease),
+                transition: transform .25s var(--ease),
+                            border-color .25s var(--ease),
                             background .25s var(--ease);
             }
-            .cursor-dot.hovering {
-                width: 0; height: 0;
+            .cursor-dot.hovering::before {
+                transform: translate(-50%, -50%) scale(0);
             }
             .cursor-ring.hovering {
-                width: 56px; height: 56px;
-                background: rgba(30,95,170,.10);
                 opacity: 1;
+            }
+            .cursor-ring.hovering::before {
+                transform: translate(-50%, -50%) scale(1.75);   /* 32px -> 56px */
+                background: rgba(30,95,170,.10);
                 border-color: var(--accent);
             }
-            .cursor-ring.clicking {
-                width: 22px; height: 22px;
+            .cursor-ring.clicking::before {
+                transform: translate(-50%, -50%) scale(.6875);  /* 32px -> 22px */
                 background: rgba(30,95,170,.18);
             }
         }
@@ -1507,13 +1521,12 @@
 <section id="home" class="hero">
     <div class="hero-inner">
         <div class="hero-text">
-            <div class="hero-label">Harvard PhD · Founder · AI for Science</div>
+            <div class="hero-label">Harvard PhD · AI for Science · Biomedical AI</div>
             <h1 class="hero-name">Tianhao<br>Luo</h1>
-            <p class="hero-tagline">Building <span class="cycle-wrap" id="cycle">AI systems</span><br>to understand disease mechanisms and translate them into clinically actionable insights.</p>
+            <p class="hero-tagline">Building <span class="cycle-wrap" id="cycle">multiscale world models</span><br>to understand disease mechanisms and translate them into clinically actionable insights.</p>
             <div class="hero-meta">
                 <span><i class="fas fa-map-marker-alt"></i> Boston, MA</span>
                 <span><i class="fas fa-flask"></i> Harvard Biomedical AI</span>
-                <span><i class="fas fa-rocket"></i> Startup Founder</span>
             </div>
             <div class="hero-cta">
                 <a href="#research" class="btn btn-fill">View Research</a>
@@ -1540,13 +1553,11 @@
         </div>
         <div class="status-track">
             <div class="status-items" id="statusItems">
-                <span>Training multi-modal foundation models @ Mahmood Lab</span>
+                <span>Building multiscale AI world models @ Mahmood Lab</span>
                 <span>Building a stealth AI startup in healthcare &amp; precision medicine</span>
-                <span>Scaling MedJourney with X-Lab</span>
                 <span>Based in Boston · Open to collaborators</span>
-                <span>Training multi-modal foundation models @ Mahmood Lab</span>
+                <span>Building multiscale AI world models @ Mahmood Lab</span>
                 <span>Building a stealth AI startup in healthcare &amp; precision medicine</span>
-                <span>Scaling MedJourney with X-Lab</span>
                 <span>Based in Boston · Open to collaborators</span>
             </div>
         </div>
@@ -1564,8 +1575,8 @@
                 <div class="section-label">About</div>
                 <h2 class="section-heading">At the intersection of<br>AI & biomedicine</h2>
                 <div class="divider"></div>
-                <p>I am a <strong>Harvard PhD student</strong> in Biomedical Informatics working at the frontier of <strong>AI for science</strong> and <strong>biomedical AI</strong>. I build multi-modal foundation models to understand disease mechanisms and translate them into clinically actionable insights.</p>
-                <p>I am also a <strong>founder</strong> of AI startups in biomedicine — MedJourney (Alzheimer's care) and a stealth AI startup in healthcare and precision medicine. Previously, I graduated <em>summa cum laude</em> from the University of Pennsylvania with triple degrees in Statistics (Wharton), Mathematics, and Computational Biology. Beyond the lab, I am a violinist of 13 years and an avid runner.</p>
+                <p>I am a <strong>Harvard PhD student</strong> in Biomedical Informatics working at the frontier of <strong>AI for science</strong> and <strong>biomedical AI</strong>. My interests span AI for <strong>spatial omics</strong>, <strong>cells</strong>, and <strong>electronic health records</strong> — and, running through all of them, the idea of a <strong>multiscale world model</strong> that reasons from the molecular to the tissue to the patient scale.</p>
+                <p>I am also interested in <strong>entrepreneurship</strong> and in how biomedical AI actually reaches patients. Previously, I graduated <em>summa cum laude</em> from the University of Pennsylvania with triple degrees in Statistics (Wharton), Mathematics, and Computational Biology. Beyond the lab, I am a violinist of 13 years and an avid runner.</p>
 
             </div>
         </div>
@@ -1635,7 +1646,7 @@
                 <span class="period">2025 — Present</span>
                 <div class="details">
                     <p><strong>PhD</strong> in Biomedical Informatics</p>
-                    <p>Rotation advisors: Omar Abudayyeh & Jonathan Gootenberg, Kun-Hsing Yu, Faisal Mahmood</p>
+                    <p>Thesis advisor: Faisal Mahmood</p>
                 </div>
             </div>
             <div class="edu-card fade-up">
@@ -1847,7 +1858,8 @@
                 </div>
             </div>
             <div class="contact-img fade-up">
-                <img src="violin.jpg" alt="Four photographs of Tianhao Luo playing the violin: holding his instrument outdoors, performing in a chamber ensemble, and two recital-hall performances.">
+                <img src="multiscale-portrait.jpg" width="750" height="1000" loading="lazy" decoding="async"
+                     alt="Line illustration of Tianhao Luo playing the violin. Below the waist the figure resolves downward through the scales of biology — tissue architecture, then individual cells, then a molecular lattice — while the arc of the bow continues as a single trace threading through every scale.">
             </div>
         </div>
     </div>
@@ -1864,9 +1876,7 @@
 <script>
 // Nav scroll
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+// (scroll behaviour is consolidated into a single rAF-throttled handler below)
 
 // Hamburger
 const hamburger = document.getElementById('hamburger');
@@ -1896,33 +1906,74 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 // Active nav link
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id');
-    });
-    navLinks.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-});
 
-// Scroll progress bar
+
+// ─── CONSOLIDATED SCROLL HANDLER ───
+// One passive listener, rAF-throttled, with section offsets cached so that
+// scrolling never forces a synchronous layout (the old code read offsetTop /
+// scrollHeight on every scroll event, which caused visible jank).
 const scrollProg = document.getElementById('scrollProg');
-window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-    scrollProg.style.width = pct + '%';
-});
+(function scrollFX() {
+    let offsets = [];
+    let ticking = false;
+    let lastActive = null;
+    let wasScrolled = null;
+
+    function measure() {
+        offsets = Array.from(sections, s => ({ id: s.id, top: s.offsetTop }));
+    }
+
+    function update() {
+        ticking = false;
+        const y = window.scrollY;
+
+        // nav background
+        const scrolled = y > 40;
+        if (scrolled !== wasScrolled) {
+            nav.classList.toggle('scrolled', scrolled);
+            wasScrolled = scrolled;
+        }
+
+        // active nav link
+        let current = '';
+        for (const o of offsets) {
+            if (y >= o.top - 200) current = o.id;
+        }
+        if (current !== lastActive) {
+            navLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+            lastActive = current;
+        }
+
+        // progress bar
+        if (scrollProg) {
+            const h = document.documentElement;
+            const range = h.scrollHeight - h.clientHeight;
+            scrollProg.style.width = (range > 0 ? (y / range) * 100 : 0) + '%';
+        }
+    }
+
+    function onScroll() {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }
+
+    measure();
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => { measure(); onScroll(); }, { passive: true });
+    window.addEventListener('load', () => { measure(); onScroll(); });
+})();
 
 // Hero cycling text (typewriter)
 const cycleEl = document.getElementById('cycle');
 const phrases = [
-    'AI systems',
-    'foundation models',
-    'virtual cells',
-    'generative models',
-    'precision medicine',
-    'multi-modal agents'
+    'multiscale world models',
+    'world models of the cell',
+    'world models of tissue',
+    'world models of the patient',
+    'world models across scales',
+    'AI world models for biomedicine'
 ];
 let pIdx = 0, cIdx = 0, deleting = false;
 function tick() {
@@ -1937,16 +1988,34 @@ function tick() {
 if (cycleEl) tick();
 
 // Venture card 3D tilt
+// The rect is measured once on enter and the transform is written inside a
+// rAF, so moving the pointer over a card no longer forces a layout per event.
 document.querySelectorAll('.venture-card').forEach(card => {
+    let rect = null, px = 0, py = 0, queued = false;
+
+    const apply = () => {
+        queued = false;
+        if (!rect) return;
+        const x = (px - rect.left) / rect.width - 0.5;
+        const y = (py - rect.top) / rect.height - 0.5;
+        card.style.transform =
+            `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateZ(0)`;
+    };
+
+    card.addEventListener('mouseenter', () => {
+        rect = card.getBoundingClientRect();
+    }, { passive: true });
+
     card.addEventListener('mousemove', (e) => {
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateZ(0)`;
-    });
+        if (!rect) rect = card.getBoundingClientRect();
+        px = e.clientX; py = e.clientY;
+        if (!queued) { queued = true; requestAnimationFrame(apply); }
+    }, { passive: true });
+
     card.addEventListener('mouseleave', () => {
+        rect = null;
         card.style.transform = '';
-    });
+    }, { passive: true });
 });
 
 // Last updated timestamp
@@ -1957,6 +2026,11 @@ if (lu) {
 }
 
 // ─── CUSTOM CURSOR ───
+// All positioning is written inside a single rAF loop. Mouse events only
+// record coordinates — they never touch style — so pointer movement can no
+// longer be throttled by layout/paint work. The loop parks itself when the
+// pointer is at rest, and the hover test is cached instead of re-running
+// closest() on every mouseover.
 (function cursor() {
     const dot = document.getElementById('cursorDot');
     const ring = document.getElementById('cursorRing');
@@ -1965,44 +2039,64 @@ if (lu) {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!fine || reduce) { dot.style.display = 'none'; ring.style.display = 'none'; return; }
 
+    const EASE = 0.35;          // ring catch-up per frame (was 0.18)
+    const REST = 0.01;          // px² below which the loop parks itself
+
     let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-    let rx = mx, ry = my;
+    let dx = mx, dy = my;       // dot position (snaps to pointer)
+    let rx = mx, ry = my;       // ring position (eases toward pointer)
+    let running = false;
+    let hovering = false;
+
+    function wake() {
+        if (!running) { running = true; requestAnimationFrame(tick); }
+    }
+
+    function tick() {
+        // The dot tracks the pointer exactly; the ring trails by design.
+        dx = mx; dy = my;
+        rx += (mx - rx) * EASE;
+        ry += (my - ry) * EASE;
+
+        dot.style.transform  = `translate3d(${dx}px, ${dy}px, 0)`;
+        ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
+
+        // Park the loop once the ring has settled on the pointer.
+        const ddx = mx - rx, ddy = my - ry;
+        if (ddx * ddx + ddy * ddy < REST) { running = false; return; }
+        requestAnimationFrame(tick);
+    }
+
+    const hoverSel = 'a, button, .btn, .venture-card, .news-item, .pub-item, .hamburger, input, textarea, label, .hero-social a, .social-icons a';
 
     window.addEventListener('mousemove', e => {
         mx = e.clientX; my = e.clientY;
-        dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+        wake();
     }, { passive: true });
 
     window.addEventListener('mouseleave', () => {
         dot.style.opacity = '0'; ring.style.opacity = '0';
-    });
+    }, { passive: true });
     window.addEventListener('mouseenter', () => {
         dot.style.opacity = ''; ring.style.opacity = '';
-    });
-    window.addEventListener('mousedown', () => ring.classList.add('clicking'));
-    window.addEventListener('mouseup', () => ring.classList.remove('clicking'));
+        wake();
+    }, { passive: true });
+    window.addEventListener('mousedown', () => ring.classList.add('clicking'), { passive: true });
+    window.addEventListener('mouseup', () => ring.classList.remove('clicking'), { passive: true });
 
-    function tick() {
-        rx += (mx - rx) * 0.18;
-        ry += (my - ry) * 0.18;
-        ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-        requestAnimationFrame(tick);
-    }
-    tick();
-
-    const hoverSel = 'a, button, .btn, .venture-card, .news-item, .pub-item, .hamburger, input, textarea, label, .hero-social a, .social-icons a';
+    // One delegated listener, and the class is only touched when the state
+    // actually flips — the old pair of handlers ran closest() on every
+    // mouseover/mouseout and re-set classes that were already correct.
     document.addEventListener('mouseover', e => {
-        if (e.target.closest(hoverSel)) {
-            dot.classList.add('hovering');
-            ring.classList.add('hovering');
+        const over = !!(e.target.closest && e.target.closest(hoverSel));
+        if (over !== hovering) {
+            hovering = over;
+            dot.classList.toggle('hovering', over);
+            ring.classList.toggle('hovering', over);
         }
-    });
-    document.addEventListener('mouseout', e => {
-        if (e.target.closest(hoverSel) && !e.relatedTarget?.closest?.(hoverSel)) {
-            dot.classList.remove('hovering');
-            ring.classList.remove('hovering');
-        }
-    });
+    }, { passive: true });
+
+    tick();
 })();
 </script>
 </body>
