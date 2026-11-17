@@ -7,7 +7,7 @@
       "url": "https://tianhaoluo.com/",
       "name": "Tianhao Luo",
       "alternateName": "tianhaoluo.com",
-      "description": "Personal site of Tianhao Luo, a Harvard PhD student in Biomedical Informatics, NSF Graduate Research Fellow in AI for Life Sciences, and startup founder working on AI for science, biomedical AI, and precision medicine.",
+      "description": "Personal site of Tianhao Luo, a Harvard PhD candidate in Biomedical Informatics and NSF Graduate Research Fellow in AI for Life Sciences working on AI for science, biomedical AI, and precision medicine, and pursuing entrepreneurship and venture building.",
       "inLanguage": "en",
       "about": { "@id": "https://tianhaoluo.com/#person" },
       "mainEntity": { "@id": "https://tianhaoluo.com/#person" },
@@ -18,10 +18,10 @@
       "@id": "https://tianhaoluo.com/#webpage",
       "@type": ["ProfilePage", "WebPage"],
       "url": "https://tianhaoluo.com/",
-      "name": "Tianhao Luo — Harvard PhD, AI for Science Researcher & Founder",
-      "description": "Profile of Tianhao Luo, a PhD student in Biomedical Informatics at Harvard Medical School and founder of two AI startups. He builds multi-modal foundation models for biology and medicine and is an NSF Graduate Research Fellow in AI for Life Sciences.",
+      "name": "Tianhao Luo — Harvard PhD Candidate, AI for Science Researcher & Venture Builder",
+      "description": "Profile of Tianhao Luo, a PhD candidate in Biomedical Informatics at Harvard Medical School. He builds multi-modal foundation models for biology and medicine, is an NSF Graduate Research Fellow in AI for Life Sciences, and is pursuing entrepreneurship and venture building in biomedical AI.",
       "inLanguage": "en",
-      "dateModified": "2026-08-19",
+      "dateModified": "2026-11-16",
       "isPartOf": { "@id": "https://tianhaoluo.com/#website" },
       "about": { "@id": "https://tianhaoluo.com/#person" },
       "mainEntity": { "@id": "https://tianhaoluo.com/#person" },
@@ -65,13 +65,13 @@
       "url": "https://tianhaoluo.com/",
       "mainEntityOfPage": { "@id": "https://tianhaoluo.com/#webpage" },
       "image": { "@id": "https://tianhaoluo.com/#primaryimage" },
-      "description": "Tianhao Luo is a PhD student in Biomedical Informatics at Harvard Medical School and an NSF Graduate Research Fellow in AI for Life Sciences. He builds multi-modal foundation models and generative models for biology and medicine — AI virtual cells and AI virtual patients, spatial and single-cell genomics — to understand disease mechanisms and translate them into clinically actionable insights. He is also the founder of MedJourney, an AI-powered voice-first companion for Alzheimer's patients, and of a stealth AI startup in healthcare and precision medicine. He graduated summa cum laude from the University of Pennsylvania with a B.S. in Statistics from The Wharton School and a B.A. in Mathematics and Computational Biology.",
-      "disambiguatingDescription": "Harvard PhD student in Biomedical Informatics, AI researcher, and AI startup founder based in Boston, Massachusetts.",
+      "description": "Tianhao Luo is a PhD candidate in Biomedical Informatics at Harvard Medical School and an NSF Graduate Research Fellow in AI for Life Sciences. He builds multi-modal foundation models and generative models for biology and medicine — AI virtual cells and AI virtual patients, spatial and single-cell genomics — to understand disease mechanisms and translate them into clinically actionable insights. Alongside his research he is pursuing entrepreneurship and venture building, focused on how biomedical AI reaches patients. He graduated summa cum laude from the University of Pennsylvania with a B.S. in Statistics from The Wharton School and a B.A. in Mathematics and Computational Biology.",
+      "disambiguatingDescription": "Harvard PhD candidate in Biomedical Informatics, AI researcher, and entrepreneur based in Boston, Massachusetts.",
       "jobTitle": [
-        "PhD Student in Biomedical Informatics",
+        "PhD Candidate in Biomedical Informatics",
         "AI Researcher",
         "Machine Learning Fellow",
-        "Founder"
+        "Entrepreneur"
       ],
       "email": "tianhao_luo@g.harvard.edu",
       "address": {
@@ -118,11 +118,13 @@
         "Automated Machine Learning",
         "Statistical Inference",
         "Bayesian Statistics",
-        "Technology Entrepreneurship"
+        "Technology Entrepreneurship",
+        "Venture Building",
+        "Biotech and Healthcare Startups"
       ],
       "hasOccupation": [
         { "@id": "https://tianhaoluo.com/#occupation-ai-researcher" },
-        { "@id": "https://tianhaoluo.com/#occupation-founder" }
+        { "@id": "https://tianhaoluo.com/#occupation-entrepreneur" }
       ],
       "affiliation": [
         { "@id": "https://tianhaoluo.com/#org-hms" },
@@ -137,9 +139,7 @@
       "worksFor": [
         { "@id": "https://tianhaoluo.com/#role-openai" },
         { "@id": "https://tianhaoluo.com/#role-pathcision" },
-        { "@id": "https://tianhaoluo.com/#role-liquidmetal" },
-        { "@id": "https://tianhaoluo.com/#role-medjourney" },
-        { "@id": "https://tianhaoluo.com/#role-stealth" }
+        { "@id": "https://tianhaoluo.com/#role-liquidmetal" }
       ],
       "memberOf": { "@id": "https://tianhaoluo.com/#org-beta-gamma-sigma" },
       "funding": { "@id": "https://tianhaoluo.com/#grant-nsf-grfp" },
@@ -150,9 +150,7 @@
       "award": [
         "NSF Graduate Research Fellowship (GRFP) — AI for Life Sciences",
         "Summa Cum Laude, University of Pennsylvania",
-        "Beta Gamma Sigma",
-        "AdventureX 1st Prize (MedJourney)",
-        "Meiling Scientist Fellowship (MedJourney)"
+        "Beta Gamma Sigma"
       ],
       "subjectOf": [
         { "@id": "https://tianhaoluo.com/#webpage" },
@@ -181,12 +179,12 @@
       ]
     },
     {
-      "@id": "https://tianhaoluo.com/#occupation-founder",
+      "@id": "https://tianhaoluo.com/#occupation-entrepreneur",
       "@type": "Occupation",
-      "name": "Startup Founder",
-      "occupationalCategory": "Entrepreneurship in AI and healthcare",
-      "description": "Founds and builds AI companies in healthcare and precision medicine, including MedJourney and a stealth AI startup.",
-      "skills": ["Entrepreneurship", "AI Product Development", "Healthcare Technology"]
+      "name": "Entrepreneur",
+      "occupationalCategory": "Entrepreneurship and venture building in AI and healthcare",
+      "description": "Pursues entrepreneurship and venture building at the intersection of AI, biomedicine, and healthcare, alongside doctoral research.",
+      "skills": ["Entrepreneurship", "Venture Building", "AI Product Development", "Healthcare Technology"]
     },
 
     {
@@ -201,10 +199,10 @@
     {
       "@id": "https://tianhaoluo.com/#role-phd-hms",
       "@type": "OrganizationRole",
-      "roleName": "PhD Student, Biomedical Informatics",
+      "roleName": "PhD Candidate, Biomedical Informatics",
       "name": "PhD in Biomedical Informatics, Harvard Medical School",
       "startDate": "2025",
-      "description": "Doctoral study in Biomedical Informatics at Harvard Medical School, with laboratory rotations advised by Omar Abudayyeh and Jonathan Gootenberg, Kun-Hsing Yu, and Faisal Mahmood.",
+      "description": "Doctoral study in Biomedical Informatics at Harvard Medical School, with laboratory rotations advised by Omar Abudayyeh and Jonathan Gootenberg, Kun-Hsing Yu, and Faisal Mahmood. Advanced to PhD candidacy in November 2026 after passing the qualifying examination.",
       "affiliation": { "@id": "https://tianhaoluo.com/#org-hms" }
     },
     {
@@ -245,24 +243,6 @@
       "endDate": "2025-08",
       "description": "Conducted due diligence on AI-driven drug discovery startups, based in Boston, Massachusetts.",
       "worksFor": { "@id": "https://tianhaoluo.com/#org-liquidmetal" }
-    },
-    {
-      "@id": "https://tianhaoluo.com/#role-medjourney",
-      "@type": "OrganizationRole",
-      "roleName": "Founder",
-      "name": "Founder, MedJourney",
-      "startDate": "2025-07",
-      "description": "Founded MedJourney, an AI-powered voice-first companion for Alzheimer's patients.",
-      "worksFor": { "@id": "https://tianhaoluo.com/#org-medjourney" }
-    },
-    {
-      "@id": "https://tianhaoluo.com/#role-stealth",
-      "@type": "OrganizationRole",
-      "roleName": "Founder",
-      "name": "Founder, stealth AI startup",
-      "startDate": "2026",
-      "description": "Founded a stealth AI startup working in healthcare and precision medicine.",
-      "worksFor": { "@id": "https://tianhaoluo.com/#org-stealth" }
     },
 
     {
@@ -362,25 +342,6 @@
       "@type": "Organization",
       "name": "LiquidMetal Ventures",
       "url": "https://www.liquidmetalvc.com/"
-    },
-    {
-      "@id": "https://tianhaoluo.com/#org-medjourney",
-      "@type": "Organization",
-      "name": "MedJourney",
-      "description": "AI-powered voice-first companion for Alzheimer's patients. Winner of 1st Prize at AdventureX; recipient of the Meiling Scientist Fellowship.",
-      "foundingDate": "2025-07",
-      "founder": { "@id": "https://tianhaoluo.com/#person" },
-      "award": "AdventureX 1st Prize",
-      "knowsAbout": ["Alzheimer's Disease Care", "Voice AI", "AI for Healthcare"]
-    },
-    {
-      "@id": "https://tianhaoluo.com/#org-stealth",
-      "@type": "Organization",
-      "name": "Stealth AI Startup",
-      "description": "A stealth-mode AI startup founded by Tianhao Luo in healthcare and precision medicine.",
-      "foundingDate": "2026",
-      "founder": { "@id": "https://tianhaoluo.com/#person" },
-      "knowsAbout": ["Artificial Intelligence", "Healthcare", "Precision Medicine"]
     },
     {
       "@id": "https://tianhaoluo.com/#org-beta-gamma-sigma",

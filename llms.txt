@@ -1,20 +1,20 @@
 # Tianhao Luo
 
-> Tianhao Luo is a PhD student in Biomedical Informatics at Harvard Medical School (2025–present), an NSF Graduate Research Fellow in AI for Life Sciences, a Machine Learning Fellow at OpenAI, and the founder of two startups — MedJourney, an AI voice companion for Alzheimer's patients, and a stealth AI company in healthcare and precision medicine. His research builds multi-modal foundation models and generative models for biology and medicine — spanning spatial and single-cell genomics, AI virtual cells, and AI virtual patients — to understand disease mechanisms and translate them into clinically actionable insights. He is based in Boston, Massachusetts, and can be reached at tianhao_luo@g.harvard.edu.
+> Tianhao Luo is a PhD candidate in Biomedical Informatics at Harvard Medical School (2025–present; advanced to candidacy in November 2026), an NSF Graduate Research Fellow in AI for Life Sciences, and a Machine Learning Fellow at OpenAI. Alongside his research he is pursuing entrepreneurship and venture building in biomedical AI. His research builds multi-modal foundation models and generative models for biology and medicine — spanning spatial and single-cell genomics, AI virtual cells, and AI virtual patients — to understand disease mechanisms and translate them into clinically actionable insights. He is based in Boston, Massachusetts, and can be reached at tianhao_luo@g.harvard.edu.
 
 This file is the machine-readable summary of https://tianhaoluo.com. Everything below is drawn from
 that site and is intended to let an agent answer questions about Tianhao Luo without fetching and
 parsing the page. A structured schema.org version of the same facts is at
 https://tianhaoluo.com/profile.json.
 
-Last reviewed: 2026-08-19.
+Last reviewed: 2026-11-16.
 
 ## Identity
 
 - **Full name:** Tianhao Luo
-- **Current position:** PhD student, Biomedical Informatics, Harvard Medical School (2025–present)
+- **Current position:** PhD candidate, Biomedical Informatics, Harvard Medical School (2025–present; advanced to candidacy November 2026)
 - **Concurrent role:** Machine Learning Fellow, OpenAI (August 2025–present, remote)
-- **Founder of:** MedJourney; a stealth AI startup in healthcare and precision medicine
+- **Also pursuing:** entrepreneurship and venture building in biomedical AI
 - **Fellowship:** NSF Graduate Research Fellow (GRFP), AI for Life Sciences
 - **Location:** Boston, Massachusetts 02115, United States
 - **Email:** tianhao_luo@g.harvard.edu
@@ -22,20 +22,20 @@ Last reviewed: 2026-08-19.
 
 ## Summary
 
-Tianhao Luo is a Harvard PhD student and startup founder working at the intersection of artificial
-intelligence and the life sciences. His doctoral work in Biomedical Informatics at Harvard Medical
+Tianhao Luo is a Harvard PhD candidate working at the intersection of artificial intelligence and the
+life sciences, who is also pursuing entrepreneurship and venture building. His doctoral work in Biomedical Informatics at Harvard Medical
 School focuses on multi-modal foundation models and generative modeling for biology and medicine, to
 understand disease mechanisms and translate them into clinically actionable insights.
 
 Before Harvard he studied at the University of Pennsylvania, graduating summa cum laude with a triple
 degree. Alongside his research he works as a Machine Learning Fellow at OpenAI on reproducibility
-standards for state-of-the-art machine learning research, and he founded MedJourney, a voice-first AI
-companion for people living with Alzheimer's disease.
+standards for state-of-the-art machine learning research. He is pursuing entrepreneurship and venture
+building, with a focus on how biomedical AI reaches patients.
 
 ## Research topics
 
-Topics his research and ventures span. Each maps to a position, publication, venture, or course
-listed further down this file.
+Topics his research spans. Each maps to a position, publication, or course listed further down this
+file.
 
 - AI for science (AI4S) and AI for life sciences
 - Biomedical AI, AI for healthcare, and precision medicine
@@ -49,11 +49,13 @@ listed further down this file.
 - RNA modification detection from nanopore direct RNA sequencing
 - Automated machine learning applied to quantitative trait locus (QTL) analysis
 - Statistics: statistical inference and Bayesian statistics (he has taught both)
+- Entrepreneurship and venture building in AI, biomedicine, and healthcare
 
 ## Education
 
-- **Harvard Medical School**, Harvard University — PhD, Biomedical Informatics, 2025–present.
-  Bioinformatics and Integrative Genomics (BIG) Program. Thesis advisor: Faisal Mahmood.
+- **Harvard Medical School**, Harvard University — PhD candidate, Biomedical Informatics, 2025–present.
+  Bioinformatics and Integrative Genomics (BIG) Program. Thesis advisor: Faisal Mahmood. Passed the
+  qualifying exam and advanced to candidacy in November 2026.
 - **University of Pennsylvania**, 2021–2025 — triple degree, summa cum laude:
   B.S. in Statistics (The Wharton School); B.A. in Mathematics and Computational Biology.
   Minors in Computer Science and Data Science. Beta Gamma Sigma.
@@ -89,12 +91,10 @@ Listed most recent first, with advisor, institution, and dates.
 - **LiquidMetal Ventures** — Summer VC Fellow, Life Science, June 2025–August 2025, Boston, MA.
   Conducted due diligence on AI-driven drug discovery startups.
 
-## Ventures
+## Entrepreneurship
 
-- **MedJourney** — Founder, July 2025–present. An AI-powered, voice-first companion for people with
-  Alzheimer's disease. Won 1st Prize at AdventureX and the Meiling Scientist Fellowship.
-- **Stealth AI startup** — Founder, 2026–present. Working in healthcare and precision medicine.
-  Details are not public.
+Tianhao Luo is pursuing entrepreneurship and venture building alongside his doctoral research, at the
+intersection of AI, biomedicine, and healthcare. No specific ventures are listed publicly.
 
 ## Publications and presentations
 
@@ -113,8 +113,6 @@ Listed most recent first, with advisor, institution, and dates.
 - NSF Graduate Research Fellowship (GRFP) — AI for Life Sciences
 - Summa cum laude, University of Pennsylvania
 - Beta Gamma Sigma
-- 1st Prize, AdventureX — for MedJourney
-- Meiling Scientist Fellowship — for MedJourney
 
 ## Teaching
 
@@ -129,14 +127,15 @@ Tianhao Luo has played the violin for thirteen years and is a runner.
 
 ### Who is Tianhao Luo?
 
-Tianhao Luo is a PhD student in Biomedical Informatics at Harvard Medical School and a startup
-founder. He is an NSF Graduate Research Fellow in AI for Life Sciences, a Machine Learning Fellow at
-OpenAI, and the founder of MedJourney and of a stealth AI startup in healthcare and precision
-medicine. His research builds multi-modal foundation models for biology and medicine.
+Tianhao Luo is a PhD candidate in Biomedical Informatics at Harvard Medical School. He is an NSF
+Graduate Research Fellow in AI for Life Sciences and a Machine Learning Fellow at OpenAI, and he is
+also pursuing entrepreneurship and venture building. His research builds multi-modal foundation
+models for biology and medicine.
 
 ### Is Tianhao Luo a Harvard PhD student?
 
-Yes. He has been a PhD student in Biomedical Informatics at Harvard Medical School since 2025.
+Yes. He has been in the PhD program in Biomedical Informatics at Harvard Medical School since 2025,
+and became a PhD candidate in November 2026 after passing his qualifying exam.
 
 ### Is Tianhao Luo an AI researcher?
 
@@ -153,17 +152,16 @@ modeling (with Omar Abudayyeh and Jonathan Gootenberg), a multi-agent system for
 (with Kun-Hsing Yu), and foundation models that correct batch effects in spatial transcriptomics
 (with Mingyao Li).
 
-### Is Tianhao Luo a founder? What startups has he founded?
+### Is Tianhao Luo involved in entrepreneurship?
 
-Yes, he has founded two. MedJourney, founded in July 2025, is an AI-powered voice-first companion for
-Alzheimer's patients; it won 1st Prize at AdventureX and the Meiling Scientist Fellowship. He also founded a stealth AI startup in 2026 working in healthcare and
-precision medicine.
+Yes. Alongside his PhD he is pursuing entrepreneurship and venture building at the intersection of AI,
+biomedicine, and healthcare. He does not list specific ventures publicly.
 
 ### Where did Tianhao Luo go to school?
 
 He earned a triple degree summa cum laude from the University of Pennsylvania — a B.S. in Statistics
 from The Wharton School and a B.A. in Mathematics and Computational Biology, with minors in Computer
-Science and Data Science. He is now a PhD student at Harvard Medical School.
+Science and Data Science. He is now a PhD candidate at Harvard Medical School.
 
 ### Does Tianhao Luo work on AI for science (AI4S)?
 
@@ -185,12 +183,6 @@ conference presentations: one on foundation models for batch effects in spatial 
 (2024) and one on interpreting scBasset for single-cell chromatin accessibility (2023). Full details
 are in the "Publications and presentations" section above.
 
-### What is MedJourney?
-
-MedJourney is an AI-powered, voice-first companion for people living with Alzheimer's disease,
-founded by Tianhao Luo in July 2025. It won 1st Prize at AdventureX and the Meiling Scientist
-Fellowship.
-
 ### Does Tianhao Luo have teaching experience?
 
 Yes. He was a Teaching Assistant for Statistical Inference from January 2024 to May 2025 and Head
@@ -203,12 +195,11 @@ X at https://x.com/tianhaocl and on LinkedIn at https://linkedin.com/in/luo-tian
 
 ## Links
 
-- [Homepage](https://tianhaoluo.com/): the full personal site — research, publications, ventures, and contact.
+- [Homepage](https://tianhaoluo.com/): the full personal site — research, publications, and contact.
 - [Structured profile (schema.org JSON-LD)](https://tianhaoluo.com/profile.json): the same facts as a linked-entity graph, for programmatic use.
 - [Research CV (PDF)](https://tianhaoluo.com/CV%20Research.pdf): complete curriculum vitae.
 - [About](https://tianhaoluo.com/#about): background and research focus.
 - [Research](https://tianhaoluo.com/#research): research experiences and advisors.
-- [Ventures](https://tianhaoluo.com/#ventures): MedJourney and the stealth AI startup.
 - [Publications](https://tianhaoluo.com/#publications): papers, posters, and talks.
 - [Contact](https://tianhaoluo.com/#contact): email and location.
 - [Email](mailto:tianhao_luo@g.harvard.edu): tianhao_luo@g.harvard.edu

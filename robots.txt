@@ -1,5 +1,5 @@
 # robots.txt for https://tianhaoluo.com
-# Personal site of Tianhao Luo — Harvard PhD student in Biomedical Informatics, AI researcher, founder.
+# Personal site of Tianhao Luo — Harvard PhD candidate in Biomedical Informatics, AI researcher, entrepreneur.
 #
 # This site is fully open to search engines, AI crawlers, and AI assistants.
 # Everything here is public information and may be crawled, indexed, cited, and used.
@@ -9,7 +9,7 @@
 #   https://tianhaoluo.com/profile.json  — schema.org JSON-LD entity graph
 #   https://tianhaoluo.com/sitemap.xml   — sitemap
 #
-# Last reviewed: 2026-08-19
+# Last reviewed: 2026-11-16
 
 User-agent: *
 Allow: /
